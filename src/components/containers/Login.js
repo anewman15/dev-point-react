@@ -1,16 +1,27 @@
+import { useState } from 'react';
+
 const Login = () => {
-  const hi = 'Hi';
+  const [userInfo, setUserInfo] = useState({
+    username: '', password: '',
+  });
+
+  const handleChange = e => {
+    setUserInfo({
+      ...userInfo,
+      [e.target.name]: e.target.value,
+    });
+  };
+
   return (
     <div>
-      <h1>{`${hi}`}</h1>
       <form>
         <label htmlFor="username">
           Username
-          <input type="text" name="username" placeholder="e.g. anewman15" />
+          <input type="text" name="username" onChange={handleChange} placeholder="e.g. anewman15" />
         </label>
         <label htmlFor="password">
           Password
-          <input type="text" placeholder="password" />
+          <input type="text" name="password" onChange={handleChange} placeholder="password" />
         </label>
         <button type="submit">Sign In</button>
       </form>
