@@ -1,27 +1,42 @@
+import { useState } from 'react';
+
 const SignUp = () => {
-  const hi = 'Hi';
+  const [userInfo, setUserInfo] = useState({
+    email: '', username: '', password: '', passwordConfirmation: '',
+  });
+
+  const handleChange = e => {
+    setUserInfo({
+      ...userInfo,
+      [e.target.name]: e.target.value,
+    });
+  };
+
   return (
     <div>
-      <h1>{`${hi}`}</h1>
       <form>
         <label htmlFor="email">
           Email
-          <input type="text" name="email" placeholder="e.g. example@example.com" />
+          <input type="text" name="email" onChange={handleChange} value={userInfo.email} placeholder="e.g. example@example.com" />
         </label>
         <label htmlFor="username">
           Username
-          <input type="text" name="username" placeholder="e.g. anewman15" />
+          <input type="text" name="username" onChange={handleChange} placeholder="e.g. anewman15" />
         </label>
         <label htmlFor="password">
           Password
-          <input type="text" placeholder="password" />
+          <input type="text" name="password" onChange={handleChange} placeholder="password" />
         </label>
         <label htmlFor="password_confirmation">
           Confirm Password
-          <input type="text" placeholder="password_confirmation" />
+          <input type="text" name="passwordConfirmation" onChange={handleChange} placeholder="password again" />
         </label>
         <button type="submit">Sign In</button>
       </form>
+      <div>
+        <p>Or</p>
+        <a href="/">Sign Up</a>
+      </div>
     </div>
   );
 };
