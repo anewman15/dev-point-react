@@ -1,9 +1,7 @@
 import { useState } from 'react';
 
 const SignUp = () => {
-  const [userInfo, setUserInfo] = useState({
-    email: '', username: '', password: '', passwordConfirmation: '',
-  });
+  const [userInfo, setUserInfo] = useState(userInfoInit);
 
   const handleChange = e => {
     setUserInfo({
@@ -21,15 +19,15 @@ const SignUp = () => {
         </label>
         <label htmlFor="username">
           Username
-          <input type="text" name="username" onChange={handleChange} placeholder="e.g. anewman15" />
+          <input type="text" name="username" onChange={handleChange} value={userInfo.username} placeholder="e.g. anewman15" />
         </label>
         <label htmlFor="password">
           Password
-          <input type="text" name="password" onChange={handleChange} placeholder="password" />
+          <input type="text" name="password" onChange={handleChange} value={userInfo.password} placeholder="password" />
         </label>
         <label htmlFor="password_confirmation">
           Confirm Password
-          <input type="text" name="passwordConfirmation" onChange={handleChange} placeholder="password again" />
+          <input type="text" name="password_confirmation" onChange={handleChange} value={userInfo.password_confirmation} placeholder="password again" />
         </label>
         <button type="submit">Sign In</button>
       </form>
