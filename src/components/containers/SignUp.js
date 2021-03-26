@@ -1,6 +1,11 @@
 import { useState } from 'react';
+import createUser from '../../sandbox/createUser';
 
 const SignUp = () => {
+  const userInfoInit = {
+    email: '', username: '', password: '', password_confirmation: '',
+  };
+
   const [userInfo, setUserInfo] = useState(userInfoInit);
 
   const handleChange = e => {
@@ -10,9 +15,15 @@ const SignUp = () => {
     });
   };
 
+  const handleSubmit = e => {
+    e.preventDefault();
+    createUser(userInfo);
+    setUserInfo(userInfoInit);
+  };
+
   return (
     <div>
-      <form>
+      <form onSubmit={handleSubmit}>
         <label htmlFor="email">
           Email
           <input type="text" name="email" onChange={handleChange} value={userInfo.email} placeholder="e.g. example@example.com" />
