@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import createSession from '../../sandbox/createSession';
 
-const Login = () => {
+const LogInForm = () => {
   const userInfoInit = {
     email: '', password: '',
   };
@@ -72,4 +72,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default LogInForm;
