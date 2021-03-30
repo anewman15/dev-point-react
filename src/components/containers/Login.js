@@ -1,9 +1,14 @@
+/* eslint-disable react/self-closing-comp */
 import { useState } from 'react';
+import createSession from '../../sandbox/createSession';
 
 const Login = () => {
-  const [userInfo, setUserInfo] = useState({
-    username: '', password: '',
-  });
+  const userInfoInit = {
+    email: '', password: '',
+  };
+
+  const [userInfo, setUserInfo] = useState(userInfoInit);
+  const [authToken, setAuthToken] = useState({});
 
   const handleChange = e => {
     setUserInfo({
@@ -12,21 +17,57 @@ const Login = () => {
     });
   };
 
+  const handleSubmit = e => {
+    e.preventDefault();
+    createSession(userInfo, setAuthToken);
+    setUserInfo(userInfoInit);
+  };
+
+  console.log(authToken);
+
   return (
     <div>
-      <form>
-        <label htmlFor="username">
-          Username
-          <input type="text" name="username" onChange={handleChange} placeholder="e.g. anewman15" />
-        </label>
-        <label htmlFor="password">
-          Password
-          <input type="text" name="password" onChange={handleChange} placeholder="password" />
-        </label>
-        <button type="submit">Sign In</button>
+      <form onSubmit={handleSubmit}>
+        <div className="field">
+          <label className="label" htmlFor="email">
+            Email
+            <div className="control has-icons-left has-icons-right">
+              <input
+                className="input is-success"
+                type="text"
+                name="email"
+                onChange={handleChange}
+                value={userInfo.email}
+                placeholder="e.g. example@example.com"
+              />
+              <span className="icon is-small is-left">
+                <i className="fas fa-envelope"></i>
+              </span>
+            </div>
+          </label>
+        </div>
+        <div className="field">
+          <label className="label" htmlFor="email">
+            Password
+            <div className="control has-icons-left has-icons-right">
+              <input
+                className="input is-success"
+                type="password"
+                name="password"
+                onChange={handleChange}
+                value={userInfo.password}
+                placeholder="password"
+              />
+              <span className="icon is-small is-left">
+                <i className="fas fa-envelope"></i>
+              </span>
+            </div>
+          </label>
+        </div>
+        <div className="control">
+          <button type="submit" className="button is-link">Log in</button>
+        </div>
       </form>
-      <p>Or</p>
-      <a href="/">Sign Up</a>
     </div>
   );
 };
