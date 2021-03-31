@@ -1,6 +1,7 @@
 /* eslint-disable react/self-closing-comp */
 import PropTypes from 'prop-types';
 import React from 'react';
+import { Link } from 'react-router-dom';
 import SignUpButton from '../presentational/SignUpButton';
 import SignOutButton from './SignOutButton';
 
@@ -8,9 +9,9 @@ function TopNav({ isLoggedIn }) {
   return (
     <nav className="navbar" role="navigation" aria-label="main navigation">
       <div className="navbar-brand">
-        <a className="navbar-item" href="https://guthub.com/anewman15/dev-point">
+        <Link className="navbar-item" to="/">
           <img src={`${process.env.PUBLIC_URL}/logo512.png`} alt="dev-lookup-logo" height="256" />
-        </a>
+        </Link>
         <a href="/" role="button" className="navbar-burger" aria-label="menu" aria-expanded="false">
           <span aria-hidden="true" />
           <span aria-hidden="true"></span>
@@ -22,7 +23,6 @@ function TopNav({ isLoggedIn }) {
           <div className="navbar-item">
             <div className="buttons">
               {isLoggedIn ? <SignOutButton /> : <SignUpButton /> }
-
             </div>
           </div>
         </div>
