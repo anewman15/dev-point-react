@@ -1,8 +1,10 @@
+import { Link } from 'react-router-dom';
+
 function SignUpButton() {
   return (
     <div>
-      <a href="/" className="button is-primary"><strong>Sign up</strong></a>
-      <a href="/" className="button is-light">Log in</a>
+      <Link to="/sign_up" className="button is-primary"><strong>Sign up</strong></Link>
+      <Link to="/login" className="button is-light">Log in</Link>
     </div>
   );
 }
