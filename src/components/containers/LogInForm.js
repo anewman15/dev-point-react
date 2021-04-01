@@ -1,14 +1,19 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react/self-closing-comp */
 import { useState } from 'react';
+import { connect } from 'react-redux';
+import { Redirect } from 'react-router-dom';
 import createSession from '../../sandbox/createSession';
+import { saveAuthStatus } from '../../redux/actions/user';
 
-const LogInForm = () => {
+const LogInForm = ({ authStatus, saveAuthStatus }) => {
   const userInfoInit = {
     email: '', password: '',
   };
 
   const [userInfo, setUserInfo] = useState(userInfoInit);
-  const [authToken, setAuthToken] = useState({});
+  const [isLoggedIn, setIsLoggedIn] = useState(authStatus);
+  const [isInvalidCreds, setIsInvalidCreds] = useState(false);
 
   const handleChange = e => {
     setUserInfo({
@@ -19,13 +24,23 @@ const LogInForm = () => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    createSession(userInfo, setAuthToken);
+    createSession(userInfo)
+      .then(response => {
+        if (response.status === 200) {
+          setIsLoggedIn(true);
+          saveAuthStatus({ status: true });
+            <Redirect to="/" />;
+        } else if (response.status !== 200) {
+          setIsInvalidCreds(true);
+          saveAuthStatus({ status: false });
+        } else {
+          console.log(response);
+        }
+      });
     setUserInfo(userInfoInit);
   };
 
-  console.log(authToken);
-
-  return (
+  const form = (
     <div>
       <form onSubmit={handleSubmit}>
         <div className="field">
@@ -70,6 +85,13 @@ const LogInForm = () => {
       </form>
     </div>
   );
+
+  const content = isLoggedIn ? <Redirect to="/" /> : form;
+  return content;
 };
 
-export default LogInForm;
+const mapStateToProps = state => ({
+  authStatus: state.authStatus,
+});
+
+export default connect(mapStateToProps, { saveAuthStatus })(LogInForm);
