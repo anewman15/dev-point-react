@@ -4,7 +4,7 @@ const saveAuthStatus = authStatus => (
   {
     type: SAVE_AUTH_STATUS,
     payload: {
-      authStatus,
+      authStatus: authStatus.status,
     },
   }
 );
