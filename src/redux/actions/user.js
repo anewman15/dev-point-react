@@ -9,4 +9,13 @@ const saveAuthStatus = authStatus => (
   }
 );
 
-export { saveAuthStatus };
+const saveUserDetails = userDetails => (
+  {
+    type: SAVE_USER_DETAILS,
+    payload: {
+      userDetails,
+    },
+  }
+);
+
+export { saveAuthStatus, saveUserDetails };
