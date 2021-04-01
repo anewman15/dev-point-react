@@ -1,4 +1,4 @@
-const createSession = async (userInfo, setAuthToken) => {
+const createSession = async userInfo => {
   const user = {
     user: {
       ...userInfo,
@@ -6,7 +6,7 @@ const createSession = async (userInfo, setAuthToken) => {
   };
 
   try {
-    const reponse = await fetch('http://localhost:3000/users/sign_in', {
+    return await fetch('http://localhost:3000/users/sign_in', {
       method: 'POST',
       mode: 'cors',
       headers: {
@@ -15,10 +15,8 @@ const createSession = async (userInfo, setAuthToken) => {
       body: JSON.stringify(user),
       credentials: 'include',
     });
-    const data = await reponse.json();
-    setAuthToken(data);
   } catch (e) {
-    console.log(e.message);
+    return e.message;
   }
 };
 
