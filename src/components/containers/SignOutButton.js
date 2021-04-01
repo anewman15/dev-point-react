@@ -1,26 +1,27 @@
-import { useEffect, useState } from 'react';
+/* eslint-disable no-unused-vars */
+import { useState } from 'react';
+import { PropTypes } from 'prop-types';
+import { connect } from 'react-redux';
+import { Redirect } from 'react-router-dom';
+import { saveAuthStatus } from '../../redux/actions/user';
 import endSession from '../../sandbox/endSession';
-import getDevs from '../../sandbox/getDevs';
 
-function SignOutButton() {
-  const [developers, setDevelopers] = useState([]);
+function SignOutButton({ authStatus, saveAuthStatus }) {
+  const [isLoggedIn, setIsLoggedIn] = useState(authStatus);
 
   const handleSubmit = e => {
     e.preventDefault();
-    endSession();
+    endSession()
+      .then(response => {
+        if (response.status === 200) {
+          setIsLoggedIn(false);
+          saveAuthStatus({ status: false });
+            <Redirect to="/" />;
+        } else {
+          console.log(response);
+        }
+      });
   };
-
-  useEffect(() => {
-    let getDevelopers = true;
-    if (getDevelopers) {
-      getDevs({ setDevelopers });
-    }
-    return () => {
-      getDevelopers = false;
-    };
-  }, []);
-
-  console.log(developers);
 
   return (
     <form onSubmit={handleSubmit}>
@@ -29,4 +30,12 @@ function SignOutButton() {
   );
 }
 
-export default SignOutButton;
+SignOutButton.propTypes = {
+  authStatus: PropTypes.bool,
+}.isRequired;
+
+const mapStateToProps = state => ({
+  authStatus: state.authStatus,
+});
+
+export default connect(mapStateToProps, { saveAuthStatus })(SignOutButton);
