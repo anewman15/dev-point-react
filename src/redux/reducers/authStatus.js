@@ -1,11 +1,7 @@
-const authStatus = (state = null, action) => {
-  console.log(`Reducer auth: ${action.payload}`);
+const authStatus = (state = false, action) => {
   switch (action.type) {
     case 'SAVE_AUTH_STATUS': {
-      return {
-        ...state,
-        authStatus: action.payload.authStatus,
-      };
+      return action.payload.authStatus;
     }
 
     default: {
