@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import SignUpButton from '../presentational/SignUpButton';
-import SignOutButton from './SignOutButton';
+import NavItemsSignedOut from '../presentational/NavItemsSignedOut';
+import NavItemsLoggedIn from './NavItemsLoggedIn';
 
 function TopNav({ authStatus }) {
   return (
@@ -23,7 +23,7 @@ function TopNav({ authStatus }) {
         <div className="navbar-end">
           <div className="navbar-item">
             <div className="buttons">
-              {authStatus ? <SignOutButton /> : <SignUpButton /> }
+              {authStatus ? <NavItemsLoggedIn /> : <NavItemsSignedOut /> }
             </div>
           </div>
         </div>
