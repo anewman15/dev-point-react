@@ -1,12 +1,17 @@
+/* eslint-disable no-unused-vars */
 import { useState } from 'react';
+import { connect } from 'react-redux';
+import { Redirect, useHistory } from 'react-router-dom';
 import createUser from '../../sandbox/createUser';
 
-const SignUpForm = () => {
+const SignUpForm = ({ authStatus }) => {
   const userInfoInit = {
     email: '', username: '', password: '', password_confirmation: '',
   };
 
   const [userInfo, setUserInfo] = useState(userInfoInit);
+  const [isLoggedIn, setIsLoggedIn] = useState(authStatus);
+  const history = useHistory();
 
   const handleChange = e => {
     setUserInfo({
@@ -17,11 +22,19 @@ const SignUpForm = () => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    createUser(userInfo);
-    setUserInfo(userInfoInit);
+    createUser(userInfo)
+      .then(response => {
+        if (response.status === 200) {
+          console.log(response);
+          setUserInfo(userInfoInit);
+          history.push('/login');
+        } else {
+          console.log(response);
+        }
+      });
   };
 
-  return (
+  const form = (
     <div>
       <form onSubmit={handleSubmit}>
         <div className="field">
@@ -34,7 +47,7 @@ const SignUpForm = () => {
                 name="email"
                 onChange={handleChange}
                 value={userInfo.email}
-                placeholder="e.g. example@example.com"
+                placeholder="valid email, e.g., example@example.com"
               />
             </div>
           </label>
@@ -49,7 +62,7 @@ const SignUpForm = () => {
                 name="username"
                 onChange={handleChange}
                 value={userInfo.username}
-                placeholder="e.g. anewman15"
+                placeholder="minimum 5 characters"
               />
             </div>
           </label>
@@ -64,7 +77,7 @@ const SignUpForm = () => {
                 name="password"
                 onChange={handleChange}
                 value={userInfo.password}
-                placeholder="Password"
+                placeholder="minimum 6 characters"
               />
             </div>
           </label>
@@ -79,7 +92,7 @@ const SignUpForm = () => {
                 name="password_confirmation"
                 onChange={handleChange}
                 value={userInfo.password_confirmation}
-                placeholder="Password again"
+                placeholder="exact same password again"
               />
             </div>
           </label>
@@ -90,6 +103,13 @@ const SignUpForm = () => {
       </form>
     </div>
   );
+
+  const content = isLoggedIn ? <Redirect to="/" /> : form;
+  return content;
 };
 
-export default SignUpForm;
+const mapStateToProps = state => ({
+  authStatus: state.authStatus,
+});
+
+export default connect(mapStateToProps)(SignUpForm);
