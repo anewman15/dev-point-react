@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-function SignUpButton() {
+function NavItemsSignedOut() {
   return (
     <div>
       <Link to="/sign_up" className="button is-primary"><strong>Sign up</strong></Link>
@@ -9,4 +9,4 @@ function SignUpButton() {
   );
 }
 
-export default SignUpButton;
+export default NavItemsSignedOut;
