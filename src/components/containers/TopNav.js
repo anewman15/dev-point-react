@@ -1,11 +1,12 @@
 /* eslint-disable react/self-closing-comp */
 import PropTypes from 'prop-types';
 import React from 'react';
+import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import SignUpButton from '../presentational/SignUpButton';
 import SignOutButton from './SignOutButton';
 
-function TopNav({ isLoggedIn }) {
+function TopNav({ authStatus }) {
   return (
     <nav className="navbar" role="navigation" aria-label="main navigation">
       <div className="navbar-brand">
@@ -22,7 +23,7 @@ function TopNav({ isLoggedIn }) {
         <div className="navbar-end">
           <div className="navbar-item">
             <div className="buttons">
-              {isLoggedIn ? <SignOutButton /> : <SignUpButton /> }
+              {authStatus ? <SignOutButton /> : <SignUpButton /> }
             </div>
           </div>
         </div>
@@ -32,7 +33,11 @@ function TopNav({ isLoggedIn }) {
 }
 
 TopNav.propTypes = {
-  isLoggedIn: PropTypes.bool,
+  authStatus: PropTypes.bool,
 }.isRequired;
 
-export default TopNav;
+const mapStateToProps = state => ({
+  authStatus: state.authStatus,
+});
+
+export default connect(mapStateToProps)(TopNav);
