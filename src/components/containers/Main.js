@@ -5,8 +5,8 @@ import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
 import validateSession from '../../sandbox/validateSession';
 import { saveAuthStatus } from '../../redux/actions/user';
+import Home from './Home';
 import LandingPage from './LandingPage';
-import LogInForm from './LogInForm';
 
 function Main({ authStatus, saveAuthStatus }) {
   const [isLoggedIn, setIsLoggedIn] = useState(authStatus);
@@ -32,7 +32,7 @@ function Main({ authStatus, saveAuthStatus }) {
   }, []);
 
   return (
-    isLoggedIn ? <LandingPage /> : <LogInForm />
+    isLoggedIn ? <Home /> : <LandingPage />
   );
 }
 
