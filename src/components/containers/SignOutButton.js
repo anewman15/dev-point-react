@@ -25,9 +25,11 @@ function SignOutButton({ authStatus, saveAuthStatus }) {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <button type="submit" className="button is-primary">Sign Out</button>
-    </form>
+    <div className="navbar-item">
+      <form onSubmit={handleSubmit}>
+        <button type="submit" className="button is-primary">Sign Out</button>
+      </form>
+    </div>
   );
 }
 
