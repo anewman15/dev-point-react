@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/self-closing-comp */
 import { useState } from 'react';
+import { PropTypes } from 'prop-types';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import createSession from '../../sandbox/createSession';
@@ -53,7 +54,8 @@ const LogInForm = ({ authStatus, saveAuthStatus }) => {
                 name="email"
                 onChange={handleChange}
                 value={userInfo.email}
-                placeholder="e.g. example@example.com"
+                placeholder="the one you signed up with"
+                required
               />
               <span className="icon is-small is-left">
                 <i className="fas fa-envelope"></i>
@@ -71,7 +73,8 @@ const LogInForm = ({ authStatus, saveAuthStatus }) => {
                 name="password"
                 onChange={handleChange}
                 value={userInfo.password}
-                placeholder="password"
+                placeholder="your password"
+                required
               />
               <span className="icon is-small is-left">
                 <i className="fas fa-envelope"></i>
@@ -86,9 +89,13 @@ const LogInForm = ({ authStatus, saveAuthStatus }) => {
     </div>
   );
 
-  const content = isLoggedIn ? <Redirect to="/" /> : form;
+  const content = isLoggedIn ? <Redirect to="/home" /> : form;
   return content;
 };
+
+LogInForm.propTypes = {
+  authStatus: PropTypes.bool,
+}.isRequired;
 
 const mapStateToProps = state => ({
   authStatus: state.authStatus,
