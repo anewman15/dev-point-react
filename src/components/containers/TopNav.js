@@ -7,25 +7,26 @@ import NavItemsSignedOut from '../presentational/NavItemsSignedOut';
 import NavItemsLoggedIn from './NavItemsLoggedIn';
 
 function TopNav({ authStatus }) {
+  const toggleNavbarBurger = () => {
+    const navbarMenu = document.getElementById('top-nav');
+    navbarMenu.classList.toggle('is-active');
+  };
+
   return (
     <nav className="navbar" role="navigation" aria-label="main navigation">
       <div className="navbar-brand">
         <Link className="navbar-item" to="/">
           <img src={`${process.env.PUBLIC_URL}/logo512.png`} alt="dev-lookup-logo" height="256" />
         </Link>
-        <a href="/" role="button" className="navbar-burger" aria-label="menu" aria-expanded="false">
+        <button type="button" className="navbar-burger" onClick={toggleNavbarBurger} aria-label="menu" aria-expanded="false">
           <span aria-hidden="true" />
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
-        </a>
+        </button>
       </div>
-      <div id="navbarBasicExample" className="navbar-menu">
+      <div id="top-nav" className="navbar-menu">
         <div className="navbar-end">
-          <div className="navbar-item">
-            <div className="buttons">
-              {authStatus ? <NavItemsLoggedIn /> : <NavItemsSignedOut /> }
-            </div>
-          </div>
+          {authStatus ? <NavItemsLoggedIn /> : <NavItemsSignedOut /> }
         </div>
       </div>
     </nav>
