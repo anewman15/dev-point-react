@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { PropTypes } from 'prop-types';
 import { connect } from 'react-redux';
-import { Redirect } from 'react-router-dom';
+import { Redirect, useHistory } from 'react-router-dom';
 import createSession from '../../sandbox/createSession';
 import { saveAuthStatus } from '../../redux/actions/user';
 
@@ -15,6 +15,7 @@ const LogInForm = ({ authStatus, saveAuthStatus }) => {
   const [userInfo, setUserInfo] = useState(userInfoInit);
   const [isLoggedIn, setIsLoggedIn] = useState(authStatus);
   const [isInvalidCreds, setIsInvalidCreds] = useState(false);
+  const history = useHistory();
 
   const handleChange = e => {
     setUserInfo({
@@ -27,12 +28,13 @@ const LogInForm = ({ authStatus, saveAuthStatus }) => {
     e.preventDefault();
     createSession(userInfo)
       .then(response => {
-        if (response.status === 200) {
+        if (response.status === 201) {
           setIsLoggedIn(true);
           saveAuthStatus({ status: true });
-            <Redirect to="/" />;
-        } else if (response.status !== 200) {
+          history.push('/');
+        } else if (response.status !== 201) {
           setIsInvalidCreds(true);
+          setIsLoggedIn(true);
           saveAuthStatus({ status: false });
         } else {
           console.log(response);
@@ -89,7 +91,7 @@ const LogInForm = ({ authStatus, saveAuthStatus }) => {
     </div>
   );
 
-  const content = isLoggedIn ? <Redirect to="/home" /> : form;
+  const content = isLoggedIn ? <Redirect to="/" /> : form;
   return content;
 };
 
