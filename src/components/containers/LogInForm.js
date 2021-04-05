@@ -5,9 +5,9 @@ import { PropTypes } from 'prop-types';
 import { connect } from 'react-redux';
 import { Redirect, useHistory } from 'react-router-dom';
 import createSession from '../../sandbox/createSession';
-import { saveAuthStatus } from '../../redux/actions/user';
+import { saveAuthStatus, saveUserDetails } from '../../redux/actions/user';
 
-const LogInForm = ({ authStatus, saveAuthStatus }) => {
+const LogInForm = ({ authStatus, saveAuthStatus, saveUserDetails }) => {
   const userInfoInit = {
     email: '', password: '',
   };
@@ -27,18 +27,18 @@ const LogInForm = ({ authStatus, saveAuthStatus }) => {
   const handleSubmit = e => {
     e.preventDefault();
     createSession(userInfo)
-      .then(response => {
-        if (response.status === 201) {
+      .then(response => response.json())
+      .then(data => {
+        if (data.user) {
           setIsLoggedIn(true);
           saveAuthStatus({ status: true });
+          saveUserDetails(data.user);
           history.push('/');
-        } else if (response.status !== 201) {
-          setIsInvalidCreds(true);
-          setIsLoggedIn(true);
-          saveAuthStatus({ status: false });
-        } else {
-          console.log(response);
         }
+      })
+      .catch(error => {
+        setIsLoggedIn(false);
+        saveAuthStatus({ status: false });
       });
     setUserInfo(userInfoInit);
   };
@@ -103,4 +103,4 @@ const mapStateToProps = state => ({
   authStatus: state.authStatus,
 });
 
-export default connect(mapStateToProps, { saveAuthStatus })(LogInForm);
+export default connect(mapStateToProps, { saveAuthStatus, saveUserDetails })(LogInForm);
