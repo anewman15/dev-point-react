@@ -1,4 +1,4 @@
-import { SAVE_DEVELOPERS } from './actionTypes';
+import { SAVE_DEVELOPERS, SAVE_CURRENT_DEV } from './actionTypes';
 
 const saveDevelopers = developers => (
   {
@@ -9,4 +9,13 @@ const saveDevelopers = developers => (
   }
 );
 
-export default saveDevelopers;
+const saveCurrentDev = dev => (
+  {
+    type: SAVE_CURRENT_DEV,
+    payload: {
+      dev,
+    },
+  }
+);
+
+export { saveDevelopers, saveCurrentDev };
