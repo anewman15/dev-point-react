@@ -24,11 +24,22 @@ function DevelopersList({ authStatus, developers, saveDevelopers }) {
   ));
 
   return (
-    <div className="container">
-      Our Developers
-      <Carousel centerMode centerSlidePercentage={60} infiniteLoop showIndicators={false}>
-        {devs}
-      </Carousel>
+    <div className="">
+      <div className="has-text-centered my-6">
+        <p className="is-uppercase has-text-weight-bold is-size-2">
+          Our Developers
+        </p>
+        <p className="is-size-6 my-2 has-text-weight-bold has-text-grey-light">
+          Please click on one to view their profile
+        </p>
+      </div>
+      <div className="columns is-centered">
+        <div className="column is-four-fifths">
+          <Carousel centerMode centerSlidePercentage={60} infiniteLoop showIndicators={false}>
+            {devs}
+          </Carousel>
+        </div>
+      </div>
     </div>
   );
 }
