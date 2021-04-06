@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
-import { checkPropTypes } from 'prop-types';
 import { useEffect } from 'react';
+import { checkPropTypes } from 'prop-types';
+import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import 'react-responsive-carousel/lib/styles/carousel.min.css'; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
@@ -13,7 +14,9 @@ function DevelopersList({ authStatus, developers, saveDevelopers }) {
     getDevs()
       .then(response => response.json())
       .then(data => {
-        saveDevelopers(data.developers);
+        if (data.developers) {
+          saveDevelopers(data.developers);
+        }
       });
   }, []);
 
@@ -23,7 +26,7 @@ function DevelopersList({ authStatus, developers, saveDevelopers }) {
     </div>
   ));
 
-  return (
+  const devsList = (
     <div className="">
       <div className="has-text-centered my-6">
         <p className="is-uppercase has-text-weight-bold is-size-2">
@@ -42,6 +45,9 @@ function DevelopersList({ authStatus, developers, saveDevelopers }) {
       </div>
     </div>
   );
+
+  const content = authStatus ? devsList : <Redirect to="/login" />;
+  return content;
 }
 
 DevelopersList.propTypes = {
