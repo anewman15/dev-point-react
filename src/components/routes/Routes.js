@@ -7,6 +7,7 @@ import Main from '../containers/Main';
 import LandingPage from '../containers/LandingPage';
 import DevelopersList from '../containers/DevelopersList';
 import DeveloperPage from '../containers/DeveloperPage';
+import BookAppointment from '../containers/BookAppointment';
 
 function Routes() {
   return (
@@ -18,6 +19,7 @@ function Routes() {
       <Route exact path="/sign_up" component={SignUpForm} />
       <Route exact path="/developers" component={DevelopersList} />
       <Route exact path="/developers/:id" component={DeveloperPage} />
+      <Route exact path="/book_appointment" component={BookAppointment} />
     </Switch>
   );
 }
