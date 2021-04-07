@@ -2,7 +2,7 @@
 import { PropTypes } from 'prop-types';
 import { useEffect } from 'react';
 import { connect } from 'react-redux';
-import { Redirect } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import { saveCurrentDev } from '../../redux/actions/developer';
 import getCurrentDev from '../../sandbox/getCurrentDev';
 import LinkIcon from './LinkIcon';
@@ -74,7 +74,13 @@ function DeveloperPage({
             </tbody>
           </table>
           <div className="has-text-centered my-6">
-            <button type="button" className="button is-primary is-rounded has-text-weight-bold is-uppercase">Book an Appointment</button>
+            <Link
+              type="button"
+              className="button is-primary is-rounded has-text-weight-bold is-uppercase"
+              to="/book_appointment"
+            >
+              Book an Appointment
+            </Link>
           </div>
         </div>
       </div>
