@@ -2,6 +2,7 @@
 import { PropTypes } from 'prop-types';
 import { useEffect } from 'react';
 import { connect } from 'react-redux';
+import { Redirect } from 'react-router-dom';
 import { saveCurrentDev } from '../../redux/actions/developer';
 import getCurrentDev from '../../sandbox/getCurrentDev';
 import LinkIcon from './LinkIcon';
@@ -41,7 +42,7 @@ function DeveloperPage({
     </tr>
   ));
 
-  return (
+  const devProfile = (
     <div className="m-6">
       <div className="columns is-centered is-vcentered my-3 px-5 has-background-dark has-text-white">
         <p className="column is-half-tablet is-size-4 has-text-weight-bold">
@@ -79,6 +80,10 @@ function DeveloperPage({
       </div>
     </div>
   );
+
+  const content = authStatus ? devProfile : <Redirect to="/login" />;
+
+  return content;
 }
 
 DeveloperPage.propTypes = {
