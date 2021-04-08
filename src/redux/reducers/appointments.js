@@ -1,7 +1,7 @@
-const appoinments = (state = [], action) => {
+const appointments = (state = {}, action) => {
   switch (action.type) {
-    case 'SAVE_APPOINTMENT': {
-      return action.payload.appoinments;
+    case 'SAVE_APPOINTMENTS': {
+      return action.payload.appointments;
     }
 
     default: {
@@ -10,4 +10,4 @@ const appoinments = (state = [], action) => {
   }
 };
 
-export default appoinments;
+export default appointments;
