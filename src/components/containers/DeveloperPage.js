@@ -14,8 +14,8 @@ function DeveloperPage({
   match,
 }) {
   useEffect(() => {
-    let cancelled = false;
-    if (!cancelled) {
+    let isCancelled = false;
+    if (!isCancelled) {
       getCurrentDev(match.params.id)
         .then(response => response.json())
         .then(data => {
@@ -25,17 +25,17 @@ function DeveloperPage({
         });
     }
     return () => {
-      cancelled = true;
+      isCancelled = true;
     };
   }, []);
 
-  const devLinks = currentDev.links.map(link => (
+  const devLinks = currentDev.links && currentDev.links.map(link => (
     <a className="p-3 m-2 is-size-3 has-text-grey-light" key={link.id} href={link.url}>
       <LinkIcon iconName={link.link_name.toLowerCase()} />
     </a>
   ));
 
-  const devSkills = currentDev.skills.map(skill => (
+  const devSkills = currentDev.skills && currentDev.skills.map(skill => (
     <tr key={skill.id + 1}>
       <td className="is-uppercase has-text-weight-light">{skill.skill_name}</td>
       <td>2 years</td>
@@ -50,10 +50,10 @@ function DeveloperPage({
         </p>
         <div className="column is-half-tablet">
           <p className="has-text-weight-bold">
-            <span>{`${currentDev.jobs[0].title}`}</span>
+            <span>{ currentDev.jobs && `${currentDev.jobs[0].title}`}</span>
             <span className="mx-1 is-size-7">@</span>
             <span className="mx-1 is-size-6 has-text-weight-bold">
-              {`${currentDev.jobs[0].company_name}`}
+              {currentDev.jobs ? `${currentDev.jobs[0].company_name}` : null }
             </span>
           </p>
         </div>
