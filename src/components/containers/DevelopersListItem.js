@@ -16,7 +16,9 @@ function DevelopersListItem({ dev }) {
   return (
     <div className="p-6">
       <div className="image">
-        <img className="is-rounded" src={`${process.env.PUBLIC_URL}/dev.png`} alt="dev" />
+        <Link to={`/developers/${dev.user.id}`}>
+          <img className="is-rounded" src={`${process.env.PUBLIC_URL}/dev.png`} alt="dev" />
+        </Link>
       </div>
       <p className="is-uppercase is-size-4 px-2 mt-5"><Link className="has-text-dark" to={`/developers/${dev.user.id}`}>{`${dev.user.first_name} ${dev.user.last_name}`}</Link></p>
       <div className="has-text-weight-bold">
