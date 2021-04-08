@@ -36,8 +36,8 @@ function AppointmentForm({ devId, devConfLink }) {
   return (
     <form className="mx-6 mt-4 pb-6" onSubmit={handleSubmit}>
       <div className="columns is-centered">
-        <div className="column is-four-fifths-tablet">
-          <div className="field is-horizontal">
+        <div className="column is-four-fifths">
+          <div className="mx-6 field is-horizontal">
             <div className="field-body is-grouped">
               <div className="field">
                 <label className="label has-text-centered has-text-white" htmlFor="location">
@@ -71,7 +71,7 @@ function AppointmentForm({ devId, devConfLink }) {
           </div>
         </div>
         <div className="column is-vcentered">
-          <div className="field is-horizontal is-vcentered">
+          <div className="mx-6 field is-horizontal is-vcentered">
             <div className="control">
               <button
                 type="submit"
@@ -82,9 +82,6 @@ function AppointmentForm({ devId, devConfLink }) {
             </div>
           </div>
         </div>
-      </div>
-      <div className="has-text-centered">
-        <a className="button is-white is-small is-rounded has-text-success" href={`${devConfLink}`}>Video Meeting Link</a>
       </div>
     </form>
   );
