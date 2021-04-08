@@ -1,8 +1,12 @@
+/* eslint-disable no-unused-vars */
 import React, { useEffect } from 'react';
 import { PropTypes } from 'prop-types';
+import { connect } from 'react-redux';
 import getAppointments from '../../sandbox/getAppointments';
+import saveAppointments from '../../redux/actions/appointment';
+import HostedAppointments from './HostedAppointments';
 
-function AppoinmentsPage() {
+function AppoinmentsPage({ authStatus, appointments, saveAppointments }) {
   useEffect(() => {
     let isCancelled = false;
 
@@ -10,7 +14,7 @@ function AppoinmentsPage() {
       getAppointments()
         .then(response => response.json())
         .then(data => {
-          console.log(data);
+          saveAppointments(data.appointments);
         });
     }
 
@@ -21,13 +25,22 @@ function AppoinmentsPage() {
 
   return (
     <div>
-      Hi
+      <div className="my-4 has-text-centered">
+        <h1 className="is-size-2 has-text-success has-text-weight-bold">Your Appointments</h1>
+      </div>
+      <HostedAppointments hostedAppointments={appointments.hosted} />
     </div>
   );
 }
 
 AppoinmentsPage.propTypes = {
+  authStatus: PropTypes.bool,
   appointments: PropTypes.array,
 }.isRequired;
 
-export default AppoinmentsPage;
+const mapStateToProps = state => ({
+  authStatus: state.authStatus,
+  appointments: state.appointments,
+});
+
+export default connect(mapStateToProps, { saveAppointments })(AppoinmentsPage);
