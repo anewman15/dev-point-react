@@ -1,33 +1,39 @@
 /* eslint-disable no-unused-vars */
 import { useEffect } from 'react';
-import { checkPropTypes } from 'prop-types';
+import { PropTypes } from 'prop-types';
 import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import 'react-responsive-carousel/lib/styles/carousel.min.css'; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
-import saveDevelopers from '../../redux/actions/developer';
+import { saveDevelopers } from '../../redux/actions/developer';
 import getDevs from '../../sandbox/getDevs';
 import DevelopersListItem from './DevelopersListItem';
 
 function DevelopersList({ authStatus, developers, saveDevelopers }) {
   useEffect(() => {
-    getDevs()
-      .then(response => response.json())
-      .then(data => {
-        if (data.developers) {
-          saveDevelopers(data.developers);
-        }
-      });
+    let isCancelled = false;
+    if (!isCancelled) {
+      getDevs()
+        .then(response => response.json())
+        .then(data => {
+          if (data.developers) {
+            saveDevelopers(data.developers);
+          }
+        });
+    }
+    return () => {
+      isCancelled = true;
+    };
   }, []);
 
   const devs = developers.map(dev => (
-    <div key={dev.user.id.toString()}>
+    <div key={dev.user.id + 1000}>
       <DevelopersListItem dev={dev} />
     </div>
   ));
 
   const devsList = (
-    <div className="">
+    <div className="p-6">
       <div className="has-text-centered my-6">
         <p className="is-uppercase has-text-weight-bold is-size-2">
           Our Developers
@@ -38,7 +44,13 @@ function DevelopersList({ authStatus, developers, saveDevelopers }) {
       </div>
       <div className="columns is-centered">
         <div className="column is-four-fifths">
-          <Carousel centerMode centerSlidePercentage={60} infiniteLoop showIndicators={false}>
+          <Carousel
+            centerMode
+            centerSlidePercentage={60}
+            infiniteLoop
+            showIndicators={false}
+            showThumbs={false}
+          >
             {devs}
           </Carousel>
         </div>
@@ -51,8 +63,8 @@ function DevelopersList({ authStatus, developers, saveDevelopers }) {
 }
 
 DevelopersList.propTypes = {
-  authStatus: checkPropTypes.bool,
-  developers: checkPropTypes.array,
+  authStatus: PropTypes.bool,
+  developers: PropTypes.array,
 }.isRequired;
 
 const mapStateToProps = state => (
