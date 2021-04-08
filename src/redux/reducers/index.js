@@ -3,6 +3,7 @@ import authStatus from './authStatus';
 import userDetails from './userDetails';
 import developers from './developers';
 import currentDev from './currentDev';
+import appointments from './appointments';
 
 const combinedReducer = combineReducers(
   {
@@ -10,6 +11,7 @@ const combinedReducer = combineReducers(
     userDetails,
     developers,
     currentDev,
+    appointments,
   },
 );
 
