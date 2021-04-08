@@ -1,1 +1,24 @@
+$dev-point-primary: #97bf0f;
+$dev-point-success: #597207;
+$primary: $dev-point-primary;
+$success: $dev-point-success;
+
 @import 'bulma';
+
+.profile-image {
+  width: 100%;
+  border: 2px solid #597207;
+  border-radius: 4px;
+}
+
+.vh-100 {
+  min-height: 100vh;
+}
+
+.box-primary {
+  border: 0.5px solid $primary;
+  padding: 1rem;
+  margin: 1rem;
+  border-radius: 4px;
+  box-shadow: 4px 4px 10px -5px $primary;
+}
