@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { PropTypes } from 'prop-types';
 import getAppointments from '../../sandbox/getAppointments';
 
 function AppoinmentsPage() {
@@ -24,5 +25,9 @@ function AppoinmentsPage() {
     </div>
   );
 }
+
+AppoinmentsPage.propTypes = {
+  appointments: PropTypes.array,
+}.isRequired;
 
 export default AppoinmentsPage;
