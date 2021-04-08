@@ -3,7 +3,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 function HostedAppointments({ hostedAppointments }) {
-  const appointmentsList = hostedAppointments.map(appointment => (
+  const appointmentsList = hostedAppointments && hostedAppointments.map(appointment => (
     <div key={`${appointment.id}`} className="box-primary">
       <div className="is-flex is-justify-content-space-between is-align-items-center">
         <p className="px-1 mx-3 is-size-7 has-text-success has-text-weight-bold">
