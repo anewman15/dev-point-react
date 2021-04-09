@@ -10,6 +10,7 @@ import HostedAppointments from './HostedAppointments';
 function AppoinmentsPage({ authStatus, appointments, saveAppointments }) {
   useEffect(() => {
     let isCancelled = false;
+    isCancelled = !authStatus;
 
     if (!isCancelled) {
       getAppointments()
