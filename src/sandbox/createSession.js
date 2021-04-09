@@ -6,7 +6,7 @@ const createSession = async userInfo => {
   };
 
   try {
-    return await fetch('http://localhost:3000/users/sign_in', {
+    return await fetch('https://anewman15-dev-point.herokuapp.com/users/sign_in', {
       method: 'POST',
       mode: 'cors',
       headers: {

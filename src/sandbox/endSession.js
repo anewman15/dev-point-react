@@ -1,6 +1,6 @@
 const endSession = async () => {
   try {
-    return await fetch('http://localhost:3000/users/sign_out', {
+    return await fetch('https://anewman15-dev-point.herokuapp.com/users/sign_out', {
       method: 'DELETE',
       credentials: 'include',
     });

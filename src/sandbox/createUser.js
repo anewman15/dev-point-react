@@ -1,6 +1,6 @@
 const createUser = async userInfo => {
   try {
-    return await fetch('http://localhost:3000/users', {
+    return await fetch('https://anewman15-dev-point.herokuapp.com/users', {
       method: 'POST',
       mode: 'cors',
       headers: {

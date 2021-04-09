@@ -1,6 +1,6 @@
 const getAppointments = async () => {
   try {
-    return await fetch('http://localhost:3000/appointments', {
+    return await fetch('https://anewman15-dev-point.herokuapp.com/appointments', {
       method: 'GET',
       mode: 'cors',
       credentials: 'include',
