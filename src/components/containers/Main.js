@@ -15,14 +15,11 @@ function Main({ authStatus, saveAuthStatus }) {
     let cancelValidation = false;
     if (!cancelValidation) {
       validateSession()
-        .then(response => {
-          if (response.status === 200) {
+        .then(response => response.json())
+        .then(data => {
+          if (data.user) {
             setIsLoggedIn(true);
             saveAuthStatus({ status: true });
-          } else {
-            setIsLoggedIn(false);
-            saveAuthStatus({ status: false });
-            console.log(response);
           }
         });
     }
@@ -31,9 +28,9 @@ function Main({ authStatus, saveAuthStatus }) {
     };
   }, []);
 
-  return (
-    isLoggedIn ? <Home /> : <LandingPage />
-  );
+  const content = authStatus ? <Home /> : <LandingPage />;
+
+  return content;
 }
 
 Main.propTypes = {
