@@ -2,6 +2,7 @@ const saveDevPointToLocaStorage = state => {
   try {
     const devPoint = JSON.stringify(state);
     localStorage.setItem('devPoint', devPoint);
+    return devPoint;
   } catch (e) {
     return e;
   }
