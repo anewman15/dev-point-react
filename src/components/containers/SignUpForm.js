@@ -25,11 +25,8 @@ const SignUpForm = ({ authStatus }) => {
     createUser(userInfo)
       .then(response => {
         if (response.status === 200) {
-          console.log(response);
           setUserInfo(userInfoInit);
           history.push('/login');
-        } else {
-          console.log(response);
         }
       });
   };

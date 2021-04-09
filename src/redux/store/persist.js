@@ -3,7 +3,7 @@ const saveDevPointToLocaStorage = state => {
     const devPoint = JSON.stringify(state);
     localStorage.setItem('devPoint', devPoint);
   } catch (e) {
-    console.log(e);
+    return e;
   }
 };
 
@@ -13,7 +13,6 @@ const loadDevPointFromLocalStorage = () => {
     const storedVal = storedDevPoint ? JSON.parse(storedDevPoint) : undefined;
     return storedVal;
   } catch (e) {
-    console.log(e);
     return undefined;
   }
 };
