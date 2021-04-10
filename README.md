@@ -5,7 +5,7 @@ A site that allows hiring managers find niche developers. Built with Rails/React
 1. [JavaScript / ES6](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 2. [React.js](https://reactjs.org/docs/getting-started.html)
 3. [Redux.js](https://redux.js.org/)
-4. [GitHub API](https://docs.github.com/en/rest/reference/repos)
+4. [DevPoint API](https://anewman15-dev-point.netlify.app/) (not public)
 5. [Jest](https://jestjs.io/docs/api)
 6. [Enzyme](https://enzymejs.github.io/enzyme/)
 7. HTML5
