@@ -33,7 +33,7 @@ function DevelopersList({ authStatus, developers, saveDevelopers }) {
   ));
 
   const devsList = (
-    <div className="p-6">
+    <div className="my-3">
       <div className="has-text-centered my-6">
         <p className="is-uppercase has-text-weight-bold is-size-2">
           Our Developers
@@ -42,18 +42,16 @@ function DevelopersList({ authStatus, developers, saveDevelopers }) {
           Please click on one to view their profile
         </p>
       </div>
-      <div className="columns is-centered">
-        <div className="column is-four-fifths">
-          <Carousel
-            centerMode
-            centerSlidePercentage={60}
-            infiniteLoop
-            showIndicators={false}
-            showThumbs={false}
-          >
-            {devs}
-          </Carousel>
-        </div>
+      <div className="mx-3 px-6">
+        <Carousel
+          centerMode
+          centerSlidePercentage={60}
+          infiniteLoop
+          showIndicators={false}
+          showThumbs={false}
+        >
+          {devs}
+        </Carousel>
       </div>
     </div>
   );
