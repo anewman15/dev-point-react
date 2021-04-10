@@ -4,7 +4,7 @@ function LandingPage() {
   return (
     <div className="bg-code">
       <div className="columns is-centered">
-        <div className="my-7 column is-four-fifths">
+        <div className="my-6 column is-four-fifths">
           <div className="p-6 bd-filter border-warning has-text-white">
             <p className="is-size-2 has-text-centered">
               Welcome to DevPoint

@@ -60,8 +60,8 @@ function DeveloperPage({
       </div>
       <div className="columns is-centered">
         <div className="column is-half-tablet">
-          <div className="profile-image">
-            <img className="" src={`${process.env.PUBLIC_URL}/dev.png`} alt="dev" />
+          <div className="image profile-image">
+            <img className="is-rounded" src={`${process.env.PUBLIC_URL}/dev.png`} alt="dev" />
           </div>
           <div className="my-6 has-text-centered">
             {devLinks}
