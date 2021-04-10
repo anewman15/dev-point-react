@@ -28,7 +28,7 @@ function AppointmentForm({ devId, devConfLink }) {
       .then(data => {
         if (data.status === 'created') {
           setAppointmentInfo(initAppointmentInfo);
-          history.push('/');
+          history.push('/appointments');
         }
       });
   };
