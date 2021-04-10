@@ -6,9 +6,9 @@ import SignOutButton from './SignOutButton';
 function NavItemsLoggedIn() {
   return (
     <>
+      <NavItemUsername />
       <NavItemDevelopers />
       <NavItemAppointments />
-      <NavItemUsername />
       <SignOutButton />
     </>
   );

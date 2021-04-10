@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 function NavItemUsername({ userDetails }) {
   return (
     <div className="navbar-item">
-      <Link className="has-text-dark" to="/">
+      <Link className="button is-size-6 is-success has-text-weight-bold is-fullwidth" to="/">
         {`Welcome, ${userDetails.username}`}
       </Link>
     </div>

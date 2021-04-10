@@ -24,7 +24,7 @@ function SignOutButton({ authStatus, saveAuthStatus }) {
 
   return (
     <div className="navbar-item">
-      <Link to="/" onClick={handleClick} className="button is-primary">
+      <Link to="/" onClick={handleClick} className="button is-primary is-fullwidth">
         Sign Out
       </Link>
     </div>
