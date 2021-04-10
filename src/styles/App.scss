@@ -1,7 +1,10 @@
 $dev-point-primary: #97bf0f;
 $dev-point-success: #597207;
+$dev-point-warning: #ffb400;
+$dev-point-dark: #333335;
 $primary: $dev-point-primary;
 $success: $dev-point-success;
+$warning: $dev-point-warning;
 
 @import 'bulma';
 
@@ -21,4 +24,9 @@ $success: $dev-point-success;
   margin: 1rem;
   border-radius: 4px;
   box-shadow: 4px 4px 10px -5px $primary;
+}
+
+.border-warning {
+  border: 0.5px solid $warning;
+  border-radius: 4px;
 }

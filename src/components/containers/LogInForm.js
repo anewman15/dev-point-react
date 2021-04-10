@@ -44,50 +44,54 @@ const LogInForm = ({ authStatus, saveAuthStatus, saveUserDetails }) => {
   };
 
   const form = (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <div className="field">
-          <label className="label" htmlFor="email">
-            Email
-            <div className="control has-icons-left has-icons-right">
-              <input
-                className="input is-success"
-                type="text"
-                name="email"
-                onChange={handleChange}
-                value={userInfo.email}
-                placeholder="the one you signed up with"
-                required
-              />
-              <span className="icon is-small is-left">
-                <i className="fas fa-envelope"></i>
-              </span>
-            </div>
-          </label>
-        </div>
-        <div className="field">
-          <label className="label" htmlFor="email">
-            Password
-            <div className="control has-icons-left has-icons-right">
-              <input
-                className="input is-success"
-                type="password"
-                name="password"
-                onChange={handleChange}
-                value={userInfo.password}
-                placeholder="your password"
-                required
-              />
-              <span className="icon is-small is-left">
-                <i className="fas fa-envelope"></i>
-              </span>
-            </div>
-          </label>
-        </div>
-        <div className="control">
-          <button type="submit" className="button is-link">Log in</button>
-        </div>
-      </form>
+    <div className="my-6 columns is-centered">
+      <div className="column is-half has-background-warning border-warning">
+        <h1 className="is-size-3 has-text-weight-bold is-text-centered p-2 my-3">Log In to Your Account</h1>
+        <form className="p-4" onSubmit={handleSubmit}>
+          <div className="field">
+            <label className="label" htmlFor="email">
+              Email
+              <div className="control has-icons-left has-icons-right">
+                <input
+                  className="input is-success"
+                  type="text"
+                  name="email"
+                  onChange={handleChange}
+                  value={userInfo.email}
+                  placeholder="the one you signed up with"
+                  required
+                />
+                <span className="icon is-small is-left">
+                  <i className="fas fa-envelope"></i>
+                </span>
+              </div>
+            </label>
+          </div>
+          <div className="field">
+            <label className="label" htmlFor="email">
+              Password
+              <div className="control has-icons-left has-icons-right">
+                <input
+                  className="input is-success"
+                  type="password"
+                  name="password"
+                  onChange={handleChange}
+                  value={userInfo.password}
+                  placeholder="your password"
+                  required
+                />
+                <span className="icon is-small is-left">
+                  <i className="fas fa-envelope"></i>
+                </span>
+              </div>
+            </label>
+          </div>
+          <div className="control">
+            <button type="submit" className="button is-success my-5">Log in</button>
+          </div>
+        </form>
+
+      </div>
     </div>
   );
 
