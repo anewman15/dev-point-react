@@ -14,8 +14,23 @@ $warning: $dev-point-warning;
   border-radius: 4px;
 }
 
+.bg-code {
+  background: url('./img/code.png') no-repeat center;
+  background-size: cover;
+  object-fit: cover;
+  min-height: 100vh;
+}
+
+.bd-filter {
+  backdrop-filter: hue-rotate(-40deg) opacity(0.6) blur(20px) invert(0.2);
+}
+
 .vh-100 {
   min-height: 100vh;
+}
+
+.my-7 {
+  margin: 10rem 0;
 }
 
 .box-primary {
