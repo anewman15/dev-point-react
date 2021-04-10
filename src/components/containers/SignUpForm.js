@@ -32,72 +32,75 @@ const SignUpForm = ({ authStatus }) => {
   };
 
   const form = (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <div className="field">
-          <label className="label" htmlFor="email">
-            Email
-            <div className="control has-icons-left has-icons-right">
-              <input
-                className="input is-success"
-                type="text"
-                name="email"
-                onChange={handleChange}
-                value={userInfo.email}
-                placeholder="valid email, e.g., example@example.com"
-              />
-            </div>
-          </label>
-        </div>
-        <div className="field">
-          <label className="label" htmlFor="username">
-            Username
-            <div className="control has-icons-left has-icons-right">
-              <input
-                className="input is-success"
-                type="text"
-                name="username"
-                onChange={handleChange}
-                value={userInfo.username}
-                placeholder="minimum 5 characters"
-              />
-            </div>
-          </label>
-        </div>
-        <div className="field">
-          <label className="label" htmlFor="password">
-            Password
-            <div className="control has-icons-left has-icons-right">
-              <input
-                className="input is-success"
-                type="password"
-                name="password"
-                onChange={handleChange}
-                value={userInfo.password}
-                placeholder="minimum 6 characters"
-              />
-            </div>
-          </label>
-        </div>
-        <div className="field">
-          <label className="label" htmlFor="password_confirmation">
-            Confirm password
-            <div className="control has-icons-left has-icons-right">
-              <input
-                className="input is-success"
-                type="password"
-                name="password_confirmation"
-                onChange={handleChange}
-                value={userInfo.password_confirmation}
-                placeholder="exact same password again"
-              />
-            </div>
-          </label>
-        </div>
-        <div className="control">
-          <button type="submit" className="button is-link">Sign up</button>
-        </div>
-      </form>
+    <div className="my-6 columns is-centered">
+      <div className="column is-half has-background-warning border-warning">
+        <h1 className="is-size-3 has-text-weight-bold is-text-centered p-2 my-3">Create an Account</h1>
+        <form className="p-4" onSubmit={handleSubmit}>
+          <div className="field">
+            <label className="label" htmlFor="email">
+              Email
+              <div className="control has-icons-left has-icons-right">
+                <input
+                  className="input is-success"
+                  type="text"
+                  name="email"
+                  onChange={handleChange}
+                  value={userInfo.email}
+                  placeholder="valid email, e.g., example@example.com"
+                />
+              </div>
+            </label>
+          </div>
+          <div className="field">
+            <label className="label" htmlFor="username">
+              Username
+              <div className="control has-icons-left has-icons-right">
+                <input
+                  className="input is-success"
+                  type="text"
+                  name="username"
+                  onChange={handleChange}
+                  value={userInfo.username}
+                  placeholder="minimum 5 characters"
+                />
+              </div>
+            </label>
+          </div>
+          <div className="field">
+            <label className="label" htmlFor="password">
+              Password
+              <div className="control has-icons-left has-icons-right">
+                <input
+                  className="input is-success"
+                  type="password"
+                  name="password"
+                  onChange={handleChange}
+                  value={userInfo.password}
+                  placeholder="minimum 6 characters"
+                />
+              </div>
+            </label>
+          </div>
+          <div className="field">
+            <label className="label" htmlFor="password_confirmation">
+              Confirm password
+              <div className="control has-icons-left has-icons-right">
+                <input
+                  className="input is-success"
+                  type="password"
+                  name="password_confirmation"
+                  onChange={handleChange}
+                  value={userInfo.password_confirmation}
+                  placeholder="exact same password again"
+                />
+              </div>
+            </label>
+          </div>
+          <div className="control">
+            <button type="submit" className="button is-success my-5">Sign up</button>
+          </div>
+        </form>
+      </div>
     </div>
   );
 
