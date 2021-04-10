@@ -5,7 +5,7 @@ import LinkIcon from './LinkIcon';
 function DevelopersListItem({ dev }) {
   const { links, skills, jobs } = dev;
   const itemLinks = links.map(link => (
-    <a className="p-3 m-2 is-size-5 has-text-grey-light" key={link.id} href={link.url}>
+    <a className="p-3 m-2 is-size-5 has-text-grey-light" key={link.id} href={link.url} target="_blank" rel="noreferrer">
       <LinkIcon iconName={link.link_name.toLowerCase()} />
     </a>
   ));
