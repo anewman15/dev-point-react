@@ -20,8 +20,8 @@ function BookAppointment({ authStatus, currentDev }) {
         <div className="my-5 has-text-white has-text-centered">
           <p className="m-4">
             If this is your first appointment with
-            {`${currentDev.first_name} ${currentDev.last_name}`}
-            , please make sure
+            {` ${currentDev.first_name}, `}
+            please make sure
             this is a short introduction call (of around 15-20 minutes), to have
             a useful conversation so that you can build on that later on
           </p>
