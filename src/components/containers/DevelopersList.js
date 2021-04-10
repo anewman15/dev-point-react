@@ -47,6 +47,8 @@ function DevelopersList({ authStatus, developers, saveDevelopers }) {
           centerMode
           centerSlidePercentage={60}
           infiniteLoop
+          autoPlay
+          interval={4000}
           showIndicators={false}
           showThumbs={false}
         >
