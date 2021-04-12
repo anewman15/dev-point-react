@@ -1,0 +1,126 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App renders the App to the dom 1`] = `
+Array [
+  <nav
+    aria-label="main navigation"
+    className="navbar is-fixed-top"
+    role="navigation"
+  >
+    <div
+      className="navbar-brand mx-7 px-4 is-text-centered"
+    >
+      <a
+        className=""
+        href="/"
+        onClick={[Function]}
+      >
+        <img
+          alt="dev-lookup-logo"
+          height="60"
+          src="/logo512.png"
+          width="60"
+        />
+      </a>
+    </div>
+  </nav>,
+  <div
+    className="columns is-centered"
+  >
+    <div
+      className="column is-one-fifth"
+    >
+      <aside
+        className="menu my-7"
+      >
+        <div
+          className="menu-list"
+        >
+          <div
+            className="navbar-item"
+          >
+            <a
+              className="button is-primary is-fullwidth"
+              href="/login"
+              onClick={[Function]}
+            >
+              Log in
+            </a>
+          </div>
+          <div
+            className="navbar-item"
+          >
+            <a
+              className="button is-light is-fullwidth"
+              href="/sign_up"
+              onClick={[Function]}
+            >
+              <strong>
+                Sign up
+              </strong>
+            </a>
+          </div>
+        </div>
+      </aside>
+    </div>
+    <div
+      className="column is-four-fifths"
+    >
+      <div
+        className="bg-code"
+      >
+        <div
+          className="columns is-centered"
+        >
+          <div
+            className="my-6 column is-four-fifths"
+          >
+            <div
+              className="p-6 bd-filter border-warning has-text-white"
+            >
+              <p
+                className="is-size-2 has-text-centered"
+              >
+                Welcome to DevPoint
+              </p>
+              <p
+                className="my-3 p-2 is-size-4 has-text-centered"
+              >
+                Our experienced developers specialize in latest frameworks and technologies, and have a track record of successful project deliveries across multiple domains in the software industry
+              </p>
+              <p
+                className="my-3 p-2 is-size-4 has-text-centered"
+              >
+                Our platform allows you to meet our developers individually for a free online consultation and build rapport for future collaboration
+              </p>
+            </div>
+            <div
+              className="my-6 mx-5 has-text-centered is-flex is-justify-content-center is-align-items-center"
+            >
+              <a
+                className="button is-success is-large is-uppercase"
+                href="/sign_up"
+                onClick={[Function]}
+              >
+                Sign Up Now
+              </a>
+              <p
+                className="px-4 has-text-white has-text-weight-bold"
+              >
+                or
+              </p>
+              <a
+                className="button is-light is-small has-text-dark has-text-weight-bold"
+                href="/login"
+                onClick={[Function]}
+              >
+                Log into your account
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>,
+]
+`;
