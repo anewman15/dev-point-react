@@ -1,5 +1,5 @@
 # DevPoint - Set an Appointment with a Developer
-A site that allows hiring managers find niche developers. Built with Rails/React/Redux.
+A site that allows hiring managers find and set up appointments with niche developers. Built with Rails/React/Redux.
 
 ## Built With
 1. [JavaScript / ES6](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
@@ -21,11 +21,15 @@ Available [here](https://anewman15-dev-point.netlify.app/)
 ## Deployment
 1. Open your Terminal from a folder of your choice and clone [this repo](https://github.com/anewman15/dev-point-react/)
 2. Navigate to the project directory
-3. Run `npm install`
-4. Then run `npm run start`
+3. Run `yarn install`
+4. Then run `yarn start`
+5. Navigate to `localhost:3000`
+6. Sign up, log in and use the website to view developers list, their profiles
+7. Set appointments from the `/book_appointments` route
+8. View the list of your appointments from `/appointments` route
 
 ## Testing
-1. Run `npm run test` in the Terminal to run the tests
+1. Run `yarn test` in the Terminal to run the tests
 
 ## Author
 
