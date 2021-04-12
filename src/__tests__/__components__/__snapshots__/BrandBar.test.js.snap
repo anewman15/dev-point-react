@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BrandBar renders the BrandBar component to the dom 1`] = `
+<nav
+  aria-label="main navigation"
+  className="navbar is-fixed-top"
+  role="navigation"
+>
+  <div
+    className="navbar-brand mx-7 px-4 is-text-centered"
+  >
+    <a
+      className=""
+      href="/"
+      onClick={[Function]}
+    >
+      <img
+        alt="dev-lookup-logo"
+        height="60"
+        src="/logo512.png"
+        width="60"
+      />
+    </a>
+  </div>
+</nav>
+`;
