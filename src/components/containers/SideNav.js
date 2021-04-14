@@ -7,11 +7,11 @@ import NavItemsLoggedIn from './NavItemsLoggedIn';
 
 function SideNav({ authStatus }) {
   return (
-    <aside className="menu my-7">
+    <nav id="side-nav" className="navbar-menu my-5">
       <div className="menu-list">
         {authStatus ? <NavItemsLoggedIn /> : <NavItemsSignedOut /> }
       </div>
-    </aside>
+    </nav>
   );
 }
 

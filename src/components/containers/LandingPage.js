@@ -19,10 +19,16 @@ function LandingPage() {
               free online consultation and build rapport for future collaboration
             </p>
           </div>
-          <div className="my-6 mx-5 has-text-centered is-flex is-justify-content-center is-align-items-center">
-            <Link to="/sign_up" className="button is-success is-large is-uppercase">Sign Up Now</Link>
-            <p className="px-4 has-text-white has-text-weight-bold">or</p>
-            <Link to="/login" className="button is-light is-small has-text-dark has-text-weight-bold">Log into your account</Link>
+          <div className="columns is-centered my-6 mx-5">
+            <div className="column has-text-centered is-flex is-justify-content-center is-align-items-center">
+              <Link to="/sign_up" className="button is-success is-large is-uppercase">Sign Up Now</Link>
+            </div>
+            <div className="column has-text-centered is-flex is-justify-content-center is-align-items-center">
+              <p className="px-4 has-text-white has-text-weight-bold">or</p>
+            </div>
+            <div className="column has-text-centered is-flex is-justify-content-center is-align-items-center">
+              <Link to="/login" className="button is-light is-small has-text-dark has-text-weight-bold">Log into your account</Link>
+            </div>
           </div>
         </div>
       </div>

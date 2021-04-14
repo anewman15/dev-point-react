@@ -17,10 +17,12 @@ const Home = () => (
         <span className="px-2 has-text-weight-bold">NOW</span>
       </a>
     </div>
-    <div className="my-6 is-flex is-justify-content-center has-text-center">
-      Or better yet, navigate to our
-      <Link className="px-2 has-text-primary has-text-weight-bold" to="/developers">Developers </Link>
-      page and get in touch with them
+    <div className="my-6 px-3 is-flex is-justify-content-center is-align-items-center">
+      <p className="has-text-center">
+        Or better yet, navigate to our
+        <Link className="px-2 has-text-primary has-text-weight-bold" to="/developers">Developers </Link>
+        page and get in touch with them
+      </p>
     </div>
   </div>
 );

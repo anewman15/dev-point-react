@@ -4,17 +4,17 @@ import LinkIcon from './LinkIcon';
 
 function DevelopersListItem({ dev }) {
   const { links, skills, jobs } = dev;
-  const itemLinks = links.map(link => (
+  const itemLinks = links.length && links.map(link => (
     <a className="p-3 m-2 is-size-5 has-text-grey-light" key={link.id} href={link.url} target="_blank" rel="noreferrer">
       <LinkIcon iconName={link.link_name.toLowerCase()} />
     </a>
   ));
 
-  const itemSkills = skills.map(skill => <span className="m-1 button is-primary is-small is-rounded has-text-weight-bold" key={skill.id}>{skill.skill_name}</span>);
-  const job = jobs[0];
+  const itemSkills = skills.length && skills.map(skill => <button type="button" className="m-1 button is-primary is-small is-rounded has-text-weight-bold" key={skill.id}>{skill.skill_name}</button>);
+  const job = jobs.length && jobs[0];
 
   return (
-    <div className="p-2">
+    <div className="px-4 py-2">
       <div className="is-flex is-justify-content-center">
         <div className="image carousel-image">
           <Link to={`/developers/${dev.user.id}`}>
@@ -28,10 +28,10 @@ function DevelopersListItem({ dev }) {
           {job.title}
         </div>
         <div className="is-divider has-text-grey-lighter has-text-weight-bolder">. . . . . . . . . . . . . . . . </div>
-        <div className="px-6 m-3">
+        <div className="m-3">
           {itemSkills}
         </div>
-        <div>
+        <div className="is-flex is-justify-content-center is-align-items-center">
           {itemLinks}
         </div>
       </div>

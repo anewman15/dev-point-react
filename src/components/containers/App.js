@@ -11,11 +11,11 @@ function App() {
     <Provider store={store}>
       <BrowserRouter>
         <BrandBar />
-        <div className="columns is-centered">
-          <div className="column is-one-fifth">
+        <div className="columns is-desktop is-centered">
+          <div className="column is-one-fifth-desktop">
             <SideNav />
           </div>
-          <div className="column is-four-fifths">
+          <div className="column is-four-fifths-desktop">
             <Routes />
           </div>
         </div>

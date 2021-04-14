@@ -42,10 +42,10 @@ function DevelopersList({ authStatus, developers, saveDevelopers }) {
           Please click on one to view their profile
         </p>
       </div>
-      <div className="mx-3 px-6">
+      <div className="mx-3 px-4">
         <Carousel
           centerMode
-          centerSlidePercentage={60}
+          centerSlidePercentage={70}
           infiniteLoop
           autoPlay
           interval={4000}
