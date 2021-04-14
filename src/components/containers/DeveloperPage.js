@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/control-has-associated-label */
+/* eslint-disable react/self-closing-comp */
 /* eslint-disable no-unused-vars */
 import { PropTypes } from 'prop-types';
 import { useEffect } from 'react';
@@ -38,7 +40,8 @@ function DeveloperPage({
   const devSkills = currentDev.skills && currentDev.skills.map(skill => (
     <tr key={skill.id + 1}>
       <td className="is-uppercase has-text-weight-light">{skill.skill_name}</td>
-      <td>2 years</td>
+      <td className="has-text-centered">{`${skill.experience} years`}</td>
+      <td className="has-text-centered">{`${skill.projects_count}`}</td>
     </tr>
   ));
 
@@ -69,6 +72,13 @@ function DeveloperPage({
         </div>
         <div className="column is-half-tablet is-centered">
           <table className="table is-striped is-narrower is-hoverable is-fullwidth">
+            <thead>
+              <tr>
+                <th></th>
+                <th className="has-text-centered">Exp</th>
+                <th className="has-text-centered">Projects</th>
+              </tr>
+            </thead>
             <tbody className="">
               {devSkills}
             </tbody>
