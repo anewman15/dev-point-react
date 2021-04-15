@@ -18,7 +18,7 @@ const Home = () => (
       </a>
     </div>
     <div className="my-6 px-3">
-      <p className="has-text-center py-3">
+      <p className="has-text-centered py-3">
         Pun aside, this page will soon allow you to add a
         profile picture, company info and an about me/us section
       </p>
