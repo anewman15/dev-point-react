@@ -45,7 +45,7 @@ Contributions, issues and feature requests are welcome!
 Please send your feedback [here](https://github.com/anewman15/dev-point-react/issues)
 
 ## Design Credits
-
+:thumbsup: :clap: to [Murat Korkmaz](https://www.behance.net/muratk) for [his design](https://www.behance.net/gallery/26425031/Vespa-Responsive-Redesign)
 ## Acknowledgments
 - [Microverse, Inc.](https://www.microverse.org/)
 - [The Odin Project](https://www.theodinproject.com/)
