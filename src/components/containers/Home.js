@@ -23,7 +23,7 @@ const Home = () => (
         profile picture, company info and an about me/us section
       </p>
       <div className="py-3 is-flex is-justify-content-center is-align-items-center">
-        <p className="has-text-center">
+        <p className="has-text-centered">
           For now though, navigate to our
           <Link className="px-2 has-text-primary has-text-weight-bold" to="/developers">Developers </Link>
           page and get in touch with them
