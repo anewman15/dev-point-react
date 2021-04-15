@@ -54,3 +54,7 @@ $warning: $dev-point-warning;
   border: 0.5px solid $warning;
   border-radius: 4px;
 }
+
+.capitalize {
+  text-transform: capitalize;
+}
