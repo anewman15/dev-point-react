@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 import { Redirect, useHistory } from 'react-router-dom';
 import createSession from '../../sandbox/createSession';
 import { saveAuthStatus, saveUserDetails } from '../../redux/actions/user';
+import InvalidCredentials from './InvalidCredentials';
 
 const LogInForm = ({ authStatus, saveAuthStatus, saveUserDetails }) => {
   const userInfoInit = {
@@ -14,7 +15,7 @@ const LogInForm = ({ authStatus, saveAuthStatus, saveUserDetails }) => {
 
   const [userInfo, setUserInfo] = useState(userInfoInit);
   const [isLoggedIn, setIsLoggedIn] = useState(authStatus);
-  const [isInvalidCreds, setIsInvalidCreds] = useState(false);
+  const [invalidCreds, setInvalidCreds] = useState(false);
   const history = useHistory();
 
   const handleChange = e => {
@@ -33,20 +34,20 @@ const LogInForm = ({ authStatus, saveAuthStatus, saveUserDetails }) => {
           setIsLoggedIn(true);
           saveAuthStatus({ status: true });
           saveUserDetails(data.user);
+          setUserInfo(userInfoInit);
           history.push('/');
         }
-      })
-      .catch(error => {
-        setIsLoggedIn(false);
-        saveAuthStatus({ status: false });
+        if (data.message === 'Invalid credentials') {
+          setInvalidCreds(true);
+        }
       });
-    setUserInfo(userInfoInit);
   };
 
   const form = (
     <div className="my-6 columns is-centered">
       <div className="column is-half has-background-warning border-warning">
         <h1 className="is-size-3 has-text-weight-bold is-text-centered p-2 my-3">Log In to Your Account</h1>
+        {invalidCreds && <InvalidCredentials />}
         <form className="p-4" onSubmit={handleSubmit}>
           <div className="field">
             <label className="label" htmlFor="email">
@@ -90,7 +91,6 @@ const LogInForm = ({ authStatus, saveAuthStatus, saveUserDetails }) => {
             <button type="submit" className="button is-success my-5">Log in</button>
           </div>
         </form>
-
       </div>
     </div>
   );
