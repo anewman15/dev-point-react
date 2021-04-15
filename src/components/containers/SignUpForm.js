@@ -51,7 +51,7 @@ const SignUpForm = ({ authStatus }) => {
   };
 
   const form = (
-    <div className="my-6 columns is-centered">
+    <div className="my-6 mx-2 columns is-centered">
       <div className="column is-half has-background-warning border-warning">
         <h1 className="is-size-3 has-text-weight-bold is-text-centered p-2 my-3">Create an Account</h1>
         {Object.keys(formErrors).length >= 1 && <FormErrorsSection formErrors={formErrors} />}
@@ -67,7 +67,7 @@ const SignUpForm = ({ authStatus }) => {
                   name="email"
                   onChange={handleChange}
                   value={userInfo.email}
-                  placeholder="valid email, e.g., example@example.com"
+                  placeholder="Valid email, e.g., example@example.com"
                   required
                   autoFocus
                 />
@@ -84,7 +84,7 @@ const SignUpForm = ({ authStatus }) => {
                   name="username"
                   onChange={handleChange}
                   value={userInfo.username}
-                  placeholder="minimum 5 characters"
+                  placeholder="Minimum 5 characters"
                   required
                 />
               </div>
@@ -100,7 +100,7 @@ const SignUpForm = ({ authStatus }) => {
                   name="password"
                   onChange={handleChange}
                   value={userInfo.password}
-                  placeholder="minimum 6 characters"
+                  placeholder="Minimum 6 characters"
                   required
                 />
               </div>
@@ -116,7 +116,7 @@ const SignUpForm = ({ authStatus }) => {
                   name="password_confirmation"
                   onChange={handleChange}
                   value={userInfo.password_confirmation}
-                  placeholder="exact same password again"
+                  placeholder="Exact same password again"
                   required
                 />
               </div>

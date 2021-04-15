@@ -45,7 +45,7 @@ const LogInForm = ({ authStatus, saveAuthStatus, saveUserDetails }) => {
   };
 
   const form = (
-    <div className="my-6 columns is-centered">
+    <div className="my-6 mx-2 columns is-centered">
       <div className="column is-half has-background-warning border-warning">
         <h1 className="is-size-3 has-text-weight-bold is-text-centered p-2 my-3">Log In to Your Account</h1>
         {invalidCreds && <InvalidCredentials />}
@@ -60,7 +60,7 @@ const LogInForm = ({ authStatus, saveAuthStatus, saveUserDetails }) => {
                   name="email"
                   onChange={handleChange}
                   value={userInfo.email}
-                  placeholder="the one you signed up with"
+                  placeholder="The one you signed up with"
                   required
                   autoFocus
                 />
@@ -80,7 +80,7 @@ const LogInForm = ({ authStatus, saveAuthStatus, saveUserDetails }) => {
                   name="password"
                   onChange={handleChange}
                   value={userInfo.password}
-                  placeholder="your password"
+                  placeholder="Your password"
                   required
                 />
                 <span className="icon is-small is-left">
