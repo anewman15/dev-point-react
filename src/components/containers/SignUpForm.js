@@ -1,8 +1,11 @@
+/* eslint-disable no-unused-expressions */
 /* eslint-disable no-unused-vars */
 import { useState } from 'react';
 import { connect } from 'react-redux';
-import { Redirect, useHistory } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import createUser from '../../sandbox/createUser';
+import FormErrorsSection from './FormErrorsSection';
+import SignUpSuccess from './SignUpSuccess';
 
 const SignUpForm = ({ authStatus }) => {
   const userInfoInit = {
@@ -10,8 +13,8 @@ const SignUpForm = ({ authStatus }) => {
   };
 
   const [userInfo, setUserInfo] = useState(userInfoInit);
-  const [isLoggedIn, setIsLoggedIn] = useState(authStatus);
-  const history = useHistory();
+  const [formErrors, setFormErrors] = useState({});
+  const [formSuccess, setFormSuccess] = useState(false);
 
   const handleChange = e => {
     setUserInfo({
@@ -24,9 +27,24 @@ const SignUpForm = ({ authStatus }) => {
     e.preventDefault();
     createUser(userInfo)
       .then(response => {
+        let res;
         if (response.status === 200) {
           setUserInfo(userInfoInit);
-          history.push('/login');
+          res = response.json();
+        }
+        if (response.status === 422) {
+          res = response.json();
+        }
+        return res;
+      })
+      .then(data => {
+        if (data.errors) {
+          setFormErrors(data.errors);
+          setFormSuccess(false);
+        }
+        if (data.message === 'User created successfully!') {
+          setFormSuccess(true);
+          setFormErrors({});
         }
       });
   };
@@ -35,6 +53,8 @@ const SignUpForm = ({ authStatus }) => {
     <div className="my-6 columns is-centered">
       <div className="column is-half has-background-warning border-warning">
         <h1 className="is-size-3 has-text-weight-bold is-text-centered p-2 my-3">Create an Account</h1>
+        {Object.keys(formErrors).length >= 1 && <FormErrorsSection formErrors={formErrors} />}
+        {formSuccess && <SignUpSuccess />}
         <form className="p-4" onSubmit={handleSubmit}>
           <div className="field">
             <label className="label" htmlFor="email">
@@ -104,7 +124,7 @@ const SignUpForm = ({ authStatus }) => {
     </div>
   );
 
-  const content = isLoggedIn ? <Redirect to="/" /> : form;
+  const content = authStatus ? <Redirect to="/" /> : form;
   return content;
 };
 
