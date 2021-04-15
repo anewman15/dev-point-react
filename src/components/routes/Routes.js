@@ -9,6 +9,7 @@ import DevelopersList from '../containers/DevelopersList';
 import DeveloperPage from '../containers/DeveloperPage';
 import BookAppointment from '../containers/BookAppointment';
 import AppoinmentsPage from '../containers/AppoinmentsPage';
+import NotFound from '../presentational/NotFound';
 
 function Routes() {
   return (
@@ -22,6 +23,7 @@ function Routes() {
       <Route exact path="/developers/:id" component={DeveloperPage} />
       <Route exact path="/book_appointment" component={BookAppointment} />
       <Route exact path="/appointments" component={AppoinmentsPage} />
+      <Route path="*" component={NotFound} />
     </Switch>
   );
 }
