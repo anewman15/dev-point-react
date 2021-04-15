@@ -8,7 +8,7 @@ Array [
     role="navigation"
   >
     <div
-      className="navbar-brand mx-7 px-4 is-text-centered"
+      className="navbar-brand mx-3 my-3 px-2 is-text-centered"
     >
       <a
         className=""
@@ -22,16 +22,36 @@ Array [
           width="60"
         />
       </a>
+      <a
+        aria-expanded="false"
+        aria-label="menu"
+        className="navbar-burger"
+        data-target="side-nav"
+        href="#side-nav"
+        onClick={[Function]}
+        role="button"
+      >
+        <span
+          aria-hidden="true"
+        />
+        <span
+          aria-hidden="true"
+        />
+        <span
+          aria-hidden="true"
+        />
+      </a>
     </div>
   </nav>,
   <div
-    className="columns is-centered"
+    className="columns is-desktop is-centered"
   >
     <div
-      className="column is-one-fifth"
+      className="column is-one-fifth-desktop"
     >
-      <aside
-        className="menu my-7"
+      <nav
+        className="navbar-menu my-5"
+        id="side-nav"
       >
         <div
           className="menu-list"
@@ -61,10 +81,10 @@ Array [
             </a>
           </div>
         </div>
-      </aside>
+      </nav>
     </div>
     <div
-      className="column is-four-fifths"
+      className="column is-four-fifths-desktop"
     >
       <div
         className="bg-code"
@@ -95,27 +115,39 @@ Array [
               </p>
             </div>
             <div
-              className="my-6 mx-5 has-text-centered is-flex is-justify-content-center is-align-items-center"
+              className="columns is-centered my-6 mx-5"
             >
-              <a
-                className="button is-success is-large is-uppercase"
-                href="/sign_up"
-                onClick={[Function]}
+              <div
+                className="column has-text-centered is-flex is-justify-content-center is-align-items-center"
               >
-                Sign Up Now
-              </a>
-              <p
-                className="px-4 has-text-white has-text-weight-bold"
+                <a
+                  className="button is-success is-large is-uppercase"
+                  href="/sign_up"
+                  onClick={[Function]}
+                >
+                  Sign Up Now
+                </a>
+              </div>
+              <div
+                className="column has-text-centered is-flex is-justify-content-center is-align-items-center"
               >
-                or
-              </p>
-              <a
-                className="button is-light is-small has-text-dark has-text-weight-bold"
-                href="/login"
-                onClick={[Function]}
+                <p
+                  className="px-4 has-text-white has-text-weight-bold"
+                >
+                  or
+                </p>
+              </div>
+              <div
+                className="column has-text-centered is-flex is-justify-content-center is-align-items-center"
               >
-                Log into your account
-              </a>
+                <a
+                  className="button is-light is-small has-text-dark has-text-weight-bold"
+                  href="/login"
+                  onClick={[Function]}
+                >
+                  Log into your account
+                </a>
+              </div>
             </div>
           </div>
         </div>

@@ -29,9 +29,11 @@ exports[`AppointmentsForm renders the AppointmentForm component to the dom 1`] =
                 className="control"
               >
                 <input
+                  autoFocus={true}
                   className="input is-primary is-rounded has-text-success"
                   name="location"
                   onChange={[Function]}
+                  placeholder="A place, or just Online"
                   required={true}
                   type="text"
                 />

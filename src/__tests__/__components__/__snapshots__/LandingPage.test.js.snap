@@ -30,27 +30,39 @@ exports[`LandingPage renders the LandingPage component to the dom 1`] = `
         </p>
       </div>
       <div
-        className="my-6 mx-5 has-text-centered is-flex is-justify-content-center is-align-items-center"
+        className="columns is-centered my-6 mx-5"
       >
-        <a
-          className="button is-success is-large is-uppercase"
-          href="/sign_up"
-          onClick={[Function]}
+        <div
+          className="column has-text-centered is-flex is-justify-content-center is-align-items-center"
         >
-          Sign Up Now
-        </a>
-        <p
-          className="px-4 has-text-white has-text-weight-bold"
+          <a
+            className="button is-success is-large is-uppercase"
+            href="/sign_up"
+            onClick={[Function]}
+          >
+            Sign Up Now
+          </a>
+        </div>
+        <div
+          className="column has-text-centered is-flex is-justify-content-center is-align-items-center"
         >
-          or
-        </p>
-        <a
-          className="button is-light is-small has-text-dark has-text-weight-bold"
-          href="/login"
-          onClick={[Function]}
+          <p
+            className="px-4 has-text-white has-text-weight-bold"
+          >
+            or
+          </p>
+        </div>
+        <div
+          className="column has-text-centered is-flex is-justify-content-center is-align-items-center"
         >
-          Log into your account
-        </a>
+          <a
+            className="button is-light is-small has-text-dark has-text-weight-bold"
+            href="/login"
+            onClick={[Function]}
+          >
+            Log into your account
+          </a>
+        </div>
       </div>
     </div>
   </div>

@@ -7,7 +7,7 @@ exports[`BrandBar renders the BrandBar component to the dom 1`] = `
   role="navigation"
 >
   <div
-    className="navbar-brand mx-7 px-4 is-text-centered"
+    className="navbar-brand mx-3 my-3 px-2 is-text-centered"
   >
     <a
       className=""
@@ -19,6 +19,25 @@ exports[`BrandBar renders the BrandBar component to the dom 1`] = `
         height="60"
         src="/logo512.png"
         width="60"
+      />
+    </a>
+    <a
+      aria-expanded="false"
+      aria-label="menu"
+      className="navbar-burger"
+      data-target="side-nav"
+      href="#side-nav"
+      onClick={[Function]}
+      role="button"
+    >
+      <span
+        aria-hidden="true"
+      />
+      <span
+        aria-hidden="true"
+      />
+      <span
+        aria-hidden="true"
       />
     </a>
   </div>
