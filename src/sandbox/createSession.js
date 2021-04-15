@@ -16,7 +16,7 @@ const createSession = async userInfo => {
       credentials: 'include',
     });
   } catch (e) {
-    return e.message;
+    return e;
   }
 };
 
