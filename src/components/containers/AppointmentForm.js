@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/no-autofocus */
 import { PropTypes } from 'prop-types';
 import { useState } from 'react';
 import { useHistory } from 'react-router-dom';
@@ -48,7 +49,9 @@ function AppointmentForm({ devId, devConfLink }) {
                       className="input is-primary is-rounded has-text-success"
                       name="location"
                       onChange={handleChange}
+                      placeholder="A place, or just Online"
                       required
+                      autoFocus
                     />
                   </div>
                 </label>

@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/no-autofocus */
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/self-closing-comp */
 import { useState } from 'react';
@@ -61,6 +62,7 @@ const LogInForm = ({ authStatus, saveAuthStatus, saveUserDetails }) => {
                   value={userInfo.email}
                   placeholder="the one you signed up with"
                   required
+                  autoFocus
                 />
                 <span className="icon is-small is-left">
                   <i className="fas fa-envelope"></i>

@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/no-autofocus */
 /* eslint-disable no-unused-expressions */
 /* eslint-disable no-unused-vars */
 import { useState } from 'react';
@@ -67,6 +68,8 @@ const SignUpForm = ({ authStatus }) => {
                   onChange={handleChange}
                   value={userInfo.email}
                   placeholder="valid email, e.g., example@example.com"
+                  required
+                  autoFocus
                 />
               </div>
             </label>
@@ -82,6 +85,7 @@ const SignUpForm = ({ authStatus }) => {
                   onChange={handleChange}
                   value={userInfo.username}
                   placeholder="minimum 5 characters"
+                  required
                 />
               </div>
             </label>
@@ -97,6 +101,7 @@ const SignUpForm = ({ authStatus }) => {
                   onChange={handleChange}
                   value={userInfo.password}
                   placeholder="minimum 6 characters"
+                  required
                 />
               </div>
             </label>
@@ -112,6 +117,7 @@ const SignUpForm = ({ authStatus }) => {
                   onChange={handleChange}
                   value={userInfo.password_confirmation}
                   placeholder="exact same password again"
+                  required
                 />
               </div>
             </label>
