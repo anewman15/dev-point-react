@@ -1,5 +1,4 @@
 /* eslint-disable jsx-a11y/no-autofocus */
-/* eslint-disable no-unused-vars */
 /* eslint-disable react/self-closing-comp */
 import { useState } from 'react';
 import { PropTypes } from 'prop-types';
@@ -15,7 +14,6 @@ const LogInForm = ({ authStatus, saveAuthStatus, saveUserDetails }) => {
   };
 
   const [userInfo, setUserInfo] = useState(userInfoInit);
-  const [isLoggedIn, setIsLoggedIn] = useState(authStatus);
   const [invalidCreds, setInvalidCreds] = useState(false);
   const history = useHistory();
 
@@ -32,10 +30,8 @@ const LogInForm = ({ authStatus, saveAuthStatus, saveUserDetails }) => {
       .then(response => response.json())
       .then(data => {
         if (data.user) {
-          setIsLoggedIn(true);
           saveAuthStatus({ status: true });
           saveUserDetails(data.user);
-          setUserInfo(userInfoInit);
           history.push('/');
         }
         if (data.message === 'Invalid credentials') {
@@ -97,7 +93,7 @@ const LogInForm = ({ authStatus, saveAuthStatus, saveUserDetails }) => {
     </div>
   );
 
-  const content = isLoggedIn ? <Redirect to="/" /> : form;
+  const content = authStatus ? <Redirect to="/" /> : form;
   return content;
 };
 
