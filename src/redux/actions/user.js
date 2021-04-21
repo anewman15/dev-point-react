@@ -1,13 +1,4 @@
-import { SAVE_AUTH_STATUS, SAVE_USER_DETAILS } from './actionTypes';
-
-const saveAuthStatus = authStatus => (
-  {
-    type: SAVE_AUTH_STATUS,
-    payload: {
-      authStatus: authStatus.status,
-    },
-  }
-);
+import { SAVE_USER_DETAILS } from './actionTypes';
 
 const saveUserDetails = userDetails => (
   {
@@ -18,4 +9,4 @@ const saveUserDetails = userDetails => (
   }
 );
 
-export { saveAuthStatus, saveUserDetails };
+export default saveUserDetails;
