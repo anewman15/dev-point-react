@@ -10,7 +10,7 @@ import HostedAppointments from './HostedAppointments';
 function AppoinmentsPage({ currentUser, appointments, saveAppointments }) {
   useEffect(() => {
     let isCancelled = false;
-    isCancelled = !!currentUser.id;
+    isCancelled = !(Object.keys(currentUser).length > 0);
 
     if (!isCancelled) {
       getAppointments()
