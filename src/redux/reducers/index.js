@@ -1,14 +1,12 @@
 import { combineReducers } from 'redux';
-import authStatus from './authStatus';
-import userDetails from './userDetails';
+import currentUser from './currentUser';
 import developers from './developers';
 import currentDev from './currentDev';
 import appointments from './appointments';
 
 const combinedReducer = combineReducers(
   {
-    authStatus,
-    userDetails,
+    currentUser,
     developers,
     currentDev,
     appointments,

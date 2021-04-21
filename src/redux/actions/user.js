@@ -1,12 +1,12 @@
-import { SAVE_USER_DETAILS } from './actionTypes';
+import { SAVE_CURRENT_USER } from './actionTypes';
 
-const saveUserDetails = userDetails => (
+const saveCurrentUser = currentUser => (
   {
-    type: SAVE_USER_DETAILS,
+    type: SAVE_CURRENT_USER,
     payload: {
-      userDetails,
+      currentUser,
     },
   }
 );
 
-export default saveUserDetails;
+export default saveCurrentUser;
