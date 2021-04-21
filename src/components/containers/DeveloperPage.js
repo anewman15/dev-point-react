@@ -10,7 +10,7 @@ import getCurrentDev from '../../sandbox/getCurrentDev';
 import LinkIcon from './LinkIcon';
 
 function DeveloperPage({
-  authStatus,
+  currentUser,
   currentDev,
   saveCurrentDev,
   match,
@@ -97,19 +97,19 @@ function DeveloperPage({
     </div>
   );
 
-  const content = authStatus ? devProfile : <Redirect to="/login" />;
+  const content = currentUser.id ? devProfile : <Redirect to="/login" />;
 
   return content;
 }
 
 DeveloperPage.propTypes = {
-  authStatus: PropTypes.bool,
+  currentUser: PropTypes.object,
   currentDev: PropTypes.object,
 }.isRequired;
 
 const mapStateToProps = state => (
   {
-    authStatus: state.authStatus,
+    currentUser: state.currentUser,
     currentDev: state.currentDev,
   }
 );

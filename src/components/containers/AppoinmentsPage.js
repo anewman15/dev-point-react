@@ -7,10 +7,10 @@ import getAppointments from '../../sandbox/getAppointments';
 import saveAppointments from '../../redux/actions/appointment';
 import HostedAppointments from './HostedAppointments';
 
-function AppoinmentsPage({ authStatus, appointments, saveAppointments }) {
+function AppoinmentsPage({ currentUser, appointments, saveAppointments }) {
   useEffect(() => {
     let isCancelled = false;
-    isCancelled = !authStatus;
+    isCancelled = !!currentUser.id;
 
     if (!isCancelled) {
       getAppointments()
@@ -34,18 +34,18 @@ function AppoinmentsPage({ authStatus, appointments, saveAppointments }) {
     </div>
   );
 
-  const content = authStatus ? page : <Redirect to="/login" />;
+  const content = currentUser.id ? page : <Redirect to="/login" />;
 
   return content;
 }
 
 AppoinmentsPage.propTypes = {
-  authStatus: PropTypes.bool,
+  currentUser: PropTypes.object,
   appointments: PropTypes.array,
 }.isRequired;
 
 const mapStateToProps = state => ({
-  authStatus: state.authStatus,
+  currentUser: state.currentUser,
   appointments: state.appointments,
 });
 

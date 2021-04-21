@@ -5,10 +5,10 @@ import { PropTypes } from 'prop-types';
 import { connect } from 'react-redux';
 import { Redirect, useHistory } from 'react-router-dom';
 import createSession from '../../sandbox/createSession';
-import { saveAuthStatus, saveUserDetails } from '../../redux/actions/user';
+import saveCurrentUser from '../../redux/actions/user';
 import InvalidCredentials from './InvalidCredentials';
 
-const LogInForm = ({ authStatus, saveAuthStatus, saveUserDetails }) => {
+const LogInForm = ({ currentUser, saveCurrentUser }) => {
   const userInfoInit = {
     email: '', password: '',
   };
@@ -30,8 +30,7 @@ const LogInForm = ({ authStatus, saveAuthStatus, saveUserDetails }) => {
       .then(response => response.json())
       .then(data => {
         if (data.user) {
-          saveAuthStatus({ status: true });
-          saveUserDetails(data.user);
+          saveCurrentUser(data.user);
           history.push('/');
         }
         if (data.message === 'Invalid credentials') {
@@ -93,16 +92,16 @@ const LogInForm = ({ authStatus, saveAuthStatus, saveUserDetails }) => {
     </div>
   );
 
-  const content = authStatus ? <Redirect to="/" /> : form;
+  const content = currentUser.id ? <Redirect to="/" /> : form;
   return content;
 };
 
 LogInForm.propTypes = {
-  authStatus: PropTypes.bool,
+  currentUser: PropTypes.bool,
 }.isRequired;
 
 const mapStateToProps = state => ({
-  authStatus: state.authStatus,
+  currentUser: state.currentUser,
 });
 
-export default connect(mapStateToProps, { saveAuthStatus, saveUserDetails })(LogInForm);
+export default connect(mapStateToProps, { saveCurrentUser })(LogInForm);

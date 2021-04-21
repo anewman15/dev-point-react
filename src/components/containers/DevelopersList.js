@@ -9,7 +9,7 @@ import { saveDevelopers } from '../../redux/actions/developer';
 import getDevs from '../../sandbox/getDevs';
 import DevelopersListItem from './DevelopersListItem';
 
-function DevelopersList({ authStatus, developers, saveDevelopers }) {
+function DevelopersList({ currentUser, developers, saveDevelopers }) {
   useEffect(() => {
     let isCancelled = false;
     if (!isCancelled) {
@@ -58,18 +58,18 @@ function DevelopersList({ authStatus, developers, saveDevelopers }) {
     </div>
   );
 
-  const content = authStatus ? devsList : <Redirect to="/login" />;
+  const content = currentUser.id ? devsList : <Redirect to="/login" />;
   return content;
 }
 
 DevelopersList.propTypes = {
-  authStatus: PropTypes.bool,
+  currentUser: PropTypes.object,
   developers: PropTypes.array,
 }.isRequired;
 
 const mapStateToProps = state => (
   {
-    authStatus: state.authStatus,
+    currentUser: state.currentUser,
     developers: state.developers,
   }
 );

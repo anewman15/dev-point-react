@@ -3,18 +3,18 @@ import { PropTypes } from 'prop-types';
 import Home from './Home';
 import LandingPage from './LandingPage';
 
-function Main({ authStatus }) {
-  const content = authStatus ? <Home /> : <LandingPage />;
+function Main({ currentUser }) {
+  const content = currentUser.id ? <Home /> : <LandingPage />;
 
   return content;
 }
 
 Main.propTypes = {
-  authStatus: PropTypes.bool,
+  currentUser: PropTypes.object,
 }.isRequired;
 
 const mapStateToProps = state => ({
-  authStatus: state.authStatus,
+  currentUser: state.currentUser,
 });
 
 export default connect(mapStateToProps)(Main);

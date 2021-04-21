@@ -3,11 +3,10 @@ import { useState } from 'react';
 import { PropTypes } from 'prop-types';
 import { connect } from 'react-redux';
 import { Link, useHistory } from 'react-router-dom';
-import { saveAuthStatus } from '../../redux/actions/user';
+import saveCurrentUser from '../../redux/actions/user';
 import endSession from '../../sandbox/endSession';
 
-function SignOutButton({ authStatus, saveAuthStatus }) {
-  const [isLoggedIn, setIsLoggedIn] = useState(authStatus);
+function SignOutButton({ saveCurrentUser }) {
   const history = useHistory();
 
   const handleClick = e => {
@@ -15,8 +14,7 @@ function SignOutButton({ authStatus, saveAuthStatus }) {
     endSession()
       .then(response => {
         if (response.status === 200) {
-          setIsLoggedIn(false);
-          saveAuthStatus({ status: false });
+          saveCurrentUser({});
           history.push('/');
         }
       });
@@ -32,11 +30,7 @@ function SignOutButton({ authStatus, saveAuthStatus }) {
 }
 
 SignOutButton.propTypes = {
-  authStatus: PropTypes.bool,
+  cyurrentUser: PropTypes.bool,
 }.isRequired;
 
-const mapStateToProps = state => ({
-  authStatus: state.authStatus,
-});
-
-export default connect(mapStateToProps, { saveAuthStatus })(SignOutButton);
+export default connect(null, { saveCurrentUser })(SignOutButton);

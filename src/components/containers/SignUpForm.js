@@ -1,14 +1,13 @@
 /* eslint-disable jsx-a11y/no-autofocus */
-/* eslint-disable no-unused-expressions */
-/* eslint-disable no-unused-vars */
 import { useState } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { Link, Redirect } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 import createUser from '../../sandbox/createUser';
 import FormErrorsSection from './FormErrorsSection';
 import SignUpSuccess from './SignUpSuccess';
 
-const SignUpForm = ({ authStatus }) => {
+const SignUpForm = ({ currentUser }) => {
   const userInfoInit = {
     email: '', username: '', password: '', password_confirmation: '',
   };
@@ -130,12 +129,16 @@ const SignUpForm = ({ authStatus }) => {
     </div>
   );
 
-  const content = authStatus ? <Redirect to="/" /> : form;
+  const content = currentUser.id ? <Redirect to="/" /> : form;
   return content;
 };
 
+SignUpForm.propTypes = {
+  currentUser: PropTypes.object,
+}.isRequired;
+
 const mapStateToProps = state => ({
-  authStatus: state.authStatus,
+  currentUser: state.currentUser,
 });
 
 export default connect(mapStateToProps)(SignUpForm);

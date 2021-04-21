@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import AppointmentForm from './AppointmentForm';
 
-function BookAppointment({ authStatus, currentDev }) {
+function BookAppointment({ currentUser, currentDev }) {
   const page = (
     <div className="has-background-primary vh-100">
       <div className="p-6">
@@ -35,18 +35,18 @@ function BookAppointment({ authStatus, currentDev }) {
     </div>
   );
 
-  const content = authStatus ? page : <Redirect to="/login" />;
+  const content = currentUser.id ? page : <Redirect to="/login" />;
 
   return content;
 }
 
 BookAppointment.propTypes = {
-  authStatus: PropTypes.bool,
+  currentUser: PropTypes.object,
   currentDev: PropTypes.object,
 }.isRequired;
 
 const mapStateToProps = state => ({
-  authStatus: state.authStatus,
+  currentUser: state.currentUser,
   currentDev: state.currentDev,
 });
 
