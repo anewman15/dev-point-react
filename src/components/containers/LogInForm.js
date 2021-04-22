@@ -33,7 +33,7 @@ const LogInForm = ({ currentUser, saveCurrentUser }) => {
           saveCurrentUser(data.user);
           history.push('/');
         }
-        if (data.message === 'Invalid credentials') {
+        if (data.error) {
           setInvalidCreds(true);
         }
       });
