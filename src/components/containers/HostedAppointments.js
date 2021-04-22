@@ -48,7 +48,7 @@ function HostedAppointments({ hostedAppointments }) {
   ));
 
   return (
-    <div className="mx-6 columns is-centered">
+    <div className="mx-1 columns is-centered">
       <div className="column">
         {appointmentsList}
       </div>
