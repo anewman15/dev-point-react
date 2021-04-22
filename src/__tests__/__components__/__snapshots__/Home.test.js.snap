@@ -40,7 +40,7 @@ exports[`Home renders the Home component to the dom 1`] = `
     className="my-6 px-3"
   >
     <p
-      className="has-text-center py-3"
+      className="has-text-centered py-3"
     >
       Pun aside, this page will soon allow you to add a profile picture, company info and an about me/us section
     </p>
@@ -48,7 +48,7 @@ exports[`Home renders the Home component to the dom 1`] = `
       className="py-3 is-flex is-justify-content-center is-align-items-center"
     >
       <p
-        className="has-text-center"
+        className="has-text-centered"
       >
         For now though, navigate to our
         <a
