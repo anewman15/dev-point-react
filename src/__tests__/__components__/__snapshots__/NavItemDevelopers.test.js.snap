@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NavItemDevelopers renders the NavItemDevelopers component to the dom 1`] = `
+<div
+  className="navbar-item"
+>
+  <a
+    className="button is-warning has-text-white has-text-weight-bold is-fullwidth"
+    href="/appointments"
+    onClick={[Function]}
+  >
+    Your Appointments
+  </a>
+</div>
+`;
