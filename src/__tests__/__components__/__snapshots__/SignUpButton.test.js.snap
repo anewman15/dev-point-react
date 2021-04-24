@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LogInButton renders the LogInButton component to the dom 1`] = `
+<div
+  className="navbar-item"
+>
+  <a
+    className="button is-primary is-fullwidth"
+    href="/login"
+    onClick={[Function]}
+  >
+    Log in
+  </a>
+</div>
+`;

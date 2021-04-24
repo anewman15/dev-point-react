@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SignUpButton renders the SIgnUpButton component to the dom 1`] = `
+<div
+  className="navbar-item"
+>
+  <a
+    className="button is-light is-fullwidth"
+    href="/sign_up"
+    onClick={[Function]}
+  >
+    <strong>
+      Sign up
+    </strong>
+  </a>
+</div>
+`;

@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NavItemsSignedOut renders the NavItemsSignedOut component to the dom 1`] = `
+Array [
+  <div
+    className="navbar-item"
+  >
+    <a
+      className="button is-primary is-fullwidth"
+      href="/login"
+      onClick={[Function]}
+    >
+      Log in
+    </a>
+  </div>,
+  <div
+    className="navbar-item"
+  >
+    <a
+      className="button is-light is-fullwidth"
+      href="/sign_up"
+      onClick={[Function]}
+    >
+      <strong>
+        Sign up
+      </strong>
+    </a>
+  </div>,
+]
+`;
