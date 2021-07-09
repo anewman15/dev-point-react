@@ -8,6 +8,12 @@ $warning: $dev-point-warning;
 
 @import 'bulma';
 
+.edit-profile-image-wrapper {
+  margin: auto;
+  width: 250px;
+  height: 250px;
+}
+
 .profile-image {
   width: 100%;
   border: 2px solid #597207;
