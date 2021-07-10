@@ -23,24 +23,24 @@ exports[`Home renders the Home component to the dom 1`] = `
     </p>
   </div>
   <div
-    className="is-flex is-justify-content-center is-align-items-center"
-  >
-    <a
-      className="button is-success my-5"
-      href="/edit_profile"
-      onClick={[Function]}
-    >
-      Edit Profile
-    </a>
-  </div>
-  <div
     className="my-3 px-3"
   >
     <p
       className="has-text-centered py-3"
     >
-      This page will soon allow you to add a profile picture, company info and an about me/us section
+      This page will soon allow you to add your name, a profile picture, company info and skills
     </p>
+    <div
+      className="is-flex is-justify-content-center is-align-items-center"
+    >
+      <a
+        className="button is-success my-5"
+        href="/edit_profile"
+        onClick={[Function]}
+      >
+        Edit Profile
+      </a>
+    </div>
     <div
       className="py-3 is-flex is-justify-content-center is-align-items-center"
     >
