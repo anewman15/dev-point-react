@@ -28,6 +28,40 @@ const EditProfile = () => (
           <button type="submit" className="button is-danger">Cancel</button>
         </div>
       </form>
+      <div className="my-6">
+        <h1 className="my-1 px-2 is-size-5 has-text-weight-bold">Name</h1>
+        <form>
+          <div className="is-flex is-justify-content-start is-align-items-center">
+            <div className="control is-flex is-justify-content-center is-align-items-center">
+              <input className="input mx-2" type="text" placeholder="FirstName" />
+              <input className="input mx-2" type="text" placeholder="LastName" />
+            </div>
+            <div className="control">
+              <button type="submit" className="button is-primary">Save</button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div className="my-6">
+        <h1 className="my-1 px-2 is-size-5 has-text-weight-bold">Employment Info</h1>
+        <form>
+          <div className="is-flex is-justify-content-start is-align-items-center">
+            <div className="">
+              <div className="control is-flex is-justify-content-center is-align-items-center my-2">
+                <input className="input mx-2" type="text" placeholder="Job Title" />
+                <input className="input mx-2" type="text" placeholder="Employer" />
+              </div>
+              <div className="control is-flex is-justify-content-center is-align-items-center my-2">
+                <input className="input mx-2" type="date" placeholder="Start Date" />
+                <input className="input mx-2" type="date" placeholder="End Date" />
+              </div>
+            </div>
+            <div className="control">
+              <button type="submit" className="button is-primary">Save</button>
+            </div>
+          </div>
+        </form>
+      </div>
     </div>
   </div>
 );
