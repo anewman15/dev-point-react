@@ -306,14 +306,57 @@ exports[`EditProfile renders the EditProfile component to the dom 1`] = `
           htmlFor="phone-number"
         >
           Phone Number
-          <input
-            className="input"
-            name="phone-number"
-            pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
-            placeholder="123-345-5678"
-            required={true}
-            type="url"
-          />
+          <div
+            className=" react-tel-input"
+            onKeyDown={[Function]}
+            style={Object {}}
+          >
+            <div
+              className="special-label"
+            >
+              Phone
+            </div>
+            <input
+              className="input form-control"
+              disabled={false}
+              onBlur={[Function]}
+              onChange={[Function]}
+              onClick={[Function]}
+              onCopy={[Function]}
+              onDoubleClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              placeholder="1 (702) 123-4567"
+              style={
+                Object {
+                  "height": "40px",
+                }
+              }
+              type="tel"
+              value="+1 (123) 345-5678"
+            />
+            <div
+              className=" flag-dropdown"
+              style={Object {}}
+            >
+              <div
+                aria-haspopup="listbox"
+                className="selected-flag"
+                onClick={[Function]}
+                role="button"
+                tabIndex="0"
+                title="United States: + 1"
+              >
+                <div
+                  className="flag us"
+                >
+                  <div
+                    className="arrow"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
         </label>
         <div
           className="control"
