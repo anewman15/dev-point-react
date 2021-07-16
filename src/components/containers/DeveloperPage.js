@@ -45,7 +45,7 @@ function DeveloperPage({
     </tr>
   ));
 
-  const devProfile = (
+  return (
     <div className="m-6">
       <div className="columns is-centered is-vcentered my-3 px-5 has-background-dark has-text-white">
         <p className="column is-half-tablet is-size-4 has-text-weight-bold">
@@ -96,10 +96,6 @@ function DeveloperPage({
       </div>
     </div>
   );
-
-  const content = currentUser.id ? devProfile : <Redirect to="/login" />;
-
-  return content;
 }
 
 DeveloperPage.propTypes = {
