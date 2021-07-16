@@ -21,7 +21,7 @@ const EditProfileContactSection = () => (
       <div className="is-flex is-justify-content-start is-align-items-flex-end my-3">
         <label htmlFor="phone-number" className="mx-2">
           Phone Number
-          <PhoneInput country="us" value="+1 (123) 345 5678" />
+          <PhoneInput country="us" value="+1 (123) 345 5678" inputClass="input" inputStyle={{ height: '40px' }} />
         </label>
         <div className="control">
           <button type="submit" className="button is-primary">Add</button>
