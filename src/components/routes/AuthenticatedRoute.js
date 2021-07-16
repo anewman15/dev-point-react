@@ -9,9 +9,9 @@ const AuthenticatedRoute = ({ currentUser, component: Component, ...rest }) => (
   <Route
     {...rest}
     render={
-      () => {
+      props => {
         if (currentUser.id) {
-          return <Component {...rest} />;
+          return <Component {...rest} {...props} />;
         } else {
           return <Redirect to="/login" />;
         }
