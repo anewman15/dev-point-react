@@ -66,10 +66,13 @@ const SignUpForm = ({ currentUser }) => {
                   name="email"
                   onChange={handleChange}
                   value={userInfo.email}
-                  placeholder="Valid email, e.g., example@example.com"
+                  placeholder="email@emails.com"
                   required
                   autoFocus
                 />
+                <span className="icon is-small is-left">
+                  <i className="fas fa-envelope" />
+                </span>
               </div>
             </label>
           </div>
@@ -86,6 +89,9 @@ const SignUpForm = ({ currentUser }) => {
                   placeholder="Minimum 5 characters"
                   required
                 />
+                <span className="icon is-small is-left">
+                  <i className="fas fa-user" />
+                </span>
               </div>
             </label>
           </div>
@@ -102,6 +108,9 @@ const SignUpForm = ({ currentUser }) => {
                   placeholder="Minimum 6 characters"
                   required
                 />
+                <span className="icon is-small is-left">
+                  <i className="fas fa-lock" />
+                </span>
               </div>
             </label>
           </div>
@@ -115,9 +124,12 @@ const SignUpForm = ({ currentUser }) => {
                   name="password_confirmation"
                   onChange={handleChange}
                   value={userInfo.password_confirmation}
-                  placeholder="Exact same password again"
+                  placeholder="Your password again"
                   required
                 />
+                <span className="icon is-small is-left">
+                  <i className="fas fa-lock" />
+                </span>
               </div>
             </label>
           </div>
