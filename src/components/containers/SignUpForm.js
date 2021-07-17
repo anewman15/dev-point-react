@@ -1,13 +1,10 @@
 /* eslint-disable jsx-a11y/no-autofocus */
 import { useState } from 'react';
-import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import { Redirect } from 'react-router-dom';
 import createUser from '../../sandbox/createUser';
 import FormErrorsSection from './FormErrorsSection';
 import SignUpSuccess from './SignUpSuccess';
 
-const SignUpForm = ({ currentUser }) => {
+const SignUpForm = () => {
   const userInfoInit = {
     email: '', username: '', password: '', password_confirmation: '',
   };
@@ -49,7 +46,7 @@ const SignUpForm = ({ currentUser }) => {
       });
   };
 
-  const form = (
+  return (
     <div className="my-6 mx-2 columns is-centered">
       <div className="column is-half has-background-warning border-warning">
         <h1 className="is-size-3 has-text-weight-bold is-text-centered p-2 my-3">Create an Account</h1>
@@ -140,17 +137,6 @@ const SignUpForm = ({ currentUser }) => {
       </div>
     </div>
   );
-
-  const content = currentUser.id ? <Redirect to="/" /> : form;
-  return content;
 };
 
-SignUpForm.propTypes = {
-  currentUser: PropTypes.object,
-}.isRequired;
-
-const mapStateToProps = state => ({
-  currentUser: state.currentUser,
-});
-
-export default connect(mapStateToProps)(SignUpForm);
+export default SignUpForm;
