@@ -23,7 +23,7 @@ const Routes = ({ currentUser }) => (
     <Route exact path="/sign_up" component={SignUpForm} />
     <AuthenticatedRoute exact path="/developers" currentUser={currentUser} component={DevelopersList} />
     <AuthenticatedRoute exact path="/developers/:id" currentUser={currentUser} component={DeveloperPage} />
-    <Route exact path="/book_appointment" component={BookAppointment} />
+    <AuthenticatedRoute exact path="/book_appointment" currentUser={currentUser} component={BookAppointment} />
     <AuthenticatedRoute exact path="/appointments" currentUser={currentUser} component={AppoinmentsPage} />
     <Route path="*" component={NotFound} />
   </Switch>
