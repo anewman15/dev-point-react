@@ -1,12 +1,24 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import { useState } from 'react';
+import uploadProfileImage from '../../sandbox/uploadProfileImage';
 
-const EditProfileImageSection = () => {
+const EditProfileImageSection = ({ currentUser }) => {
   const [imageFile, setImageFile] = useState(null);
+  const userInfo = {
+    user_id: currentUser.id,
+    fileBinary: imageFile,
+  };
+
   const fileChangeHandler = event => setImageFile(event.target.files[0]);
-  const uploadProfileImage = e => {
+  const handleProfileImageUpload = e => {
     e.preventDefault();
-    console.log(`Image: ${imageFile.type}`);
+    uploadProfileImage(userInfo)
+      .then(response => response.json())
+      .then(data => {
+        if (data.status === 'success') {
+          console.log(data.message);
+        }
+      });
   };
 
   const resetImageFile = () => setImageFile(null);
@@ -19,7 +31,7 @@ const EditProfileImageSection = () => {
           <img className="is-rounded" src={`${process.env.PUBLIC_URL}/dev.png`} alt="profile_image" />
         </div>
       </div>
-      <form className="py-2 is-flex is-flex-direction-column is-justify-content-center is-align-items-center" onSubmit={uploadProfileImage}>
+      <form className="py-2 is-flex is-flex-direction-column is-justify-content-center is-align-items-center" onSubmit={handleProfileImageUpload}>
         <div className="file mx-2">
           <label className="file-label">
             <input
@@ -42,7 +54,7 @@ const EditProfileImageSection = () => {
         </div>
         <div className="my-2 py-2 is-flex is-justify-content-center is-align-items-center">
           <div className="control mx-2">
-            <button type="submit" className="button is-primary px-6">Save</button>
+            <button type="submit" className="button is-primary px-6">Upload</button>
           </div>
           <div className="control mx-2">
             <button type="button" className="button is-danger px-6" onClick={resetImageFile}>Cancel</button>
