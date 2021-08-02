@@ -17,7 +17,7 @@ const EditProfileImageSection = () => {
           <img className="is-rounded" src={`${process.env.PUBLIC_URL}/dev.png`} alt="profile_image" />
         </div>
       </div>
-      <form className="py-2 is-flex is-justify-content-center is-align-items-center" onSubmit={uploadProfileImage}>
+      <form className="py-2 is-flex is-flex-direction-column is-justify-content-center is-align-items-center" onSubmit={uploadProfileImage}>
         <div className="file mx-2">
           <label className="file-label">
             <input
@@ -35,13 +35,16 @@ const EditProfileImageSection = () => {
                 Choose a file…
               </span>
             </span>
+            {imageFile && <span className="mx-2 p-2 has-text-primary">{imageFile.name}</span>}
           </label>
         </div>
-        <div className="control mx-2">
-          <button type="submit" className="button is-primary">Save</button>
-        </div>
-        <div className="control mx-2">
-          <button type="button" className="button is-danger">Cancel</button>
+        <div className="my-2 py-2 is-flex is-justify-content-center is-align-items-center">
+          <div className="control mx-2">
+            <button type="submit" className="button is-primary px-6">Save</button>
+          </div>
+          <div className="control mx-2">
+            <button type="button" className="button is-danger px-6">Cancel</button>
+          </div>
         </div>
       </form>
     </div>
