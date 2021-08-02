@@ -1,8 +1,10 @@
-const storeToS3Bucket = async (url, presignedUrlParams, fileBinary) => {
+/* eslint-disable camelcase */
+const storeToS3Bucket = async (presignedUrlParams, fileBinary) => {
+  const { url, direct_upload } = presignedUrlParams;
   try {
     return await fetch(url, {
       method: 'PUT',
-      headers: presignedUrlParams.direct_upload.headers,
+      headers: direct_upload.headers,
       body: fileBinary,
     });
   } catch (e) {
