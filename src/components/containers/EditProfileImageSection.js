@@ -1,5 +1,7 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import { useState } from 'react';
+import { PropTypes } from 'prop-types';
+import { connect } from 'react-redux';
 import uploadProfileImage from '../../sandbox/uploadProfileImage';
 
 const EditProfileImageSection = ({ currentUser }) => {
@@ -65,4 +67,12 @@ const EditProfileImageSection = ({ currentUser }) => {
   );
 };
 
-export default EditProfileImageSection;
+EditProfileImageSection.propTypes = {
+  currentUser: PropTypes.object,
+}.isRequired;
+
+const mapStateToProps = state => ({
+  currentUser: state.currentUser,
+});
+
+export default connect(mapStateToProps)(EditProfileImageSection);
