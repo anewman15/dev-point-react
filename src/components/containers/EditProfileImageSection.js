@@ -9,6 +9,8 @@ const EditProfileImageSection = () => {
     console.log(`Image: ${imageFile.type}`);
   };
 
+  const resetImageFile = () => setImageFile(null);
+
   return (
     <div className="my-6">
       <h1 className="my-1 px-2 is-size-5 has-text-weight-bold">Profile Image</h1>
@@ -43,7 +45,7 @@ const EditProfileImageSection = () => {
             <button type="submit" className="button is-primary px-6">Save</button>
           </div>
           <div className="control mx-2">
-            <button type="button" className="button is-danger px-6">Cancel</button>
+            <button type="button" className="button is-danger px-6" onClick={resetImageFile}>Cancel</button>
           </div>
         </div>
       </form>
