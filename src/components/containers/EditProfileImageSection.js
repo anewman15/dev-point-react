@@ -4,6 +4,10 @@ import { useState } from 'react';
 const EditProfileImageSection = () => {
   const [imageFile, setImageFile] = useState(null);
   const fileChangeHandler = event => setImageFile(event.target.files[0]);
+  const uploadProfileImage = e => {
+    e.preventDefault();
+    console.log(`Image: ${imageFile.type}`);
+  };
 
   return (
     <div className="my-6">
@@ -13,7 +17,7 @@ const EditProfileImageSection = () => {
           <img className="is-rounded" src={`${process.env.PUBLIC_URL}/dev.png`} alt="profile_image" />
         </div>
       </div>
-      <form className="py-2 is-flex is-justify-content-center is-align-items-center">
+      <form className="py-2 is-flex is-justify-content-center is-align-items-center" onSubmit={uploadProfileImage}>
         <div className="file mx-2">
           <label className="file-label">
             <input
@@ -37,7 +41,7 @@ const EditProfileImageSection = () => {
           <button type="submit" className="button is-primary">Save</button>
         </div>
         <div className="control mx-2">
-          <button type="submit" className="button is-danger">Cancel</button>
+          <button type="button" className="button is-danger">Cancel</button>
         </div>
       </form>
     </div>
