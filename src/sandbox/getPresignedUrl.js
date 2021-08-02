@@ -19,9 +19,11 @@ const getPresignedUrl = async (file, fileHash) => {
     }),
   };
 
-  const res = await fetch(PRESIGNED_URL_API_ENDPOINT, options);
-  if (res.status !== 200) return res;
-  return res.json();
+  try {
+    return await fetch(PRESIGNED_URL_API_ENDPOINT, options);
+  } catch (e) {
+    return e;
+  }
 };
 
 export default getPresignedUrl;
