@@ -53,10 +53,10 @@ function DeveloperPage({
         </p>
         <div className="column is-half-tablet">
           <p className="has-text-weight-bold">
-            <span>{ currentDev.jobs && `${currentDev.jobs[0].title}`}</span>
+            <span>{ currentDev.employments && `${currentDev.employments[0].title}`}</span>
             <span className="mx-1 is-size-7">@</span>
             <span className="mx-1 is-size-6 has-text-weight-bold">
-              {currentDev.jobs ? `${currentDev.jobs[0].company_name}` : null }
+              {currentDev.employments ? `${currentDev.employments[0].company_name}` : null }
             </span>
           </p>
         </div>
