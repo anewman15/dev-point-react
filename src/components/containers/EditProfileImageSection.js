@@ -1,26 +1,26 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable consistent-return */
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import { useState } from 'react';
 import { PropTypes } from 'prop-types';
 import { connect } from 'react-redux';
-import uploadProfileImage from '../../sandbox/uploadProfileImage';
+// import uploadProfileImage from '../../sandbox/uploadProfileImage';
+import fileHash from '../../utils/fileHash';
+import getPresignedUrl from '../../sandbox/getPresignedUrl';
+import storeToS3Bucket from '../../sandbox/storeToS3Bucket';
+import updateProfileImage from '../../sandbox/updateProfileImage';
 
 const EditProfileImageSection = ({ currentUser }) => {
   const [imageFile, setImageFile] = useState(null);
+  const [profileImageUrl, setProfileImageUrl] = useState('');
   const userInfo = {
     user_id: currentUser.id,
     fileBinary: imageFile,
   };
 
   const fileChangeHandler = event => setImageFile(event.target.files[0]);
-  const handleProfileImageUpload = e => {
+  const handleProfileImageUpload = async e => {
     e.preventDefault();
-    uploadProfileImage(userInfo)
-      .then(response => response.json())
-      .then(data => {
-        if (data.status === 'success') {
-          console.log(data.message);
-        }
-      });
   };
 
   const resetImageFile = () => setImageFile(null);
@@ -28,12 +28,12 @@ const EditProfileImageSection = ({ currentUser }) => {
   return (
     <div className="my-6">
       <h1 className="my-1 px-2 is-size-5 has-text-weight-bold">Profile Image</h1>
-      <div className="my-2 px-3">
+      <div className="my-6 py-4 px-3">
         <div className="image edit-profile-image-wrapper">
-          <img className="is-rounded" src={`${process.env.PUBLIC_URL}/dev.png`} alt="profile_image" />
+          <img className="is-rounded" src={profileImageUrl || `${process.env.PUBLIC_URL}/dev.png`} alt="profile_image" />
         </div>
       </div>
-      <form className="py-2 is-flex is-flex-direction-column is-justify-content-center is-align-items-center" onSubmit={handleProfileImageUpload}>
+      <form className="my-6 py-4 is-flex is-flex-direction-column is-justify-content-center is-align-items-center" onSubmit={handleProfileImageUpload}>
         <div className="file mx-2">
           <label className="file-label">
             <input
