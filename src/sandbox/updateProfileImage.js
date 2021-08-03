@@ -6,8 +6,11 @@ const updateProfileImage = async (userInfo, blobSignedId) => {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        profile_image: blobSignedId,
+        user: {
+          profile_image: blobSignedId,
+        },
       }),
+      credentials: 'include',
     });
   } catch (e) {
     return e;
