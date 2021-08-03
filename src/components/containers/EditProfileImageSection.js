@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable consistent-return */
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { PropTypes } from 'prop-types';
 import { connect } from 'react-redux';
 // import uploadProfileImage from '../../sandbox/uploadProfileImage';
@@ -12,6 +12,7 @@ import updateProfileImage from '../../sandbox/updateProfileImage';
 
 const EditProfileImageSection = ({ currentUser }) => {
   const [imageFile, setImageFile] = useState(null);
+  const imageFileInput = useRef();
   const [profileImageUrl, setProfileImageUrl] = useState('');
   const userInfo = {
     user_id: currentUser.id,
@@ -19,6 +20,12 @@ const EditProfileImageSection = ({ currentUser }) => {
   };
 
   const fileChangeHandler = event => setImageFile(event.target.files[0]);
+
+  const resetImageForm = () => {
+    imageFileInput.current.value = '';
+    setImageFile(null);
+  };
+
   const handleProfileImageUpload = async e => {
     e.preventDefault();
 
@@ -41,14 +48,13 @@ const EditProfileImageSection = ({ currentUser }) => {
                 .then(data => {
                   if (data.status === 'success') {
                     setProfileImageUrl(data.profile_image_url);
+                    resetImageForm();
                   }
                 });
             }
           });
       });
   };
-
-  const resetImageFile = () => setImageFile(null);
 
   return (
     <div className="my-6">
@@ -58,10 +64,14 @@ const EditProfileImageSection = ({ currentUser }) => {
           <img className="is-rounded" src={profileImageUrl || `${process.env.PUBLIC_URL}/dev.png`} alt="profile_image" />
         </div>
       </div>
-      <form className="my-6 py-4 is-flex is-flex-direction-column is-justify-content-center is-align-items-center" onSubmit={handleProfileImageUpload}>
+      <form
+        className="my-6 py-4 is-flex is-flex-direction-column is-justify-content-center is-align-items-center"
+        onSubmit={handleProfileImageUpload}
+      >
         <div className="file mx-2">
           <label className="file-label">
             <input
+              ref={imageFileInput}
               className="file-input"
               type="file"
               name="profile_image"
@@ -84,7 +94,7 @@ const EditProfileImageSection = ({ currentUser }) => {
             <button type="submit" className="button is-primary px-6">Upload</button>
           </div>
           <div className="control mx-2">
-            <button type="button" className="button is-danger px-6" onClick={resetImageFile}>Cancel</button>
+            <button type="button" className="button is-danger px-6" onClick={resetImageForm}>Cancel</button>
           </div>
         </div>
       </form>
