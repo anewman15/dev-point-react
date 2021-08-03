@@ -23,6 +23,17 @@ const EditProfileImageSection = ({ currentUser }) => {
     e.preventDefault();
 
     const md5Hash = await fileHash(imageFile);
+
+    let presignedUrlParams = {};
+    getPresignedUrl(userInfo.fileBinary, md5Hash)
+      .then(response => {
+        if (response.status === 200) {
+          return response.json();
+        }
+      })
+      .then(data => {
+        presignedUrlParams = data;
+      });
   };
 
   const resetImageFile = () => setImageFile(null);
