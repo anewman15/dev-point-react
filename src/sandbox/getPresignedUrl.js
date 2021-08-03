@@ -4,6 +4,7 @@ const getPresignedUrl = async (file, fileHash) => {
   const options = {
     method: 'POST',
     headers: {
+      Accept: 'application/json',
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
@@ -17,6 +18,7 @@ const getPresignedUrl = async (file, fileHash) => {
         },
       },
     }),
+    credentials: 'include',
   };
 
   try {
