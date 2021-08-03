@@ -5,12 +5,13 @@ import { useState, useRef } from 'react';
 import { PropTypes } from 'prop-types';
 import { connect } from 'react-redux';
 // import uploadProfileImage from '../../sandbox/uploadProfileImage';
+import saveCurrentUser from '../../redux/actions/user';
 import fileHash from '../../utils/fileHash';
 import getPresignedUrl from '../../sandbox/getPresignedUrl';
 import storeToS3Bucket from '../../sandbox/storeToS3Bucket';
 import updateProfileImage from '../../sandbox/updateProfileImage';
 
-const EditProfileImageSection = ({ currentUser }) => {
+const EditProfileImageSection = ({ currentUser, saveCurrentUser }) => {
   const [imageFile, setImageFile] = useState(null);
   const imageFileInput = useRef();
   const [profileImageUrl, setProfileImageUrl] = useState('');
@@ -18,6 +19,8 @@ const EditProfileImageSection = ({ currentUser }) => {
     user_id: currentUser.id,
     fileBinary: imageFile,
   };
+
+  const updatedCurrentUser = currentUser;
 
   const fileChangeHandler = event => setImageFile(event.target.files[0]);
 
@@ -48,6 +51,8 @@ const EditProfileImageSection = ({ currentUser }) => {
                 .then(data => {
                   if (data.status === 'success') {
                     setProfileImageUrl(data.profile_image_url);
+                    updatedCurrentUser.profile_image_url = data.profile_image_url;
+                    saveCurrentUser(updatedCurrentUser);
                     resetImageForm();
                   }
                 });
@@ -110,4 +115,4 @@ const mapStateToProps = state => ({
   currentUser: state.currentUser,
 });
 
-export default connect(mapStateToProps)(EditProfileImageSection);
+export default connect(mapStateToProps, { saveCurrentUser })(EditProfileImageSection);
