@@ -33,6 +33,10 @@ const EditProfileImageSection = ({ currentUser }) => {
       })
       .then(data => {
         presignedUrlParams = data;
+        storeToS3Bucket(presignedUrlParams, userInfo.fileBinary)
+          .then(response => {
+            
+          });
       });
   };
 
