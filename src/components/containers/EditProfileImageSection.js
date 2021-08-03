@@ -21,6 +21,8 @@ const EditProfileImageSection = ({ currentUser }) => {
   const fileChangeHandler = event => setImageFile(event.target.files[0]);
   const handleProfileImageUpload = async e => {
     e.preventDefault();
+
+    const md5Hash = await fileHash(imageFile);
   };
 
   const resetImageFile = () => setImageFile(null);
