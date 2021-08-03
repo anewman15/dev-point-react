@@ -35,7 +35,15 @@ const EditProfileImageSection = ({ currentUser }) => {
         presignedUrlParams = data;
         storeToS3Bucket(presignedUrlParams, userInfo.fileBinary)
           .then(response => {
-            
+            if (response.status === 200) {
+              updateProfileImage(userInfo, presignedUrlParams.blob_signed_id)
+                .then(response => response.json())
+                .then(data => {
+                  if (data.status === 'success') {
+                    setProfileImageUrl(data.profile_image_url);
+                  }
+                });
+            }
           });
       });
   };
