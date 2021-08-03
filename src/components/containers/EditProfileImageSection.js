@@ -61,7 +61,7 @@ const EditProfileImageSection = ({ currentUser }) => {
       <h1 className="my-1 px-2 is-size-5 has-text-weight-bold">Profile Image</h1>
       <div className="my-6 py-4 px-3">
         <div className="image edit-profile-image-wrapper">
-          <img className="is-rounded" src={profileImageUrl || `${process.env.PUBLIC_URL}/dev.png`} alt="profile_image" />
+          <img className="is-rounded" src={profileImageUrl || currentUser.profile_image_url || `${process.env.PUBLIC_URL}/dev.png`} alt="profile_image" />
         </div>
       </div>
       <form
