@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import LinkIcon from './LinkIcon';
 
 function DevelopersListItem({ dev }) {
-  const { links, skills, jobs } = dev;
+  const { links, skills, employments } = dev;
   const itemLinks = links.length && links.map(link => (
     <a className="p-3 m-2 is-size-5 has-text-grey-light" key={link.id} href={link.url} target="_blank" rel="noreferrer">
       <LinkIcon iconName={link.link_name.toLowerCase()} />
@@ -11,7 +11,7 @@ function DevelopersListItem({ dev }) {
   ));
 
   const itemSkills = skills.length && skills.map(skill => <button type="button" className="m-1 button is-primary is-small is-rounded has-text-weight-bold" key={skill.id}>{skill.skill_name}</button>);
-  const job = jobs.length && jobs[0];
+  const employment = employments.length && employments[0];
 
   return (
     <div className="px-4 py-2">
@@ -25,7 +25,7 @@ function DevelopersListItem({ dev }) {
       <div>
         <p className="is-uppercase is-size-4 px-2 mt-5"><Link className="has-text-dark" to={`/developers/${dev.user.id}`}>{`${dev.user.first_name} ${dev.user.last_name}`}</Link></p>
         <div className="has-text-weight-bold">
-          {job.title}
+          {employment.title}
         </div>
         <div className="is-divider has-text-grey-lighter has-text-weight-bolder">. . . . . . . . . . . . . . . . </div>
         <div className="m-3">

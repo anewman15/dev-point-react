@@ -32,7 +32,7 @@ function DevelopersList({ currentUser, developers, saveDevelopers }) {
     </div>
   ));
 
-  const devsList = (
+  return (
     <div className="my-3">
       <div className="has-text-centered my-6">
         <p className="is-uppercase has-text-weight-bold is-size-2">
@@ -57,9 +57,6 @@ function DevelopersList({ currentUser, developers, saveDevelopers }) {
       </div>
     </div>
   );
-
-  const content = currentUser.id ? devsList : <Redirect to="/login" />;
-  return content;
 }
 
 DevelopersList.propTypes = {

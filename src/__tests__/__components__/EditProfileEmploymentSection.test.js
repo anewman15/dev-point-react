@@ -1,7 +1,7 @@
 import { unmountComponentAtNode } from 'react-dom';
 import { MemoryRouter } from 'react-router-dom';
 import renderer from 'react-test-renderer';
-import LogInButton from '../../components/presentational/LogInButton';
+import EditProfileEmploymentSection from '../../components/containers/EditProfileEmploymentSection';
 
 let container = null;
 beforeEach(() => {
@@ -15,12 +15,12 @@ afterEach(() => {
   container = null;
 });
 
-describe('LogInButton', () => {
-  it('renders the LogInButton component to the dom', () => {
+describe('EditProfileEmploymentSection', () => {
+  it('renders the EditProfileEmploymentSection component to the dom', () => {
     const tree = renderer
       .create(
         <MemoryRouter>
-          <LogInButton />
+          <EditProfileEmploymentSection />
         </MemoryRouter>,
       )
       .toJSON();

@@ -1,0 +1,77 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EditProfileEmploymentSection renders the EditProfileEmploymentSection component to the dom 1`] = `
+<div
+  className="my-6"
+>
+  <h1
+    className="my-1 px-2 is-size-5 has-text-weight-bold"
+  >
+    Employment Info
+  </h1>
+  <form>
+    <div
+      className="is-flex is-justify-content-start is-align-items-flex-end"
+    >
+      <div
+        className=""
+      >
+        <div
+          className="control is-flex is-justify-content-center is-align-items-center my-2"
+        >
+          <input
+            className="input mx-2"
+            placeholder="Job Title"
+            required={true}
+            type="text"
+          />
+          <input
+            className="input mx-2"
+            placeholder="Employer"
+            required={true}
+            type="text"
+          />
+        </div>
+        <div
+          className="control is-flex is-justify-content-center is-align-items-center my-2"
+        >
+          <label
+            className="mx-2"
+            htmlFor="start-date"
+          >
+            Start Date
+            <input
+              className="input"
+              name="start-date"
+              required={true}
+              type="month"
+            />
+          </label>
+          <label
+            className="mx-2"
+            htmlFor="end-date"
+          >
+            End Date
+            <input
+              className="input"
+              name="end-date"
+              required={true}
+              type="month"
+            />
+          </label>
+        </div>
+      </div>
+      <div
+        className="control my-2"
+      >
+        <button
+          className="button is-primary"
+          type="submit"
+        >
+          Save
+        </button>
+      </div>
+    </div>
+  </form>
+</div>
+`;

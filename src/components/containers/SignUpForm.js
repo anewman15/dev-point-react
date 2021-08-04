@@ -1,13 +1,10 @@
 /* eslint-disable jsx-a11y/no-autofocus */
 import { useState } from 'react';
-import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import { Redirect } from 'react-router-dom';
 import createUser from '../../sandbox/createUser';
 import FormErrorsSection from './FormErrorsSection';
 import SignUpSuccess from './SignUpSuccess';
 
-const SignUpForm = ({ currentUser }) => {
+const SignUpForm = () => {
   const userInfoInit = {
     email: '', username: '', password: '', password_confirmation: '',
   };
@@ -49,7 +46,7 @@ const SignUpForm = ({ currentUser }) => {
       });
   };
 
-  const form = (
+  return (
     <div className="my-6 mx-2 columns is-centered">
       <div className="column is-half has-background-warning border-warning">
         <h1 className="is-size-3 has-text-weight-bold is-text-centered p-2 my-3">Create an Account</h1>
@@ -66,10 +63,13 @@ const SignUpForm = ({ currentUser }) => {
                   name="email"
                   onChange={handleChange}
                   value={userInfo.email}
-                  placeholder="Valid email, e.g., example@example.com"
+                  placeholder="email@emails.com"
                   required
                   autoFocus
                 />
+                <span className="icon is-small is-left">
+                  <i className="fas fa-envelope" />
+                </span>
               </div>
             </label>
           </div>
@@ -86,6 +86,9 @@ const SignUpForm = ({ currentUser }) => {
                   placeholder="Minimum 5 characters"
                   required
                 />
+                <span className="icon is-small is-left">
+                  <i className="fas fa-user" />
+                </span>
               </div>
             </label>
           </div>
@@ -102,6 +105,9 @@ const SignUpForm = ({ currentUser }) => {
                   placeholder="Minimum 6 characters"
                   required
                 />
+                <span className="icon is-small is-left">
+                  <i className="fas fa-lock" />
+                </span>
               </div>
             </label>
           </div>
@@ -115,9 +121,12 @@ const SignUpForm = ({ currentUser }) => {
                   name="password_confirmation"
                   onChange={handleChange}
                   value={userInfo.password_confirmation}
-                  placeholder="Exact same password again"
+                  placeholder="Your password again"
                   required
                 />
+                <span className="icon is-small is-left">
+                  <i className="fas fa-lock" />
+                </span>
               </div>
             </label>
           </div>
@@ -128,17 +137,6 @@ const SignUpForm = ({ currentUser }) => {
       </div>
     </div>
   );
-
-  const content = currentUser.id ? <Redirect to="/" /> : form;
-  return content;
 };
 
-SignUpForm.propTypes = {
-  currentUser: PropTypes.object,
-}.isRequired;
-
-const mapStateToProps = state => ({
-  currentUser: state.currentUser,
-});
-
-export default connect(mapStateToProps)(SignUpForm);
+export default SignUpForm;

@@ -1,0 +1,115 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EditProfileContactSection renders the EditProfileContactSection component to the dom 1`] = `
+<div
+  className="my-6"
+>
+  <h1
+    className="my-1 px-2 is-size-5 has-text-weight-bold"
+  >
+    Contact Info
+  </h1>
+  <form>
+    <div
+      className="is-flex is-justify-content-start is-align-items-flex-end my-3"
+    >
+      <label
+        className="mx-2"
+        htmlFor="link-url"
+      >
+        Video Call Link
+        <input
+          className="input"
+          name="link-url"
+          placeholder="https://zoom.us/j/randomzoomidwithsomerandomcharsandnums"
+          required={true}
+          type="url"
+        />
+      </label>
+      <div
+        className="control"
+      >
+        <button
+          className="button is-primary"
+          type="submit"
+        >
+          Add
+        </button>
+      </div>
+    </div>
+  </form>
+  <form>
+    <div
+      className="is-flex is-justify-content-start is-align-items-flex-end my-3"
+    >
+      <label
+        className="mx-2"
+        htmlFor="phone-number"
+      >
+        Phone Number
+        <div
+          className=" react-tel-input"
+          onKeyDown={[Function]}
+          style={Object {}}
+        >
+          <div
+            className="special-label"
+          >
+            Phone
+          </div>
+          <input
+            className="input form-control"
+            disabled={false}
+            onBlur={[Function]}
+            onChange={[Function]}
+            onClick={[Function]}
+            onCopy={[Function]}
+            onDoubleClick={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            placeholder="1 (702) 123-4567"
+            style={
+              Object {
+                "height": "40px",
+              }
+            }
+            type="tel"
+            value="+1 (123) 345-5678"
+          />
+          <div
+            className=" flag-dropdown"
+            style={Object {}}
+          >
+            <div
+              aria-haspopup="listbox"
+              className="selected-flag"
+              onClick={[Function]}
+              role="button"
+              tabIndex="0"
+              title="United States: + 1"
+            >
+              <div
+                className="flag us"
+              >
+                <div
+                  className="arrow"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </label>
+      <div
+        className="control"
+      >
+        <button
+          className="button is-primary"
+          type="submit"
+        >
+          Add
+        </button>
+      </div>
+    </div>
+  </form>
+</div>
+`;

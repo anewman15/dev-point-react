@@ -45,7 +45,7 @@ function DeveloperPage({
     </tr>
   ));
 
-  const devProfile = (
+  return (
     <div className="m-6">
       <div className="columns is-centered is-vcentered my-3 px-5 has-background-dark has-text-white">
         <p className="column is-half-tablet is-size-4 has-text-weight-bold">
@@ -53,10 +53,10 @@ function DeveloperPage({
         </p>
         <div className="column is-half-tablet">
           <p className="has-text-weight-bold">
-            <span>{ currentDev.jobs && `${currentDev.jobs[0].title}`}</span>
+            <span>{ currentDev.employments && `${currentDev.employments[0].title}`}</span>
             <span className="mx-1 is-size-7">@</span>
             <span className="mx-1 is-size-6 has-text-weight-bold">
-              {currentDev.jobs ? `${currentDev.jobs[0].company_name}` : null }
+              {currentDev.employments ? `${currentDev.employments[0].company_name}` : null }
             </span>
           </p>
         </div>
@@ -96,10 +96,6 @@ function DeveloperPage({
       </div>
     </div>
   );
-
-  const content = currentUser.id ? devProfile : <Redirect to="/login" />;
-
-  return content;
 }
 
 DeveloperPage.propTypes = {

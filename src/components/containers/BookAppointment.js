@@ -1,10 +1,9 @@
 import { PropTypes } from 'prop-types';
 import { connect } from 'react-redux';
-import { Redirect } from 'react-router-dom';
 import AppointmentForm from './AppointmentForm';
 
-function BookAppointment({ currentUser, currentDev }) {
-  const page = (
+function BookAppointment({ currentDev }) {
+  return (
     <div className="has-background-primary vh-100">
       <div className="p-6">
         <h2 className="is-uppercase is-size-3 p-3 has-text-centered has-text-white">
@@ -34,10 +33,6 @@ function BookAppointment({ currentUser, currentDev }) {
       <AppointmentForm devId={currentDev.id} devConfLink={currentDev.links[2].url} />
     </div>
   );
-
-  const content = currentUser.id ? page : <Redirect to="/login" />;
-
-  return content;
 }
 
 BookAppointment.propTypes = {
@@ -46,7 +41,6 @@ BookAppointment.propTypes = {
 }.isRequired;
 
 const mapStateToProps = state => ({
-  currentUser: state.currentUser,
   currentDev: state.currentDev,
 });
 

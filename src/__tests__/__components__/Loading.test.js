@@ -1,7 +1,7 @@
 import { unmountComponentAtNode } from 'react-dom';
 import { MemoryRouter } from 'react-router-dom';
 import renderer from 'react-test-renderer';
-import LogInButton from '../../components/presentational/LogInButton';
+import Loading from '../../components/presentational/Loading';
 
 let container = null;
 beforeEach(() => {
@@ -15,12 +15,12 @@ afterEach(() => {
   container = null;
 });
 
-describe('LogInButton', () => {
-  it('renders the LogInButton component to the dom', () => {
+describe('Loading', () => {
+  it('renders the Loading component to the dom', () => {
     const tree = renderer
       .create(
         <MemoryRouter>
-          <LogInButton />
+          <Loading />
         </MemoryRouter>,
       )
       .toJSON();

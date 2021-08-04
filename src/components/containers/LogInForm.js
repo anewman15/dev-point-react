@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable jsx-a11y/no-autofocus */
 /* eslint-disable react/self-closing-comp */
 import { useState } from 'react';
@@ -39,7 +40,7 @@ const LogInForm = ({ currentUser, saveCurrentUser }) => {
       });
   };
 
-  const form = (
+  return (
     <div className="my-6 mx-2 columns is-centered">
       <div className="column is-half has-background-warning border-warning">
         <h1 className="is-size-3 has-text-weight-bold is-text-centered p-2 my-3">Log In to Your Account</h1>
@@ -79,7 +80,7 @@ const LogInForm = ({ currentUser, saveCurrentUser }) => {
                   required
                 />
                 <span className="icon is-small is-left">
-                  <i className="fas fa-envelope"></i>
+                  <i className="fas fa-unlock-alt"></i>
                 </span>
               </div>
             </label>
@@ -91,13 +92,10 @@ const LogInForm = ({ currentUser, saveCurrentUser }) => {
       </div>
     </div>
   );
-
-  const content = currentUser.id ? <Redirect to="/" /> : form;
-  return content;
 };
 
 LogInForm.propTypes = {
-  currentUser: PropTypes.bool,
+  currentUser: PropTypes.object,
 }.isRequired;
 
 const mapStateToProps = state => ({

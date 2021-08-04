@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SomethingWrong renders the SomethingWrong component to the dom 1`] = `
+<div>
+  <h1>
+    Something Went Wrong
+  </h1>
+  <p>
+    Please try refreshing and make sure you're connected to the Internet
+  </p>
+</div>
+`;

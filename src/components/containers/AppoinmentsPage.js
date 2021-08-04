@@ -25,7 +25,7 @@ function AppoinmentsPage({ currentUser, appointments, saveAppointments }) {
     };
   }, []);
 
-  const page = (
+  return (
     <div>
       <div className="my-4 has-text-centered">
         <h1 className="is-size-2 has-text-success has-text-weight-bold">Your Appointments</h1>
@@ -33,10 +33,6 @@ function AppoinmentsPage({ currentUser, appointments, saveAppointments }) {
       <HostedAppointments hostedAppointments={appointments.hosted} />
     </div>
   );
-
-  const content = currentUser.id ? page : <Redirect to="/login" />;
-
-  return content;
 }
 
 AppoinmentsPage.propTypes = {
