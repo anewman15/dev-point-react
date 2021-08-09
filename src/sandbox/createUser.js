@@ -1,4 +1,10 @@
 const createUser = async userInfo => {
+  const user = {
+    user: {
+      ...userInfo,
+    },
+  };
+
   try {
     return await fetch('https://anewman15-dev-point.herokuapp.com/users', {
       method: 'POST',
@@ -6,7 +12,7 @@ const createUser = async userInfo => {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify(userInfo),
+      body: JSON.stringify(user),
       credentials: 'include',
     });
   } catch (e) {
