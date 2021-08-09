@@ -11,7 +11,10 @@ const Home = ({ currentUser }) => {
         <div className="image edit-profile-image-wrapper mx-3">
           <img className="is-rounded" src={profile_image_url || `${process.env.PUBLIC_URL}/dev.png`} alt="profile_image" />
         </div>
-        <p className="px-2 is-size-1 has-text-centered has-text-weight-bold mx-3">{`Welcome ${first_name}!`}</p>
+        <p className="px-2 is-size-1 has-text-centered has-text-weight-bold mx-3">
+          Welcome
+          {first_name && ` ${first_name}!`}
+        </p>
       </div>
       <div className="my-3 px-3">
         <p className="has-text-centered py-3">
