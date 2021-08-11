@@ -99,7 +99,7 @@ const EditProfileImageSection = ({ currentUser, saveCurrentUser }) => {
             <button type="submit" className="button is-primary px-6">Upload</button>
           </div>
           <div className="control mx-2">
-            <button type="button" className="button is-danger px-6" onClick={resetImageForm}>Cancel</button>
+            <button type="button" className="button is-danger px-6" onClick={resetImageForm}>Clear</button>
           </div>
         </div>
       </form>
