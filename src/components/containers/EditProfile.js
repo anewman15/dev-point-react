@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 
 import EditProfileImageSection from './EditProfileImageSection';
+import EditProfileNewslettersSection from './EditProfileNewslettersSection';
 // import EditProfileEmploymentSection from './EditProfileEmploymentSection';
 // import EditProfileNameSection from './EditProfileNameSection';
 // import EditProfileLinksSection from './EditProfileLinksSection';
@@ -12,8 +13,6 @@ const EditProfile = () => (
     <div className="mb-4 p-5 notification is-danger is-light">
       <p className="my-2">
         This page will soon allow you to add your name, employment and contact information.
-      </p>
-      <p>
         For now though, go ahead and upload your profile image.
       </p>
     </div>
@@ -22,6 +21,7 @@ const EditProfile = () => (
     <EditProfileEmploymentSection />
     <EditProfileLinksSection />
     <EditProfileContactSection /> */}
+    <EditProfileNewslettersSection />
   </div>
 );
 
