@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 
 import EditProfileImageSection from './EditProfileImageSection';
-import EditProfileNewslettersSection from './EditProfileNewslettersSection';
+// import EditProfileNewslettersSection from './EditProfileNewslettersSection';
 // import EditProfileEmploymentSection from './EditProfileEmploymentSection';
 // import EditProfileNameSection from './EditProfileNameSection';
 // import EditProfileLinksSection from './EditProfileLinksSection';
@@ -21,7 +21,7 @@ const EditProfile = () => (
     <EditProfileEmploymentSection />
     <EditProfileLinksSection />
     <EditProfileContactSection /> */}
-    <EditProfileNewslettersSection />
+    {/* <EditProfileNewslettersSection /> */}
   </div>
 );
 
