@@ -1,12 +1,16 @@
-$dev-point-primary: #97bf0f;
-$dev-point-success: #597207;
-$dev-point-warning: #ffb400;
-$dev-point-dark: #333335;
-$primary: $dev-point-primary;
-$success: $dev-point-success;
-$warning: $dev-point-warning;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-@import 'bulma';
+:root {
+  --dev-point-primary: #97bf0f;
+  --dev-point-success: #597207;
+  --dev-point-warning: #ffb400;
+  --dev-point-dark: #333335;
+  --primary: var (--dev-point-primary);
+  --success: var (--dev-point-success);
+  --warning: var (--dev-point-warning);
+}
 
 .edit-profile-image-wrapper {
   margin: auto;
@@ -49,15 +53,15 @@ $warning: $dev-point-warning;
 }
 
 .box-primary {
-  border: 0.5px solid $primary;
+  border: 0.5px solid var(--primary);
   padding: 1rem;
   margin: 1rem;
   border-radius: 4px;
-  box-shadow: 4px 4px 10px -5px $primary;
+  box-shadow: 4px 4px 10px -5px var(--primary);
 }
 
 .border-warning {
-  border: 0.5px solid $warning;
+  border: 0.5px solid var(--warning);
   border-radius: 4px;
 }
 
