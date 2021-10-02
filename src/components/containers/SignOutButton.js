@@ -22,7 +22,7 @@ function SignOutButton({ saveCurrentUser }) {
 
   return (
     <div className="navbar-item">
-      <Link to="/" onClick={handleClick} className="button is-primary is-fullwidth">
+      <Link to="/" onClick={handleClick} className="btn btn-danger">
         Sign Out
       </Link>
     </div>
