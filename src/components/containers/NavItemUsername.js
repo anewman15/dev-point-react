@@ -7,8 +7,8 @@ import { Link } from 'react-router-dom';
 function NavItemUsername({ currentUser }) {
   return (
     <div className="navbar-item">
-      <Link className="button is-size-6 is-success has-text-weight-bold is-fullwidth" to="/">
-        {`Welcome, ${currentUser.username}`}
+      <Link className="text-white" to="/">
+        {currentUser.username}
       </Link>
     </div>
   );
