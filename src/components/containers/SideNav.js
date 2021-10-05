@@ -8,7 +8,7 @@ import NavItemsLoggedIn from './NavItemsLoggedIn';
 
 function SideNav({ currentUser }) {
   return (
-    <nav className="fixed mx-auto w-full">
+    <nav className="fixed mx-auto w-full z-1000 top-0">
       <div className="px-2 flex justify-between items-center bg-yellow-300">
         <div className="mx-2">
           <Link className="" to="/">
