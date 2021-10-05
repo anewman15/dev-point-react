@@ -9,7 +9,7 @@ function App() {
     <Provider store={store}>
       <BrowserRouter>
         <SideNav />
-        <div className="container mx-auto">
+        <div className="mx-auto">
           <Routes />
         </div>
       </BrowserRouter>
