@@ -18,6 +18,10 @@
   height: 250px;
 }
 
+body {
+  @apply bg-gray-100
+}
+
 .btn {
   @apply px-4 py-2 rounded;
 }
@@ -40,6 +44,22 @@
 
 .btn-lg {
   @apply text-2xl;
+}
+
+.field {
+  @apply my-6
+}
+
+.control {
+  @apply relative my-2
+}
+
+.input {
+  @apply py-1 pl-10 pr-2 rounded
+}
+
+.icon {
+  @apply absolute left-2 top-1 text-gray-300
 }
 
 .profile-image {
