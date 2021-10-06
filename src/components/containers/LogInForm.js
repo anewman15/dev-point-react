@@ -41,54 +41,56 @@ const LogInForm = ({ currentUser, saveCurrentUser }) => {
   };
 
   return (
-    <div className="my-6 mx-2 columns is-centered">
-      <div className="column is-half has-background-warning border-warning">
-        <h1 className="is-size-3 has-text-weight-bold is-text-centered p-2 my-3">Log In to Your Account</h1>
+    <div className="my-6 mx-auto">
+      <div className="mx-auto w-8/12 md:w-6/12 lg:w-4/12 bg-yellow-400 opacity-75 rounded">
+        <h1 className="p-2 my-3 text-3xl text-center">Log In to Your Account</h1>
         {invalidCreds && <InvalidCredentials />}
-        <form className="p-4" onSubmit={handleSubmit}>
-          <div className="field">
-            <label className="label" htmlFor="email">
-              Email
-              <div className="control has-icons-left has-icons-right">
-                <input
-                  className="input is-success"
-                  type="text"
-                  name="email"
-                  onChange={handleChange}
-                  value={userInfo.email}
-                  placeholder="The one you signed up with"
-                  required
-                  autoFocus
-                />
-                <span className="icon is-small is-left">
-                  <i className="fas fa-envelope"></i>
-                </span>
-              </div>
-            </label>
-          </div>
-          <div className="field">
-            <label className="label" htmlFor="email">
-              Password
-              <div className="control has-icons-left has-icons-right">
-                <input
-                  className="input is-success"
-                  type="password"
-                  name="password"
-                  onChange={handleChange}
-                  value={userInfo.password}
-                  placeholder="Your password"
-                  required
-                />
-                <span className="icon is-small is-left">
-                  <i className="fas fa-unlock-alt"></i>
-                </span>
-              </div>
-            </label>
-          </div>
-          <div className="control">
-            <button type="submit" className="button is-success my-5">Log in</button>
-          </div>
-        </form>
+        <div className="flex justify-center items-center">
+          <form className="p-4 mx-auto" onSubmit={handleSubmit}>
+            <div className="field">
+              <label className="label" htmlFor="email">
+                Email
+                <div className="control has-icons-left has-icons-right">
+                  <input
+                    className="input is-success"
+                    type="text"
+                    name="email"
+                    onChange={handleChange}
+                    value={userInfo.email}
+                    placeholder="The one you signed up with"
+                    required
+                    autoFocus
+                  />
+                  <span className="icon is-small is-left">
+                    <i className="fas fa-envelope"></i>
+                  </span>
+                </div>
+              </label>
+            </div>
+            <div className="field">
+              <label className="label" htmlFor="email">
+                Password
+                <div className="control">
+                  <input
+                    className="input"
+                    type="password"
+                    name="password"
+                    onChange={handleChange}
+                    value={userInfo.password}
+                    placeholder="Your password"
+                    required
+                  />
+                  <span className="icon">
+                    <i className="fas fa-unlock-alt"></i>
+                  </span>
+                </div>
+              </label>
+            </div>
+            <div className="control">
+              <button type="submit" className="btn btn-success my-3">Log in</button>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
   );
