@@ -10,6 +10,7 @@
 }
 
 body {
+  min-width: 540px;
   @apply bg-gray-100
 }
 
