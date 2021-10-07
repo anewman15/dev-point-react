@@ -2,15 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --dev-point-primary: #97bf0f;
-  --dev-point-success: #597207;
-  --dev-point-warning: #ffb400;
-  --dev-point-dark: #333335;
-  --primary: var (--dev-point-primary);
-  --success: var (--dev-point-success);
-  --warning: var (--dev-point-warning);
-}
 
 .edit-profile-image-wrapper {
   margin: auto;
@@ -23,11 +14,11 @@ body {
 }
 
 .btn {
-  @apply px-4 py-2 rounded;
+  @apply px-4 py-2 rounded filter brightness-100 hover:brightness-125;
 }
 
 .btn-primary {
-  @apply text-gray-100 bg-blue-300;
+  @apply text-gray-100 bg-primary-700;
 }
 
 .btn-secondary {
@@ -35,7 +26,7 @@ body {
 }
 
 .btn-success {
-  @apply text-gray-100 bg-green-500;
+  @apply text-gray-100 bg-primary-700;
 }
 
 .btn-danger {
@@ -50,16 +41,20 @@ body {
   @apply my-6
 }
 
+.label {
+  @apply text-primary-800 font-semibold
+}
+
 .control {
   @apply relative my-2
 }
 
 .input {
-  @apply py-1 pl-10 pr-2 rounded
+  @apply py-1 pl-10 pr-2 border border-primary-500 rounded focus:outline-none focus:ring-1 focus:ring-primary-500 text-primary-800 placeholder-primary-200
 }
 
 .icon {
-  @apply absolute left-2 top-1 text-gray-300
+  @apply absolute left-2 top-1 text-primary-200
 }
 
 .profile-image {
