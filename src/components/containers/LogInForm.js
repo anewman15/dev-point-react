@@ -41,12 +41,15 @@ const LogInForm = ({ currentUser, saveCurrentUser }) => {
   };
 
   return (
-    <div className="my-6 mx-auto">
-      <div className="mx-auto w-8/12 md:w-6/12 lg:w-4/12 bg-yellow-400 opacity-75 rounded">
-        <h1 className="p-2 my-3 text-3xl text-center">Log In to Your Account</h1>
+    <div className="my-20 mx-auto">
+      <div className="mx-auto w-8/12 md:w-6/12 lg:w-96 bg-yellow-400 rounded">
+        <h1 className="px-2 pt-12 pb-2 mb-3 text-3xl text-center text-green-800 font-bold">Log In to Your Account</h1>
+        <div className="px-6 pb-4">
+          <hr className="border-1 border-primary-600 px-2" />
+        </div>
         {invalidCreds && <InvalidCredentials />}
         <div className="flex justify-center items-center">
-          <form className="p-4 mx-auto" onSubmit={handleSubmit}>
+          <form className="px-4 mx-auto mb-8" onSubmit={handleSubmit}>
             <div className="field">
               <label className="label" htmlFor="email">
                 Email
