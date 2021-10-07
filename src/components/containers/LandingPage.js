@@ -5,11 +5,11 @@ function LandingPage() {
     <div className="bg-code">
       <div className="">
         <div className="">
-          <div className="p-12 bd-filter text-white">
-            <p className="p-8 text-6xl text-center font-medium">
+          <div className="p-12 bd-filter text-primary-700">
+            <p className="p-8 text-5xl text-center font-semibold">
               Welcome to DevPoint
             </p>
-            <div className="my-8 text-2xl text-center">
+            <div className="my-8 text-2xl text-center font-medium text-primary-700">
               <p className="my-3 p-2">
                 Our experienced developers specialize in latest frameworks and technologies,
                 and have a track record of successful project deliveries across multiple
@@ -23,7 +23,7 @@ function LandingPage() {
           </div>
           <div className="my-20 flex justify-center space-x-4 items-center my-6 mx-5">
             <div className="text-center flex is-justify-center items-center">
-              <Link to="/sign_up" className="btn btn-success btn-lg">Sign Up Now</Link>
+              <Link to="/sign_up" className="btn btn-success btn-lg uppercase font-bold">Sign Up Now</Link>
             </div>
             <div className="text-center flex is-justify-center items-center">
               <p className="px-4 text-white font-bold">or</p>

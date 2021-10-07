@@ -22,7 +22,7 @@ body {
 }
 
 .btn-secondary {
-  @apply text-gray-800 bg-gray-300;
+  @apply text-primary-700 bg-gray-300;
 }
 
 .btn-success {
@@ -50,7 +50,7 @@ body {
 }
 
 .input {
-  @apply py-1 pl-10 pr-2 border border-primary-500 rounded focus:outline-none focus:ring-1 focus:ring-primary-500 text-primary-800 placeholder-primary-200
+  @apply py-1 pl-10 pr-2 bg-gray-100 border border-primary-500 rounded focus:outline-none focus:ring-1 focus:ring-primary-500 text-primary-800 placeholder-primary-200
 }
 
 .icon {

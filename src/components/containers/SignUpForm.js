@@ -48,7 +48,7 @@ const SignUpForm = () => {
 
   return (
     <div className="my-12 mx-auto">
-      <div className="mx-auto w-8/12 md:w-6/12 lg:w-5/12 bg-yellow-400 rounded">
+      <div className="mx-auto w-8/12 md:w-6/12 lg:w-5/12 bg-yellow-300 rounded">
         <h1 className="px-2 pt-8 pb-2 mb-3 text-3xl text-center text-green-800 font-bold">Create an Account</h1>
         <div className="px-6 pb-2">
           <hr className="border-1 border-primary-600 px-2" />
