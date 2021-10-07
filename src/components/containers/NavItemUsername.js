@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 function NavItemUsername({ currentUser }) {
   return (
     <div className="navbar-item">
-      <Link className="text-white" to="/">
+      <Link className="text-primary-800 font-bold" to="/">
         {currentUser.username}
       </Link>
     </div>
