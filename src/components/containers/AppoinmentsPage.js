@@ -26,11 +26,11 @@ function AppoinmentsPage({ currentUser, appointments, saveAppointments }) {
   }, []);
 
   return (
-    <div className="container mx-auto">
-      <div className="m-6">
+    <div className="container mx-auto bg-gray-50 rounded border-1 border-gray-100 filter drop-shadow-2xl">
+      <div className="m-6 pt-8">
         <h1 className="text-2xl md:text-4xl text-primary-800 text-center font-bold">Your Appointments</h1>
       </div>
-      <div className="mx-auto my-12">
+      <div className="mx-auto my-12 pb-8">
         {
           appointments.hosted.length
             ? <HostedAppointments hostedAppointments={appointments.hosted} />
