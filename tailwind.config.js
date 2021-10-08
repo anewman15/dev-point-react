@@ -8,6 +8,7 @@ module.exports = {
       colors: {
         primary: colors.emerald,
         warning: colors.amber,
+        danger: colors.red,
       },
     },
   },
