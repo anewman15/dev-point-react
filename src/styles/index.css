@@ -2,13 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
-.edit-profile-image-wrapper {
-  margin: auto;
-  width: 250px;
-  height: 250px;
-}
-
 body {
   min-width: 540px;
   @apply bg-gray-100
@@ -30,12 +23,24 @@ body {
   @apply text-gray-100 bg-primary-700;
 }
 
+.btn-warning {
+  @apply text-white bg-warning-500;
+}
+
 .btn-danger {
   @apply text-gray-100 bg-red-500;
 }
 
 .btn-lg {
   @apply text-2xl;
+}
+
+.link-primary {
+  @apply text-primary-500 font-bold hover:text-primary-700 ;
+}
+
+.link-warning {
+  @apply text-primary-500 font-bold hover:text-warning-700 ;
 }
 
 .field {
@@ -56,6 +61,12 @@ body {
 
 .icon {
   @apply absolute left-2 top-1 text-primary-200
+}
+
+.edit-profile-image-wrapper {
+  margin: auto;
+  width: 180px;
+  height: 180px;
 }
 
 .profile-image {
