@@ -26,11 +26,17 @@ function AppoinmentsPage({ currentUser, appointments, saveAppointments }) {
   }, []);
 
   return (
-    <div>
-      <div className="my-4 has-text-centered">
-        <h1 className="is-size-2 has-text-success has-text-weight-bold">Your Appointments</h1>
+    <div className="container mx-auto">
+      <div className="m-6">
+        <h1 className="text-2xl md:text-4xl text-primary-800 text-center font-bold">Your Appointments</h1>
       </div>
-      <HostedAppointments hostedAppointments={appointments.hosted} />
+      <div className="mx-auto my-12">
+        {
+          appointments.hosted.length
+            ? <HostedAppointments hostedAppointments={appointments.hosted} />
+            : <p className="text-xl text-gray-400">None yet.</p>
+        }
+      </div>
     </div>
   );
 }
