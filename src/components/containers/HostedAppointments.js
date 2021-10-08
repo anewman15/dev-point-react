@@ -5,7 +5,7 @@ import { formattedDate, timeLeft } from '../../utils/date';
 
 function HostedAppointments({ hostedAppointments }) {
   const appointmentsList = hostedAppointments && hostedAppointments.map(appointment => (
-    <div key={`${appointment.id}`} className="container mx-auto my-10 w-11/12 md:w-9/12 lg:w-8/12 bg-warning-300 px-8 py-6 rounded filter drop-shadow-xl">
+    <div key={`${appointment.id}`} className="container mx-auto my-10 px-8 py-6 w-11/12 md:w-9/12 lg:w-8/12 bg-warning-300 rounded filter drop-shadow-xl">
       <div className="flex flex-wrap justify-between items-center space-x-4">
         <p className="text-sm text-primary-500 font-bold">
           {appointment.location}
@@ -61,11 +61,9 @@ function HostedAppointments({ hostedAppointments }) {
   ));
 
   return (
-    <div className="mx-1 columns is-centered">
-      <div className="column">
-        {appointmentsList}
-      </div>
-    </div>
+    <>
+      { appointmentsList }
+    </>
   );
 }
 
