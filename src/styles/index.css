@@ -7,6 +7,18 @@ body {
   @apply bg-gray-100
 }
 
+.page-container {
+  @apply container mx-auto md:w-11/12 lg:w-10/12 my-6 p-2
+}
+
+.page-border {
+  @apply rounded border border-yellow-50
+}
+
+.page-shadow {
+  @apply filter drop-shadow-xl
+}
+
 .btn {
   @apply px-4 py-2 rounded filter brightness-100 hover:brightness-125;
 }
