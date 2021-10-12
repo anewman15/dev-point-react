@@ -32,7 +32,7 @@ function DeveloperPage({
   }, []);
 
   const devLinks = currentDev.links && currentDev.links.map(link => (
-    <a className="p-3 m-2 is-size-3 has-text-grey-light" key={link.id} href={link.url}>
+    <a className="my-2 text-2xl text-gray-400" key={link.id} href={link.url}>
       <LinkIcon iconName={link.link_name.toLowerCase()} />
     </a>
   ));
@@ -46,30 +46,38 @@ function DeveloperPage({
   ));
 
   return (
-    <div className="m-6">
-      <div className="columns is-centered is-vcentered my-3 px-5 has-background-dark has-text-white">
-        <p className="column is-half-tablet is-size-4 has-text-weight-bold">
-          {`${currentDev.first_name} ${currentDev.last_name}`}
-        </p>
-        <div className="column is-half-tablet">
-          <p className="has-text-weight-bold">
-            <span>{ currentDev.employments && `${currentDev.employments[0].title}`}</span>
-            <span className="mx-1 is-size-7">@</span>
-            <span className="mx-1 is-size-6 has-text-weight-bold">
-              {currentDev.employments ? `${currentDev.employments[0].company_name}` : null }
-            </span>
-          </p>
+    <div className="page-container bg-gray-50 page-border page-shadow">
+      <div className="md:w-10-12 lg:w-9/12">
+        <div className="my-4 flex justify-around items-center space-x-4">
+          <div className="">
+            <img className="rounded-full" src={`${process.env.PUBLIC_URL}/dev.png`} alt="dev" width="180" />
+          </div>
+          <div className="">
+            <p className="my-3 text-3xl text-primary-700 font-bold">
+              {`${currentDev.first_name} ${currentDev.last_name}`}
+            </p>
+            <div className="my-3">
+              <h2 className="text-xl text-gray-800 font-semibold">
+                <span className="text-gray-300 mr-2"><i className="fas fa-suitcase" /></span>
+                { currentDev.employments && `${currentDev.employments[0].title}`}
+              </h2>
+              <h3 className="text-gray-800">
+                <span className="text-gray-300 mr-2"><i className="fas fa-building" /></span>
+                {currentDev.employments && `${currentDev.employments[0].company_name}`}
+              </h3>
+
+            </div>
+            <div className="flex justify-start space-x-4">
+              {devLinks}
+            </div>
+          </div>
         </div>
       </div>
-      <div className="columns is-centered">
-        <div className="column is-half-tablet">
-          <div className="image profile-image">
-            <img className="is-rounded" src={`${process.env.PUBLIC_URL}/dev.png`} alt="dev" />
-          </div>
-          <div className="my-6 has-text-centered">
-            {devLinks}
-          </div>
-        </div>
+
+      <hr className="mx-8 border-1 border-gray-200" />
+
+      <div>
+
         <div className="column is-half-tablet is-centered">
           <table className="table is-striped is-narrower is-hoverable is-fullwidth">
             <thead>
