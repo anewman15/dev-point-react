@@ -42,7 +42,7 @@ function AppointmentForm({ devId, devConfLink }) {
 
       <div className="flex flex-wrap justify-start items-center">
         <form className="" onSubmit={handleSubmit}>
-          <div className="md:flex md:justify-between md:items-center md:space-x-2 lg:block">
+          <div className="md:flex md:justify-between md:items-center md:space-x-2 lg:space-x-0 lg:block">
             <div className="field">
               <label className="label" htmlFor="location">
                 Location
