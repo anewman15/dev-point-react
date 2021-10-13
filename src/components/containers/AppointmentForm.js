@@ -35,58 +35,54 @@ function AppointmentForm({ devId, devConfLink }) {
   };
 
   return (
-    <form className="mx-6 mt-4 pb-6" onSubmit={handleSubmit}>
-      <div className="columns is-centered">
-        <div className="column is-four-fifths">
-          <div className="mx-6 field is-horizontal">
-            <div className="field-body is-grouped">
-              <div className="field">
-                <label className="label has-text-centered has-text-white" htmlFor="location">
-                  Location
-                  <div className="control">
-                    <input
-                      type="text"
-                      className="input is-primary is-rounded has-text-success"
-                      name="location"
-                      onChange={handleChange}
-                      placeholder="A place, or just Online"
-                      required
-                      autoFocus
-                    />
-                  </div>
-                </label>
+    <div className="container my-6 mx-auto p-6 bg-warning-500 bg-opacity-60 rounded">
+      <h2 className="text-l md:text-xl text-primary-800 text-center font-semibold">Book an Appointment</h2>
+
+      <hr className="my-4 border-1 border-primary-600" />
+
+      <div className="flex flex-wrap justify-start items-center">
+        <form className="" onSubmit={handleSubmit}>
+          <div className="field">
+            <label className="label" htmlFor="location">
+              Location
+              <div className="control">
+                <input
+                  type="text"
+                  className="input"
+                  name="location"
+                  onChange={handleChange}
+                  placeholder="A place, or just Online"
+                  required
+                  autoFocus
+                />
               </div>
-              <div className="field is-horizontal">
-                <label className="label has-text-centered has-text-white" htmlFor="time">
-                  Time
-                  <div className="control">
-                    <input
-                      type="datetime-local"
-                      className="input is-primary is-rounded has-text-success"
-                      name="time"
-                      onChange={handleChange}
-                      required
-                    />
-                  </div>
-                </label>
+            </label>
+          </div>
+          <div className="field">
+            <label className="label" htmlFor="time">
+              Time
+              <div className="control">
+                <input
+                  type="datetime-local"
+                  className="input"
+                  name="time"
+                  onChange={handleChange}
+                  required
+                />
               </div>
-            </div>
+            </label>
           </div>
-        </div>
-        <div className="column is-vcentered">
-          <div className="mx-6 field is-horizontal is-vcentered">
-            <div className="control">
-              <button
-                type="submit"
-                className="button is-white has-text-success is-rounded is-uppercase is-fullwidth mt-4 p-5 has-text-weight-bold"
-              >
-                Book Now
-              </button>
-            </div>
+          <div className="control">
+            <button
+              type="submit"
+              className="btn btn-primary"
+            >
+              Book Now
+            </button>
           </div>
-        </div>
+        </form>
       </div>
-    </form>
+    </div>
   );
 }
 
