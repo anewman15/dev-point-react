@@ -8,6 +8,7 @@ import { Link, Redirect } from 'react-router-dom';
 import { saveCurrentDev } from '../../redux/actions/developer';
 import getCurrentDev from '../../sandbox/getCurrentDev';
 import LinkIcon from './LinkIcon';
+import AppointmentForm from './AppointmentForm';
 
 function DeveloperPage({
   currentUser,
@@ -76,9 +77,11 @@ function DeveloperPage({
 
       <hr className="mx-8 border-1 border-gray-200" />
 
-      <div>
-
-        <div className="column is-half-tablet is-centered">
+      <div className="mx-auto flex flex-col justify-center lg:flex-row lg:justify-start items-center space-x-4">
+        <div className="px-8 order-last lg:order-first">
+          <AppointmentForm devId={currentDev.id} devConfLink={currentDev.links[2].url} />
+        </div>
+        <div className="order-first lg:order-last">
           <table className="table is-striped is-narrower is-hoverable is-fullwidth">
             <thead>
               <tr>
@@ -91,15 +94,6 @@ function DeveloperPage({
               {devSkills}
             </tbody>
           </table>
-          <div className="has-text-centered my-6">
-            <Link
-              type="button"
-              className="button is-primary is-rounded has-text-weight-bold is-uppercase"
-              to="/book_appointment"
-            >
-              Book an Appointment
-            </Link>
-          </div>
         </div>
       </div>
     </div>
