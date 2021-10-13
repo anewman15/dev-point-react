@@ -74,7 +74,7 @@ function DeveloperPage({
         <div className="px-8 order-last lg:order-first">
           <AppointmentForm devId={currentDev.id} devConfLink={currentDev.links[2].url} />
         </div>
-        <div className="mx-auto w-full my-4 p-8 order-first lg:order-last bg-primary-300 rounded border-1 border-primary-300 bg-opacity-40">
+        <div className="mx-auto w-full my-4 p-8 order-first lg:order-last bg-primary-500 rounded border-1 border-primary-300 bg-opacity-40">
           <SkillsCloud currentDev={currentDev} />
         </div>
       </div>
