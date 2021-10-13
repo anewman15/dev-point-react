@@ -5,7 +5,7 @@ import { formattedDate, timeLeft } from '../../utils/date';
 
 function HostedAppointments({ hostedAppointments }) {
   const appointmentsList = hostedAppointments && hostedAppointments.map(appointment => (
-    <div key={`${appointment.id}`} className="container mx-auto my-10 px-8 py-6 w-11/12 md:w-9/12 lg:w-8/12 bg-warning-400 bg-opacity-80 rounded filter drop-shadow-xl">
+    <div key={`${appointment.id}`} className="container mx-auto my-10 px-8 py-4 w-11/12 md:w-9/12 lg:w-8/12 bg-warning-400 bg-opacity-80 rounded filter drop-shadow-xl">
       <div className="flex flex-wrap justify-between items-center space-x-4">
         <p className="text-sm text-primary-500 font-bold">
           {appointment.location}
@@ -29,7 +29,7 @@ function HostedAppointments({ hostedAppointments }) {
 
       <hr className="border-1 border-warning-200 my-2" />
 
-      <div className="my-4 flex flex-wrap flex-col md:flex-row justify-start items-baseline md:space-x-4 leading-loose">
+      <div className="my-2 flex flex-wrap flex-col md:flex-row justify-start items-baseline md:space-x-4 leading-loose">
         <p className="text-2xl md:text-3xl">
           <Link className="text-primary-700 font-semibold" to={`/developers/${appointment.guest.id}`}>{`${appointment.guest.first_name} ${appointment.guest.last_name}`}</Link>
         </p>
@@ -39,11 +39,11 @@ function HostedAppointments({ hostedAppointments }) {
         </p>
       </div>
       <div className="flex flex-wrap justify-between items-center">
-        <p className="my-2 text-primary-700 flex justify-center items-center">
+        <p className="text-primary-700 flex justify-center items-center">
           <span className="mr-3"><i className="far fa-calendar-alt text-primary-400 text-xl" /></span>
           {formattedDate(appointment.time)}
         </p>
-        <p className="my-2 flex justify-center items-center">
+        <p className="flex justify-center items-center">
           <span className="mr-2"><i className="fas fa-clock text-primary-400 text-xl" /></span>
           <span className="font-bold lowercase">
             {
