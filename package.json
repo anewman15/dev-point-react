@@ -26,6 +26,7 @@
     "react-responsive-carousel": "^3.2.18",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
+    "react-wordcloud": "^1.2.7",
     "redux": "^4.0.5",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat",
     "web-vitals": "^1.0.1",
