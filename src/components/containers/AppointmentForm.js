@@ -42,35 +42,37 @@ function AppointmentForm({ devId, devConfLink }) {
 
       <div className="flex flex-wrap justify-start items-center">
         <form className="" onSubmit={handleSubmit}>
-          <div className="field">
-            <label className="label" htmlFor="location">
-              Location
-              <div className="control">
-                <input
-                  type="text"
-                  className="input"
-                  name="location"
-                  onChange={handleChange}
-                  placeholder="A place, or just Online"
-                  required
-                  autoFocus
-                />
-              </div>
-            </label>
-          </div>
-          <div className="field">
-            <label className="label" htmlFor="time">
-              Time
-              <div className="control">
-                <input
-                  type="datetime-local"
-                  className="input"
-                  name="time"
-                  onChange={handleChange}
-                  required
-                />
-              </div>
-            </label>
+          <div className="md:flex md:justify-between md:items-center md:space-x-2 lg:block">
+            <div className="field">
+              <label className="label" htmlFor="location">
+                Location
+                <div className="control">
+                  <input
+                    type="text"
+                    className="input"
+                    name="location"
+                    onChange={handleChange}
+                    placeholder="A place, or just Online"
+                    required
+                    autoFocus
+                  />
+                </div>
+              </label>
+            </div>
+            <div className="field">
+              <label className="label" htmlFor="time">
+                Time
+                <div className="control">
+                  <input
+                    type="datetime-local"
+                    className="input"
+                    name="time"
+                    onChange={handleChange}
+                    required
+                  />
+                </div>
+              </label>
+            </div>
           </div>
           <div className="control">
             <button
