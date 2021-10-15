@@ -5,7 +5,7 @@ exports[`LogInButton renders the LogInButton component to the dom 1`] = `
   className="navbar-item"
 >
   <a
-    className="button is-primary is-fullwidth"
+    className="btn btn-success"
     href="/login"
     onClick={[Function]}
   >
