@@ -2,152 +2,163 @@
 
 exports[`SignUpForm renders the SignUpForm component to the dom 1`] = `
 <div
-  className="my-6 mx-2 columns is-centered"
+  className="my-12 mx-auto"
 >
   <div
-    className="column is-half has-background-warning border-warning"
+    className="mx-auto w-8/12 md:w-6/12 lg:w-5/12 bg-yellow-300 rounded"
   >
     <h1
-      className="is-size-3 has-text-weight-bold is-text-centered p-2 my-3"
+      className="px-2 pt-8 pb-2 mb-3 text-3xl text-center text-green-800 font-bold"
     >
       Create an Account
     </h1>
-    <form
-      className="p-4"
-      onSubmit={[Function]}
+    <div
+      className="px-6 pb-2"
     >
-      <div
-        className="field"
+      <hr
+        className="border-1 border-primary-600 px-2"
+      />
+    </div>
+    <div
+      className="flex justify-center items-center"
+    >
+      <form
+        className="px-4 mx-auto mb-8"
+        onSubmit={[Function]}
       >
-        <label
-          className="label"
-          htmlFor="email"
+        <div
+          className="field"
         >
-          Email
-          <div
-            className="control has-icons-left has-icons-right"
+          <label
+            className="label"
+            htmlFor="email"
           >
-            <input
-              autoFocus={true}
-              className="input is-success"
-              name="email"
-              onChange={[Function]}
-              placeholder="email@emails.com"
-              required={true}
-              type="text"
-              value=""
-            />
-            <span
-              className="icon is-small is-left"
+            Email
+            <div
+              className="control"
             >
-              <i
-                className="fas fa-envelope"
+              <input
+                autoFocus={true}
+                className="input"
+                name="email"
+                onChange={[Function]}
+                placeholder="email@emails.com"
+                required={true}
+                type="text"
+                value=""
               />
-            </span>
-          </div>
-        </label>
-      </div>
-      <div
-        className="field"
-      >
-        <label
-          className="label"
-          htmlFor="username"
+              <span
+                className="icon"
+              >
+                <i
+                  className="fas fa-envelope"
+                />
+              </span>
+            </div>
+          </label>
+        </div>
+        <div
+          className="field"
         >
-          Username
-          <div
-            className="control has-icons-left has-icons-right"
+          <label
+            className="label"
+            htmlFor="username"
           >
-            <input
-              className="input is-success"
-              name="username"
-              onChange={[Function]}
-              placeholder="Minimum 5 characters"
-              required={true}
-              type="text"
-              value=""
-            />
-            <span
-              className="icon is-small is-left"
+            Username
+            <div
+              className="control"
             >
-              <i
-                className="fas fa-user"
+              <input
+                className="input"
+                name="username"
+                onChange={[Function]}
+                placeholder="Minimum 5 characters"
+                required={true}
+                type="text"
+                value=""
               />
-            </span>
-          </div>
-        </label>
-      </div>
-      <div
-        className="field"
-      >
-        <label
-          className="label"
-          htmlFor="password"
+              <span
+                className="icon"
+              >
+                <i
+                  className="fas fa-user"
+                />
+              </span>
+            </div>
+          </label>
+        </div>
+        <div
+          className="field"
         >
-          Password
-          <div
-            className="control has-icons-left has-icons-right"
+          <label
+            className="label"
+            htmlFor="password"
           >
-            <input
-              className="input is-success"
-              name="password"
-              onChange={[Function]}
-              placeholder="Minimum 6 characters"
-              required={true}
-              type="password"
-              value=""
-            />
-            <span
-              className="icon is-small is-left"
+            Password
+            <div
+              className="control"
             >
-              <i
-                className="fas fa-lock"
+              <input
+                className="input"
+                name="password"
+                onChange={[Function]}
+                placeholder="Minimum 6 characters"
+                required={true}
+                type="password"
+                value=""
               />
-            </span>
-          </div>
-        </label>
-      </div>
-      <div
-        className="field"
-      >
-        <label
-          className="label"
-          htmlFor="password_confirmation"
+              <span
+                className="icon"
+              >
+                <i
+                  className="fas fa-lock"
+                />
+              </span>
+            </div>
+          </label>
+        </div>
+        <div
+          className="field"
         >
-          Confirm password
-          <div
-            className="control has-icons-left has-icons-right"
+          <label
+            className="label"
+            htmlFor="password_confirmation"
           >
-            <input
-              className="input is-success"
-              name="password_confirmation"
-              onChange={[Function]}
-              placeholder="Your password again"
-              required={true}
-              type="password"
-              value=""
-            />
-            <span
-              className="icon is-small is-left"
+            Confirm password
+            <div
+              className="control"
             >
-              <i
-                className="fas fa-lock"
+              <input
+                className="input"
+                name="password_confirmation"
+                onChange={[Function]}
+                placeholder="Your password again"
+                required={true}
+                type="password"
+                value=""
               />
-            </span>
-          </div>
-        </label>
-      </div>
-      <div
-        className="control"
-      >
-        <button
-          className="button is-success my-5"
-          type="submit"
+              <span
+                className="icon"
+              >
+                <i
+                  className="fas fa-lock"
+                />
+              </span>
+            </div>
+          </label>
+        </div>
+        <div
+          className="control"
         >
-          Sign up
-        </button>
-      </div>
-    </form>
+          <button
+            className="btn btn-primary"
+            type="submit"
+          >
+            Sign up
+          </button>
+        </div>
+      </form>
+    </div>
   </div>
 </div>
 `;
