@@ -1,87 +1,83 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`AppointmentsForm renders the AppointmentForm component to the dom 1`] = `
-<form
-  className="mx-6 mt-4 pb-6"
-  onSubmit={[Function]}
+<div
+  className="container my-6 mx-auto p-6 bg-warning-500 bg-opacity-60 rounded"
 >
-  <div
-    className="columns is-centered"
+  <h2
+    className="text-l md:text-xl text-primary-800 text-center font-semibold"
   >
-    <div
-      className="column is-four-fifths"
+    Book an Appointment
+  </h2>
+  <hr
+    className="my-4 border-1 border-primary-600"
+  />
+  <div
+    className="flex flex-wrap justify-start items-center"
+  >
+    <form
+      className=""
+      onSubmit={[Function]}
     >
       <div
-        className="mx-6 field is-horizontal"
+        className="md:flex md:justify-between md:items-center md:space-x-2 lg:space-x-0 lg:block"
       >
         <div
-          className="field-body is-grouped"
+          className="field"
         >
-          <div
-            className="field"
+          <label
+            className="label"
+            htmlFor="location"
           >
-            <label
-              className="label has-text-centered has-text-white"
-              htmlFor="location"
+            Location
+            <div
+              className="control"
             >
-              Location
-              <div
-                className="control"
-              >
-                <input
-                  autoFocus={true}
-                  className="input is-primary is-rounded has-text-success"
-                  name="location"
-                  onChange={[Function]}
-                  placeholder="A place, or just Online"
-                  required={true}
-                  type="text"
-                />
-              </div>
-            </label>
-          </div>
-          <div
-            className="field is-horizontal"
+              <input
+                autoFocus={true}
+                className="input"
+                name="location"
+                onChange={[Function]}
+                placeholder="A place, or just Online"
+                required={true}
+                type="text"
+              />
+            </div>
+          </label>
+        </div>
+        <div
+          className="field"
+        >
+          <label
+            className="label"
+            htmlFor="time"
           >
-            <label
-              className="label has-text-centered has-text-white"
-              htmlFor="time"
+            Time
+            <div
+              className="control"
             >
-              Time
-              <div
-                className="control"
-              >
-                <input
-                  className="input is-primary is-rounded has-text-success"
-                  name="time"
-                  onChange={[Function]}
-                  required={true}
-                  type="datetime-local"
-                />
-              </div>
-            </label>
-          </div>
+              <input
+                className="input"
+                name="time"
+                onChange={[Function]}
+                required={true}
+                type="datetime-local"
+              />
+            </div>
+          </label>
         </div>
       </div>
-    </div>
-    <div
-      className="column is-vcentered"
-    >
       <div
-        className="mx-6 field is-horizontal is-vcentered"
+        className="control"
       >
-        <div
-          className="control"
+        <button
+          className="btn btn-primary"
+          type="submit"
         >
-          <button
-            className="button is-white has-text-success is-rounded is-uppercase is-fullwidth mt-4 p-5 has-text-weight-bold"
-            type="submit"
-          >
-            Book Now
-          </button>
-        </div>
+          Book Now
+        </button>
       </div>
-    </div>
+    </form>
   </div>
-</form>
+</div>
 `;
