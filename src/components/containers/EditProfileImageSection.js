@@ -62,47 +62,54 @@ const EditProfileImageSection = ({ currentUser, saveCurrentUser }) => {
   };
 
   return (
-    <div className="my-6">
-      <h1 className="my-1 px-2 is-size-5 has-text-weight-bold">Profile Image</h1>
-      <div className="my-6 py-4 px-3">
-        <div className="image edit-profile-image-wrapper">
-          <img className="is-rounded" src={profileImageUrl || currentUser.profile_image_url || `${process.env.PUBLIC_URL}/dev.png`} alt="profile_image" />
+    <div className="my-8 mx-auto p-8">
+      <h1 className="my-2 px-2 text-2xl text-primary-800 font-bold">Profile Image</h1>
+      <div className="my-6 w-11/12 flex flex-col justify-center items-center p-8">
+        <div className="mx-auto">
+          <img
+            className="rounded-full"
+            src={profileImageUrl || currentUser.profile_image_url || `${process.env.PUBLIC_URL}/dev.png`}
+            alt="profile_image"
+            width="256"
+          />
         </div>
+        <form
+          className="my-6 py-4"
+          onSubmit={handleProfileImageUpload}
+        >
+          <div className="flex flex-wrap justify-center items-center space-x-6">
+            <div className="file mx-2">
+              <label className="file-label">
+                <input
+                  ref={imageFileInput}
+                  className="file-input"
+                  type="file"
+                  name="profile_image"
+                  onChange={fileChangeHandler}
+                  required
+                />
+                <div className="flex flex-wrap justify-center items-center space-x-4">
+                  <p className="btn btn-secondary">
+                    <span className="flex flex-wrap justify-center items-center space-x-4">
+                      <i className="file-icon fas fa-upload" />
+                      <span>Choose a file…</span>
+                    </span>
+                  </p>
+                  {imageFile && <span className="mx-2 p-2 text-primary-600">{imageFile.name}</span>}
+                </div>
+              </label>
+            </div>
+            <div className="my-2 py-2 flex flex-wrap justify-center items-center space-x-4">
+              <div className="control">
+                <button type="submit" className="btn btn-primary">Upload</button>
+              </div>
+              <div className="control">
+                <button type="button" className="btn btn-warning" onClick={resetImageForm}>Clear</button>
+              </div>
+            </div>
+          </div>
+        </form>
       </div>
-      <form
-        className="my-6 py-4 is-flex is-flex-direction-column is-justify-content-center is-align-items-center"
-        onSubmit={handleProfileImageUpload}
-      >
-        <div className="file mx-2">
-          <label className="file-label">
-            <input
-              ref={imageFileInput}
-              className="file-input"
-              type="file"
-              name="profile_image"
-              onChange={fileChangeHandler}
-              required
-            />
-            <span className="file-cta">
-              <span className="file-icon">
-                <i className="fas fa-upload" />
-              </span>
-              <span className="file-label">
-                Choose a file…
-              </span>
-            </span>
-            {imageFile && <span className="mx-2 p-2 has-text-primary">{imageFile.name}</span>}
-          </label>
-        </div>
-        <div className="my-2 py-2 is-flex is-justify-content-center is-align-items-center">
-          <div className="control mx-2">
-            <button type="submit" className="button is-primary px-6">Upload</button>
-          </div>
-          <div className="control mx-2">
-            <button type="button" className="button is-danger px-6" onClick={resetImageForm}>Clear</button>
-          </div>
-        </div>
-      </form>
     </div>
   );
 };
