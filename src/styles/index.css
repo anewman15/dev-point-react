@@ -19,6 +19,10 @@ body {
   @apply filter drop-shadow-xl
 }
 
+.page-title {
+  @apply text-2xl md:text-4xl text-primary-800 text-center font-bold
+}
+
 .btn {
   @apply px-4 py-2 rounded filter brightness-100 hover:brightness-125;
 }
@@ -73,6 +77,18 @@ body {
 
 .icon {
   @apply absolute left-2 top-1 text-primary-200
+}
+
+.notif {
+  @apply p-6 mx-auto my-6 w-11/12 md:w-10/12 lg:w-9/12 rounded border bg-opacity-60
+}
+
+.notif-warning {
+  @apply bg-warning-100 border-warning-600 text-warning-600
+}
+
+.notif-danger {
+  @apply bg-danger-100 border-danger-600 text-danger-600
 }
 
 .edit-profile-image-wrapper {
