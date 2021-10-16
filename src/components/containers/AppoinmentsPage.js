@@ -28,7 +28,7 @@ function AppoinmentsPage({ currentUser, appointments, saveAppointments }) {
   return (
     <div className="page-container bg-gray-50 page-border page-shadow">
       <div className="m-6 pt-8">
-        <h1 className="text-2xl md:text-4xl text-primary-800 text-center font-bold">Your Appointments</h1>
+        <h1 className="page-title">Your Appointments</h1>
       </div>
       <div className="mx-auto my-12 pb-8">
         {
