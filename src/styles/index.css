@@ -32,7 +32,7 @@ body {
 }
 
 .btn-secondary {
-  @apply text-primary-700 bg-gray-300;
+  @apply text-white bg-gray-500;
 }
 
 .btn-success {
@@ -85,6 +85,14 @@ body {
 
 .notif-warning {
   @apply bg-warning-100 border-warning-600 text-warning-600
+}
+
+.file-input {
+  display: none;
+}
+
+.file-icon {
+  @apply text-primary-200
 }
 
 .notif-danger {
