@@ -14,7 +14,7 @@ function DevelopersListItem({ dev }) {
   const employment = employments.length && employments[0];
 
   return (
-    <div className="dev-item-container bg-secondary-50 rounded filter drop-shadow-xl">
+    <div className="dev-item-container bg-secondary-50 rounded filter drop-shadow-lg">
       <div className="px-2 md:px-4 flex flex-wrap justify-start items-start space-x-6">
         <div className="">
           <Link to={`/developers/${dev.user.id}`}>
