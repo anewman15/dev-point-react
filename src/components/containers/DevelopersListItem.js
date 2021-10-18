@@ -11,7 +11,7 @@ function DevelopersListItem({ dev }) {
   ));
 
   const itemSkills = skills.length && skills.map(skill => <span className="skill-pill" key={skill.id}>{skill.skill_name}</span>);
-  const employment = employments.length && employments[0];
+  const employment = ;
 
   return (
     <div className="dev-item-container bg-secondary-50 rounded filter drop-shadow-lg">
@@ -25,9 +25,15 @@ function DevelopersListItem({ dev }) {
           <p className="text-primary-700 text-xl font-semibold">
             <Link to={`/developers/${dev.user.id}`}>{`${dev.user.first_name} ${dev.user.last_name}`}</Link>
           </p>
-          <p className="text-l text-secondary-700 font-bold">
-            {employment.title}
-          </p>
+
+          {
+            employments.length ?
+            <p className="text-l text-secondary-700 font-bold">
+              {employment[0].title}
+            </p>
+            : null
+          }
+          
           <div className="my-3 flex flex-wrap justify-start items-center space-x-4">
             {itemLinks}
           </div>
