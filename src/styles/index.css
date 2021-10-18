@@ -11,6 +11,10 @@ body {
   @apply container mx-auto md:w-11/12 lg:w-10/12 my-6 p-2
 }
 
+.dev-item-container {
+  @apply container mx-auto md:w-11/12 lg:w-10/12 my-8 p-3
+}
+
 .page-border {
   @apply rounded border border-yellow-50
 }
@@ -97,6 +101,10 @@ body {
 
 .notif-danger {
   @apply bg-danger-100 border-danger-600 text-danger-600
+}
+
+.skill-pill {
+  @apply rounded-full mx-1 my-2 py-1 px-2 bg-primary-300 text-white font-bold
 }
 
 .edit-profile-image-wrapper {
