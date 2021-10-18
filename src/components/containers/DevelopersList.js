@@ -34,26 +34,13 @@ function DevelopersList({ currentUser, developers, saveDevelopers }) {
 
   return (
     <div className="my-3">
-      <div className="has-text-centered my-6">
-        <p className="is-uppercase has-text-weight-bold is-size-2">
+      <div className="m-6 pt-8">
+        <h1 className="page-title">
           Our Developers
-        </p>
-        <p className="is-size-6 my-2 has-text-weight-bold has-text-grey-light">
-          Please click on one to view their profile
-        </p>
+        </h1>
       </div>
       <div className="mx-3 px-4">
-        <Carousel
-          centerMode
-          centerSlidePercentage={70}
-          infiniteLoop
-          autoPlay
-          interval={4000}
-          showIndicators={false}
-          showThumbs={false}
-        >
-          {devs}
-        </Carousel>
+        {devs}
       </div>
     </div>
   );
