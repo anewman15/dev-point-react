@@ -1,7 +1,8 @@
 /* eslint-disable jsx-a11y/no-autofocus */
-import { PropTypes } from 'prop-types';
 import { useState } from 'react';
+import { PropTypes } from 'prop-types';
 import { useHistory } from 'react-router-dom';
+import { connect } from 'react-redux';
 import createAppointment from '../../sandbox/createAppointment';
 
 function AppointmentForm({ devId, devConfLink }) {
@@ -89,8 +90,13 @@ function AppointmentForm({ devId, devConfLink }) {
 }
 
 AppointmentForm.propTypes = {
-  devId: PropTypes.integer,
-  userId: PropTypes.integer,
+  currentDev: PropTypes.object,
 }.isRequired;
 
-export default AppointmentForm;
+const mapStateToProps = state => (
+  {
+    currentDev: state.currentDev,
+  }
+);
+
+export default connect(mapStateToProps)(AppointmentForm);
