@@ -5,7 +5,7 @@ exports[`SignUpButton renders the SignUpButton component to the dom 1`] = `
   className="navbar-item"
 >
   <a
-    className="button is-light is-fullwidth"
+    className="btn btn-secondary"
     href="/sign_up"
     onClick={[Function]}
   >

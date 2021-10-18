@@ -6,7 +6,7 @@ Array [
     className="navbar-item"
   >
     <a
-      className="button is-primary is-fullwidth"
+      className="btn btn-success"
       href="/login"
       onClick={[Function]}
     >
@@ -17,7 +17,7 @@ Array [
     className="navbar-item"
   >
     <a
-      className="button is-light is-fullwidth"
+      className="btn btn-secondary"
       href="/sign_up"
       onClick={[Function]}
     >

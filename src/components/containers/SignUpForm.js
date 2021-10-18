@@ -47,93 +47,98 @@ const SignUpForm = () => {
   };
 
   return (
-    <div className="my-6 mx-2 columns is-centered">
-      <div className="column is-half has-background-warning border-warning">
-        <h1 className="is-size-3 has-text-weight-bold is-text-centered p-2 my-3">Create an Account</h1>
+    <div className="my-12 mx-auto">
+      <div className="mx-auto w-8/12 md:w-6/12 lg:w-5/12 bg-yellow-300 rounded">
+        <h1 className="px-2 pt-8 pb-2 mb-3 text-3xl text-center text-green-800 font-bold">Create an Account</h1>
+        <div className="px-6 pb-2">
+          <hr className="border-1 border-primary-600 px-2" />
+        </div>
         {Object.keys(formErrors).length >= 1 && <FormErrorsSection formErrors={formErrors} />}
         {formSuccess && <SignUpSuccess />}
-        <form className="p-4" onSubmit={handleSubmit}>
-          <div className="field">
-            <label className="label" htmlFor="email">
-              Email
-              <div className="control has-icons-left has-icons-right">
-                <input
-                  className="input is-success"
-                  type="text"
-                  name="email"
-                  onChange={handleChange}
-                  value={userInfo.email}
-                  placeholder="email@emails.com"
-                  required
-                  autoFocus
-                />
-                <span className="icon is-small is-left">
-                  <i className="fas fa-envelope" />
-                </span>
-              </div>
-            </label>
-          </div>
-          <div className="field">
-            <label className="label" htmlFor="username">
-              Username
-              <div className="control has-icons-left has-icons-right">
-                <input
-                  className="input is-success"
-                  type="text"
-                  name="username"
-                  onChange={handleChange}
-                  value={userInfo.username}
-                  placeholder="Minimum 5 characters"
-                  required
-                />
-                <span className="icon is-small is-left">
-                  <i className="fas fa-user" />
-                </span>
-              </div>
-            </label>
-          </div>
-          <div className="field">
-            <label className="label" htmlFor="password">
-              Password
-              <div className="control has-icons-left has-icons-right">
-                <input
-                  className="input is-success"
-                  type="password"
-                  name="password"
-                  onChange={handleChange}
-                  value={userInfo.password}
-                  placeholder="Minimum 6 characters"
-                  required
-                />
-                <span className="icon is-small is-left">
-                  <i className="fas fa-lock" />
-                </span>
-              </div>
-            </label>
-          </div>
-          <div className="field">
-            <label className="label" htmlFor="password_confirmation">
-              Confirm password
-              <div className="control has-icons-left has-icons-right">
-                <input
-                  className="input is-success"
-                  type="password"
-                  name="password_confirmation"
-                  onChange={handleChange}
-                  value={userInfo.password_confirmation}
-                  placeholder="Your password again"
-                  required
-                />
-                <span className="icon is-small is-left">
-                  <i className="fas fa-lock" />
-                </span>
-              </div>
-            </label>
-          </div>
-          <div className="control">
-            <button type="submit" className="button is-success my-5">Sign up</button>
-          </div>
-        </form>
+        <div className="flex justify-center items-center">
+          <form className="px-4 mx-auto mb-8" onSubmit={handleSubmit}>
+            <div className="field">
+              <label className="label" htmlFor="email">
+                Email
+                <div className="control">
+                  <input
+                    className="input"
+                    type="text"
+                    name="email"
+                    onChange={handleChange}
+                    value={userInfo.email}
+                    placeholder="email@emails.com"
+                    required
+                    autoFocus
+                  />
+                  <span className="icon">
+                    <i className="fas fa-envelope" />
+                  </span>
+                </div>
+              </label>
+            </div>
+            <div className="field">
+              <label className="label" htmlFor="username">
+                Username
+                <div className="control">
+                  <input
+                    className="input"
+                    type="text"
+                    name="username"
+                    onChange={handleChange}
+                    value={userInfo.username}
+                    placeholder="Minimum 5 characters"
+                    required
+                  />
+                  <span className="icon">
+                    <i className="fas fa-user" />
+                  </span>
+                </div>
+              </label>
+            </div>
+            <div className="field">
+              <label className="label" htmlFor="password">
+                Password
+                <div className="control">
+                  <input
+                    className="input"
+                    type="password"
+                    name="password"
+                    onChange={handleChange}
+                    value={userInfo.password}
+                    placeholder="Minimum 6 characters"
+                    required
+                  />
+                  <span className="icon">
+                    <i className="fas fa-lock" />
+                  </span>
+                </div>
+              </label>
+            </div>
+            <div className="field">
+              <label className="label" htmlFor="password_confirmation">
+                Confirm password
+                <div className="control">
+                  <input
+                    className="input"
+                    type="password"
+                    name="password_confirmation"
+                    onChange={handleChange}
+                    value={userInfo.password_confirmation}
+                    placeholder="Your password again"
+                    required
+                  />
+                  <span className="icon">
+                    <i className="fas fa-lock" />
+                  </span>
+                </div>
+              </label>
+            </div>
+            <div className="control">
+              <button type="submit" className="btn btn-primary">Sign up</button>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
   );
