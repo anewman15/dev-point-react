@@ -53,11 +53,11 @@ function DeveloperPage({
             <div className="my-3">
               <h2 className="text-xl text-gray-800 font-semibold">
                 <span className="text-gray-300 mr-2"><i className="fas fa-suitcase" /></span>
-                { currentDev.employments && `${currentDev.employments[0].title}`}
+                { currentDev.employments.length ? `${currentDev.employments[0].title}` : null}
               </h2>
               <h3 className="text-gray-800">
                 <span className="text-gray-300 mr-2"><i className="fas fa-building" /></span>
-                {currentDev.employments && `${currentDev.employments[0].company_name}`}
+                { currentDev.employments.length ? `${currentDev.employments[0].company_name}` : null }
               </h3>
 
             </div>
@@ -72,7 +72,7 @@ function DeveloperPage({
 
       <div className="mx-auto flex flex-col justify-center lg:flex-row lg:justify-start items-center lg:space-x-4">
         <div className="px-8 order-last lg:order-first">
-          <AppointmentForm devId={currentDev.id} devConfLink={currentDev.links[2].url} />
+          <AppointmentForm />
         </div>
         <div className="mx-auto w-full my-4 p-8 order-first lg:order-last bg-primary-500 rounded border-1 border-primary-300 bg-opacity-40">
           <SkillsCloud currentDev={currentDev} />
