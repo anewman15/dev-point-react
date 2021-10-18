@@ -39,7 +39,7 @@ function DevelopersList({ currentUser, developers, saveDevelopers }) {
           Our Developers
         </h1>
       </div>
-      <div className="mx-3 px-4">
+      <div className="mx-3 my-10 px-4">
         {devs}
       </div>
     </div>
