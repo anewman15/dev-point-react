@@ -32,7 +32,7 @@ function AppoinmentsPage({ currentUser, appointments, saveAppointments }) {
       </div>
       <div className="mx-auto my-12 pb-8">
         {
-          appointments.hosted.length
+          appointments.hosted && appointments.hosted.length
             ? <HostedAppointments hostedAppointments={appointments.hosted} />
             : <p className="text-xl text-gray-400">None yet.</p>
         }
