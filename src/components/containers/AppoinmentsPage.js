@@ -34,7 +34,8 @@ function AppoinmentsPage({ currentUser, appointments, saveAppointments }) {
         {
           appointments.hosted && appointments.hosted.length
             ? <HostedAppointments hostedAppointments={appointments.hosted} />
-            : <p className="text-xl text-gray-400">None yet.</p>
+            : <p className="text-xl text-gray-400 text-center font-bold">None yet</p>
+
         }
       </div>
     </div>

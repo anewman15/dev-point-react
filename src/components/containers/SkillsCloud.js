@@ -4,7 +4,7 @@ import propTypes from 'prop-types';
 import ReactWordCloud from 'react-wordcloud';
 
 const SkillsCloud = ({ currentDev }) => {
-  const devSkills = currentDev.skills.map(skill => (
+  const devSkills = currentDev.skills && currentDev.skills.map(skill => (
     {
       text: skill.skill_name,
       value: skill.experience,
