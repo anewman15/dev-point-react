@@ -88,8 +88,16 @@ body {
   @apply p-6 mx-auto my-6 w-11/12 md:w-10/12 lg:w-9/12 rounded border bg-opacity-60;
 }
 
+.notif-success {
+  @apply bg-primary-100 border-primary-600 text-primary-600;
+}
+
 .notif-warning {
   @apply bg-warning-100 border-warning-600 text-warning-600;
+}
+
+.notif-danger {
+  @apply bg-danger-100 border-danger-600 text-danger-600;
 }
 
 .file-input {
@@ -100,28 +108,8 @@ body {
   @apply text-primary-200;
 }
 
-.notif-danger {
-  @apply bg-danger-100 border-danger-600 text-danger-600;
-}
-
 .skill-pill {
   @apply rounded-full mx-1 my-2 py-1 px-2 bg-primary-300 text-white font-bold;
-}
-
-.edit-profile-image-wrapper {
-  margin: auto;
-  width: 180px;
-  height: 180px;
-}
-
-.profile-image {
-  width: 100%;
-  border: 2px solid #597207;
-  border-radius: 4px;
-}
-
-.carousel-image {
-  width: 230px;
 }
 
 .bg-code {
@@ -132,35 +120,6 @@ body {
 }
 
 .bd-filter {
-  backdrop-filter: hue-rotate(-40deg) opacity(0.6) blur(20px) invert(0.2);
+  backdrop-filter: hue-rotate(-60deg) opacity(0.4) blur(20px) invert(0.2);
 }
 
-.vh-100 {
-  min-height: 100vh;
-}
-
-.my-7 {
-  margin: 10rem 0;
-}
-
-.mx-7 {
-  margin-right: 5rem;
-  margin-left: 5rem;
-}
-
-.box-primary {
-  border: 0.5px solid var(--primary);
-  padding: 1rem;
-  margin: 1rem;
-  border-radius: 4px;
-  box-shadow: 4px 4px 10px -5px var(--primary);
-}
-
-.border-warning {
-  border: 0.5px solid var(--warning);
-  border-radius: 4px;
-}
-
-.capitalize {
-  text-transform: capitalize;
-}
