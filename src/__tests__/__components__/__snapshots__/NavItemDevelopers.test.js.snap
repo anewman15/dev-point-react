@@ -5,7 +5,7 @@ exports[`NavItemDevelopers renders the NavItemDevelopers component to the dom 1`
   className="navbar-item"
 >
   <a
-    className="button is-warning has-text-white has-text-weight-bold is-fullwidth"
+    className="text-primary-800 font-bold"
     href="/appointments"
     onClick={[Function]}
   >

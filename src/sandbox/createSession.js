@@ -6,7 +6,7 @@ const createSession = async userInfo => {
   };
 
   try {
-    return await fetch('https://anewman15-dev-point.herokuapp.com/users/sign_in', {
+    return await fetch(`${process.env.REACT_APP_BACKEND_API_URL}/users/sign_in`, {
       method: 'POST',
       mode: 'cors',
       headers: {

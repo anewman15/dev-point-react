@@ -1,0 +1,125 @@
+/* stylelint-disable scss/at-rule-no-unknown */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  min-width: 540px;
+
+  @apply bg-gray-100;
+}
+
+.page-container {
+  @apply container mx-auto md:w-11/12 lg:w-10/12 my-6 p-2;
+}
+
+.dev-item-container {
+  @apply container mx-auto md:w-11/12 lg:w-10/12 my-8 p-3;
+}
+
+.page-border {
+  @apply rounded border border-yellow-50;
+}
+
+.page-shadow {
+  @apply filter drop-shadow-xl;
+}
+
+.page-title {
+  @apply text-2xl md:text-4xl text-primary-800 text-center font-bold;
+}
+
+.btn {
+  @apply px-4 py-2 rounded filter brightness-100 hover:brightness-125;
+}
+
+.btn-primary {
+  @apply text-gray-100 bg-primary-700;
+}
+
+.btn-secondary {
+  @apply text-white bg-gray-500;
+}
+
+.btn-success {
+  @apply text-gray-100 bg-primary-700;
+}
+
+.btn-warning {
+  @apply text-white bg-warning-500;
+}
+
+.btn-danger {
+  @apply text-gray-100 bg-red-500;
+}
+
+.btn-lg {
+  @apply text-2xl;
+}
+
+.link-primary {
+  @apply text-primary-500 font-bold hover:text-primary-700 ;
+}
+
+.link-warning {
+  @apply text-primary-500 font-bold hover:text-warning-700 ;
+}
+
+.field {
+  @apply my-6;
+}
+
+.label {
+  @apply text-primary-800 font-semibold;
+}
+
+.control {
+  @apply relative my-2;
+}
+
+.input {
+  @apply py-1 pl-10 pr-2 bg-gray-100 border border-primary-500 rounded focus:outline-none focus:ring-1 focus:ring-primary-500 text-primary-800 placeholder-primary-200; }
+
+.icon {
+  @apply absolute left-2 top-1 text-primary-200;
+}
+
+.notif {
+  @apply p-6 mx-auto my-6 w-11/12 md:w-10/12 lg:w-9/12 rounded border bg-opacity-60;
+}
+
+.notif-success {
+  @apply bg-primary-100 border-primary-600 text-primary-600;
+}
+
+.notif-warning {
+  @apply bg-warning-100 border-warning-600 text-warning-600;
+}
+
+.notif-danger {
+  @apply bg-danger-100 border-danger-600 text-danger-600;
+}
+
+.file-input {
+  display: none;
+}
+
+.file-icon {
+  @apply text-primary-200;
+}
+
+.skill-pill {
+  @apply rounded-full mx-1 my-2 py-1 px-2 bg-primary-300 text-white font-bold;
+}
+
+.bg-code {
+  background: url('./img/code.png') no-repeat center;
+  background-size: cover;
+  object-fit: cover;
+  min-height: 100vh;
+}
+
+.bd-filter {
+  backdrop-filter: hue-rotate(-60deg) opacity(0.4) blur(20px) invert(0.2);
+}
+

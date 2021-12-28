@@ -1,7 +1,7 @@
 /* eslint-disable consistent-return */
 import fileHash from '../utils/fileHash';
 import getPresignedUrl from './getPresignedUrl';
-import storeToS3Bucket from './storeToS3Bucket';
+import storeToCloudinary from './storeToCloudinary';
 import updateProfileImage from './updateProfileImage';
 
 const uploadProfileImage = async userInfo => {
@@ -21,7 +21,7 @@ const uploadProfileImage = async userInfo => {
         presignedUrlParams = data;
       });
 
-    const s3Response = await storeToS3Bucket(presignedUrlParams, fileBinary);
+    const s3Response = await storeToCloudinary(presignedUrlParams, fileBinary);
 
     if (s3Response.status !== 200) throw (new Error('Error while uploading to storage service.'));
 

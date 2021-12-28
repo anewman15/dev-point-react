@@ -5,35 +5,45 @@ import LinkIcon from './LinkIcon';
 function DevelopersListItem({ dev }) {
   const { links, skills, employments } = dev;
   const itemLinks = links.length && links.map(link => (
-    <a className="p-3 m-2 is-size-5 has-text-grey-light" key={link.id} href={link.url} target="_blank" rel="noreferrer">
+    <a className="text-l text-secondary-300 hover:text-primary-500" key={link.id} href={link.url} target="_blank" rel="noreferrer">
       <LinkIcon iconName={link.link_name.toLowerCase()} />
     </a>
   ));
 
-  const itemSkills = skills.length && skills.map(skill => <button type="button" className="m-1 button is-primary is-small is-rounded has-text-weight-bold" key={skill.id}>{skill.skill_name}</button>);
-  const employment = employments.length && employments[0];
-
+  const itemSkills = skills.length && skills.map(skill => <span className="skill-pill" key={skill.id}>{skill.skill_name}</span>);
   return (
-    <div className="px-4 py-2">
-      <div className="is-flex is-justify-content-center">
-        <div className="image carousel-image">
+    <div className="dev-item-container bg-secondary-50 rounded filter drop-shadow-lg">
+      <div className="px-2 md:px-4 flex flex-wrap justify-start items-start space-x-6">
+        <div className="">
           <Link to={`/developers/${dev.user.id}`}>
-            <img className="is-rounded" src={`${process.env.PUBLIC_URL}/dev.png`} alt="dev" />
+            <img className="rounded-full" src={`${process.env.PUBLIC_URL}/dev.png`} alt="dev" width="128" />
           </Link>
         </div>
+        <div className="my-3">
+          <p className="text-primary-700 text-xl font-semibold">
+            <Link to={`/developers/${dev.user.id}`}>{`${dev.user.first_name} ${dev.user.last_name}`}</Link>
+          </p>
+
+          {
+            employments.length
+              ? (
+                <p className="text-l text-secondary-700 font-bold">
+                  {employments[0].title}
+                </p>
+              )
+              : null
+          }
+
+          <div className="my-3 flex flex-wrap justify-start items-center space-x-4">
+            {itemLinks}
+          </div>
+        </div>
       </div>
-      <div>
-        <p className="is-uppercase is-size-4 px-2 mt-5"><Link className="has-text-dark" to={`/developers/${dev.user.id}`}>{`${dev.user.first_name} ${dev.user.last_name}`}</Link></p>
-        <div className="has-text-weight-bold">
-          {employment.title}
-        </div>
-        <div className="is-divider has-text-grey-lighter has-text-weight-bolder">. . . . . . . . . . . . . . . . </div>
-        <div className="m-3">
-          {itemSkills}
-        </div>
-        <div className="is-flex is-justify-content-center is-align-items-center">
-          {itemLinks}
-        </div>
+
+      <hr className="my-0 mx-6 border-1 border-gray-100" />
+
+      <div className="my-4 mx-6 px-4 flex flex-wrap">
+        {itemSkills}
       </div>
     </div>
   );

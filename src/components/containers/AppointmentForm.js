@@ -1,15 +1,14 @@
 /* eslint-disable jsx-a11y/no-autofocus */
-import { PropTypes } from 'prop-types';
 import { useState } from 'react';
+import { PropTypes } from 'prop-types';
 import { useHistory } from 'react-router-dom';
+import { connect } from 'react-redux';
 import createAppointment from '../../sandbox/createAppointment';
 
-function AppointmentForm({ devId, devConfLink }) {
+function AppointmentForm({ currentDev }) {
   const initAppointmentInfo = {
-    appointment_guest_id: devId,
     location: '',
     time: '',
-    video_conf_link: devConfLink,
   };
 
   const [appoinmentInfo, setAppointmentInfo] = useState(initAppointmentInfo);
@@ -17,8 +16,10 @@ function AppointmentForm({ devId, devConfLink }) {
 
   const handleChange = e => {
     setAppointmentInfo({
+      appointment_guest_id: currentDev.id,
       ...appoinmentInfo,
       [e.target.name]: e.target.value,
+      video_conf_link: currentDev.links[2].url,
     });
   };
 
@@ -35,18 +36,23 @@ function AppointmentForm({ devId, devConfLink }) {
   };
 
   return (
-    <form className="mx-6 mt-4 pb-6" onSubmit={handleSubmit}>
-      <div className="columns is-centered">
-        <div className="column is-four-fifths">
-          <div className="mx-6 field is-horizontal">
-            <div className="field-body is-grouped">
+    Object.keys(currentDev).length >= 1
+      && (
+      <div className="container my-6 mx-auto p-6 bg-warning-500 bg-opacity-60 rounded">
+        <h2 className="text-l md:text-xl text-primary-800 text-center font-semibold">Book an Appointment</h2>
+
+        <hr className="my-4 border-1 border-primary-600" />
+
+        <div className="flex flex-wrap justify-start items-center">
+          <form className="" onSubmit={handleSubmit}>
+            <div className="md:flex md:justify-between md:items-center md:space-x-2 lg:space-x-0 lg:block">
               <div className="field">
-                <label className="label has-text-centered has-text-white" htmlFor="location">
+                <label className="label" htmlFor="location">
                   Location
                   <div className="control">
                     <input
                       type="text"
-                      className="input is-primary is-rounded has-text-success"
+                      className="input"
                       name="location"
                       onChange={handleChange}
                       placeholder="A place, or just Online"
@@ -56,13 +62,13 @@ function AppointmentForm({ devId, devConfLink }) {
                   </div>
                 </label>
               </div>
-              <div className="field is-horizontal">
-                <label className="label has-text-centered has-text-white" htmlFor="time">
+              <div className="field">
+                <label className="label" htmlFor="time">
                   Time
                   <div className="control">
                     <input
                       type="datetime-local"
-                      className="input is-primary is-rounded has-text-success"
+                      className="input"
                       name="time"
                       onChange={handleChange}
                       required
@@ -71,28 +77,29 @@ function AppointmentForm({ devId, devConfLink }) {
                 </label>
               </div>
             </div>
-          </div>
-        </div>
-        <div className="column is-vcentered">
-          <div className="mx-6 field is-horizontal is-vcentered">
             <div className="control">
               <button
                 type="submit"
-                className="button is-white has-text-success is-rounded is-uppercase is-fullwidth mt-4 p-5 has-text-weight-bold"
+                className="btn btn-primary"
               >
                 Book Now
               </button>
             </div>
-          </div>
+          </form>
         </div>
       </div>
-    </form>
+      )
   );
 }
 
 AppointmentForm.propTypes = {
-  devId: PropTypes.integer,
-  userId: PropTypes.integer,
+  currentDev: PropTypes.object,
 }.isRequired;
 
-export default AppointmentForm;
+const mapStateToProps = state => (
+  {
+    currentDev: state.currentDev,
+  }
+);
+
+export default connect(mapStateToProps)(AppointmentForm);

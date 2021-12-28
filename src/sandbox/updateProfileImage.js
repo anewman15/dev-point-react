@@ -1,6 +1,6 @@
 const updateProfileImage = async (userInfo, blobSignedId) => {
   try {
-    return await fetch(`https://anewman15-dev-point.herokuapp.com/users/${userInfo.user_id}`, {
+    return await fetch(`${process.env.REACT_APP_BACKEND_API_URL}/users/${userInfo.user_id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
