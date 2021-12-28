@@ -4,11 +4,10 @@
 import { useState, useRef } from 'react';
 import { PropTypes } from 'prop-types';
 import { connect } from 'react-redux';
-// import uploadProfileImage from '../../sandbox/uploadProfileImage';
 import saveCurrentUser from '../../redux/actions/user';
 import fileHash from '../../utils/fileHash';
 import getPresignedUrl from '../../sandbox/getPresignedUrl';
-import storeToS3Bucket from '../../sandbox/storeToS3Bucket';
+import storeToCloudinary from '../../sandbox/storeToCloudinary';
 import updateProfileImage from '../../sandbox/updateProfileImage';
 
 const EditProfileImageSection = ({ currentUser, saveCurrentUser }) => {
@@ -43,7 +42,7 @@ const EditProfileImageSection = ({ currentUser, saveCurrentUser }) => {
       })
       .then(data => {
         presignedUrlParams = data;
-        storeToS3Bucket(presignedUrlParams, userInfo.fileBinary)
+        storeToCloudinary(presignedUrlParams, userInfo.fileBinary)
           .then(response => {
             if (response.status === 200) {
               updateProfileImage(userInfo, presignedUrlParams.blob_signed_id)

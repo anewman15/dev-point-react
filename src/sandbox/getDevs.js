@@ -1,6 +1,6 @@
 const getDevs = async () => {
   try {
-    return await fetch('https://anewman15-dev-point.herokuapp.com/developers', {
+    return await fetch(`${process.env.REACT_APP_BACKEND_API_URL}/developers`, {
       method: 'GET',
       mode: 'cors',
       credentials: 'include',

@@ -1,6 +1,6 @@
 const createAppointment = async appointmentInfo => {
   try {
-    return await fetch('https://anewman15-dev-point.herokuapp.com/appointments', {
+    return await fetch(`${process.env.REACT_APP_BACKEND_API_URL}/appointments`, {
       method: 'POST',
       mode: 'cors',
       headers: {

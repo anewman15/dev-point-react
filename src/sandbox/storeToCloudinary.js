@@ -1,5 +1,5 @@
 /* eslint-disable camelcase */
-const storeToS3Bucket = async (presignedUrlParams, fileBinary) => {
+const storeToCloudinary = async (presignedUrlParams, fileBinary) => {
   const { direct_upload } = presignedUrlParams;
   try {
     return await fetch(direct_upload.url, {
@@ -12,4 +12,4 @@ const storeToS3Bucket = async (presignedUrlParams, fileBinary) => {
   }
 };
 
-export default storeToS3Bucket;
+export default storeToCloudinary;
