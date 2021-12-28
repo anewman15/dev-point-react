@@ -1,4 +1,4 @@
-const PRESIGNED_URL_API_ENDPOINT = 'https://anewman15-dev-point.herokuapp.com/presigned_url';
+const PRESIGNED_URL_API_ENDPOINT = `${process.env.REACT_APP_BACKEND_API_URL}/presigned_url`;
 
 const getPresignedUrl = async (file, fileHash) => {
   const options = {

@@ -6,7 +6,7 @@ const createUser = async userInfo => {
   };
 
   try {
-    return await fetch('https://anewman15-dev-point.herokuapp.com/users', {
+    return await fetch(`${process.env.REACT_APP_BACKEND_API_URL}/users`, {
       method: 'POST',
       mode: 'cors',
       headers: {
